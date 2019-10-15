@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="maven:maven-junit-report-plugin:1.5" type="repository">
+    <properties maven-id="maven:maven-junit-report-plugin:1.5" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/maven/maven-junit-report-plugin/1.5/maven-junit-report-plugin-1.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
