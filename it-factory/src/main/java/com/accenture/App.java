@@ -6,6 +6,7 @@ import com.accenture.gamelogic.Game;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class App 
 {
@@ -43,9 +44,20 @@ public class App
    static void  startTheGame() throws IOException
     {
         CorrectnessOfTheEnteredData correctness = new CorrectnessOfTheEnteredData();
-        Game game = new Game(correctness.getNumberLength());
-        game.generateNumber();
+        Scanner scanner = new Scanner(System.in);
+        String userDecision;
+        do
+        {
+            Game game = new Game(correctness.getNumberLength());
+            game.tryToGuess();
+            do
+            {
+                System.out.println("Хотите сыграть еше ?\n"+ "Y/N");
+                userDecision = scanner.nextLine().toLowerCase();
+            }while (!(userDecision.equals("n")||userDecision.equals("y")));
 
+        }while (!userDecision.equals("n"));
+        System.out.println("Спасибо за игру");
 
     }
    static void rules()

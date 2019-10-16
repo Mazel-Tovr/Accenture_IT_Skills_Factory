@@ -40,11 +40,16 @@ public class CorrectnessOfTheEnteredData
     public boolean isCorrectNumber(String usersInPut,final int numberLength)
     {
         Set<Character> checkDigitsUnique = new HashSet<>();
-        if(usersInPut.length() != numberLength) return false;
+        if(usersInPut.length() != numberLength)
+        {
+            System.out.println( "Число должно состоять из "+numberLength +" цифр" );
+            return false;
+        }
         for (int i = 0; i < numberLength ; i++)
         {
             checkDigitsUnique.add(usersInPut.charAt(i));
         }
+        if (checkDigitsUnique.size() != numberLength) System.out.println("Число должно состоять из разных цифр");
         return checkDigitsUnique.size() == numberLength ? true : false;
 
     }

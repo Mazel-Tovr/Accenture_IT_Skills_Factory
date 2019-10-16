@@ -1,1 +1,4 @@
+com\accenture\gamelogic\Game.class
 com\accenture\App.class
+com\accenture\control\CorrectnessOfTheEnteredData.class
+com\accenture\control\TryParse.class
