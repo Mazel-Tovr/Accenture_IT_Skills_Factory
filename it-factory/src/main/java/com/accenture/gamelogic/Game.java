@@ -27,7 +27,7 @@ public class Game
         }
        secretNumber = numbersSet.toString().replaceAll("\\D","");//Удаляем нецифровые символы
     }
-    public void tryToGuess()
+    public void startGame()
     {
         Scanner scanner = new Scanner(System.in);
         while (true)
@@ -50,7 +50,7 @@ public class Game
     private void userGiveUp()
     {
         System.out.println("Слабак!");
-        System.out.println(tryCount == 0 ? "Сдался даже не пытаясь": tryCount == 1 ? "Сдался с первой же попытки":"Тебе потребовалось "+tryCount +"попытки что бы сдаться");
+        System.out.println(tryCount == 0 ? "Сдался даже не пытаясь": tryCount == 1 ? "Сдался после первой же попытки":"Ты сдался после "+tryCount +"х попыткок");
         System.out.println("Число, загаданное компьютером: "+secretNumber);
     }
 

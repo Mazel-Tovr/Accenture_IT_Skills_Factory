@@ -49,7 +49,8 @@ public class App
         do
         {
             Game game = new Game(correctness.getNumberLength());
-            game.tryToGuess();
+            game.startGame();
+
             do
             {
                 System.out.println("Хотите сыграть еше ?\n"+ "Y/N");
