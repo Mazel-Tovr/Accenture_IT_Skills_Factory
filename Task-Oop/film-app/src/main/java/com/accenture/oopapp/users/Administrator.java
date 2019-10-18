@@ -1,5 +1,10 @@
 package com.accenture.oopapp.users;
 
+import com.accenture.oopapp.films.Movie;
+import com.accenture.oopapp.films.review.Review;
+import com.accenture.oopapp.films.review.WorkingWithReview;
+
+import java.util.List;
 import java.util.Objects;
 
 public class Administrator extends Person
@@ -28,4 +33,5 @@ public class Administrator extends Person
     public int hashCode() {
         return Objects.hash(nickName);
     }
+
 }

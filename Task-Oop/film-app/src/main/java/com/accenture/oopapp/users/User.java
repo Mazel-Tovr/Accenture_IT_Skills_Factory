@@ -15,6 +15,14 @@ public class User extends Person
         this.passWord = pussWord;
     }
 
+    public String getNickName() {
+        return nickName;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
     @Override
     public boolean equals(Object o)
     {

@@ -1,12 +1,8 @@
 package com.accenture.oopapp.films;
 
-import com.accenture.oopapp.review.Review;
-import com.accenture.oopapp.users.*;
+import com.accenture.oopapp.films.review.Review;
 
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Movie
 {
@@ -17,6 +13,7 @@ public class Movie
     private String releaseDate;
     private List<Review> filmsReview = new ArrayList<>();
     private List<Review> reviewsOnModerations = new ArrayList<>();
+    private double rating = 0;
     private String description;
 
     public Movie(String movieId, String movieName, MoveType moveType, EnumSet<Genre> genres, String releaseDate)
@@ -28,17 +25,13 @@ public class Movie
         this.releaseDate = releaseDate;
     }
 
-    public boolean addReview(Review review, Person person)
-    {
-       if(person instanceof User) return reviewsOnModerations.add(review);
-       else if(person instanceof Administrator) return filmsReview.add(review);
-       return false;
-    }
+    public List<Review> getFilmsReview() { return filmsReview; }
 
     public List<Review> getReviewsOnModerations()
     {
         return reviewsOnModerations;
     }
+
 
     @Override
     public boolean equals(Object o)
@@ -53,4 +46,15 @@ public class Movie
     public int hashCode() {
         return Objects.hash(movieId);
     }
+
+    public void recalculateFilmRating()
+    {
+        int usersRating = 0;
+        for (var item :filmsReview)
+        {
+           usersRating += item.howYouLikedFilm();
+        }
+        rating = (double) usersRating / filmsReview.size();
+    }
+
 }
