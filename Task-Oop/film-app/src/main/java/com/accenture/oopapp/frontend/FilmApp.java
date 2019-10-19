@@ -22,7 +22,7 @@ public class FilmApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getResource("\\entrance\\singin\\SingIn.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("entrance/SingIn.fxml"));
         primaryStage.setTitle("Вход в приложение");
         primaryStage.setScene(new Scene(root));
         runStage(primaryStage);

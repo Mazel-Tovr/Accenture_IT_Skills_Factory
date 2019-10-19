@@ -8,11 +8,11 @@ public class User extends Person
     private String passWord;
     private String shortDescription;
     private int rating = 0;
-    public User(String name, Integer age, Gender gender, String nickName, String pussWord)
+    public User(String name, Integer age, Gender gender, String nickName, String passWord)
     {
         super(name, age, gender);
         this.nickName = nickName;
-        this.passWord = pussWord;
+        this.passWord = passWord;
     }
 
     public String getNickName() {

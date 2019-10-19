@@ -1,4 +1,4 @@
-package com.accenture.oopapp.frontend.entrance.singin;
+package com.accenture.oopapp.frontend.entrance;
 
 import com.accenture.oopapp.frontend.FilmApp;
 import com.accenture.oopapp.frontend.mainform.MainFormController;
@@ -32,7 +32,7 @@ public class SingInController
         String passwordText = passwordField.getText();
         if(userText != "" && passwordText != "")
         {
-            if(!FilmApp.dataBase.isConnect(userText,passwordText))
+            if(FilmApp.dataBase.isConnect(userText,passwordText))
             {
 
                 FilmApp.entranceData.setLogin(userText);
@@ -63,7 +63,7 @@ public class SingInController
     @FXML
     void signingUp(ActionEvent event) throws IOException
     {
-        Parent root = FXMLLoader.load(SingInController.class.getResource("singup/SingUp.fxml"));
+        Parent root = FXMLLoader.load(SingInController.class.getResource("SingUp.fxml"));
         FilmApp.primaryStage.close();
         FilmApp.primaryStage.setScene(new Scene(root));
         FilmApp.primaryStage.setTitle("Регистрация");

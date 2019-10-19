@@ -12,17 +12,18 @@ public class DataBase
     Set<Administrator> administratorSet = new HashSet<>();
     Set<Movie> movieSet = new HashSet<>();
 
-    public Set<User> getUserSet() { return userSet; }
-
-    public Set<Administrator> getAdministratorSet() { return administratorSet; }
-
-    public Set<Movie> getMovieSet() { return movieSet; }
-
-//    public boolean addUserToUserSet(User user) { return userSet.add(user); }
+//    public Set<User> getUserSet() { return userSet; }
 //
-//    public boolean addAdministratorToAdministratorSet(Administrator administrator) { return administratorSet.add(administrator); }
+//    public Set<Administrator> getAdministratorSet() { return administratorSet; }
 //
-//    public boolean addMovieTOMovieSet(Movie movie) { return movieSet.add(movie); }
+//    public Set<Movie> getMovieSet() { return movieSet; }
+
+    public boolean addUserToUserSet(User user) { return userSet.add(user); }
+
+    public boolean addAdministratorToAdministratorSet(Administrator administrator) { return administratorSet.add(administrator); }
+
+    public boolean addMovieTOMovieSet(Movie movie) { return movieSet.add(movie); }
+
      public boolean isUserExist(String nickName)
      {
          for (var item:userSet)

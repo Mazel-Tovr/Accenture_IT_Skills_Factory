@@ -1,10 +1,5 @@
 package com.accenture.oopapp.users;
 
-import com.accenture.oopapp.films.Movie;
-import com.accenture.oopapp.films.review.Review;
-import com.accenture.oopapp.films.review.WorkingWithReview;
-
-import java.util.List;
 import java.util.Objects;
 
 public class Administrator extends Person
@@ -13,11 +8,11 @@ public class Administrator extends Person
     private String passWord;
     private String shortDescription;
 
-    public Administrator(String name, Integer age, Gender gender, String nickName, String pussWord)
+    public Administrator(String name, Integer age, Gender gender, String nickName, String passWord)
     {
         super(name, age, gender);
         this.nickName = nickName;
-        this.passWord = pussWord;
+        this.passWord = passWord;
     }
 
     @Override
