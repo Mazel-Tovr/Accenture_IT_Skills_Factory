@@ -1,6 +1,6 @@
 package com.accenture.oopapp.films;
 
-public enum  MoveType
+public enum MovieType
 {
     FILM,SHORT,SERIAL
 }

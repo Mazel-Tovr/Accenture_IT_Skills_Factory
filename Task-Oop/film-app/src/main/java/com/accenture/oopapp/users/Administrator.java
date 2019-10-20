@@ -2,7 +2,7 @@ package com.accenture.oopapp.users;
 
 import java.util.Objects;
 
-public class Administrator extends Person
+public class Administrator extends Person implements Comparable<Administrator>
 {
     private String nickName;
     private String passWord;
@@ -13,6 +13,10 @@ public class Administrator extends Person
         super(name, age, gender);
         this.nickName = nickName;
         this.passWord = passWord;
+    }
+
+    public String getNickName() {
+        return nickName;
     }
 
     @Override
@@ -29,4 +33,9 @@ public class Administrator extends Person
         return Objects.hash(nickName);
     }
 
+
+    @Override
+    public int compareTo(Administrator administrator) {
+        return this.getNickName().compareTo(administrator.getNickName());
+    }
 }

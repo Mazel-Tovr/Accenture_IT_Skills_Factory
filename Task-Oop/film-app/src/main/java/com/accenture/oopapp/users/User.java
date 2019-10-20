@@ -2,7 +2,7 @@ package com.accenture.oopapp.users;
 
 import java.util.Objects;
 
-public class User extends Person
+public class User extends Person implements Comparable<User>
 {
     private String nickName;
     private String passWord;
@@ -35,5 +35,11 @@ public class User extends Person
     @Override
     public int hashCode() {
         return Objects.hash(nickName);
+    }
+
+    @Override
+    public int compareTo(User o)
+    {
+        return this.getNickName().compareTo(o.getNickName());
     }
 }

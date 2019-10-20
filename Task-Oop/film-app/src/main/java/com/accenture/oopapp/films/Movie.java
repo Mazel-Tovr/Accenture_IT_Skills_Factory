@@ -8,30 +8,25 @@ public class Movie
 {
     private String movieId;
     private String movieName;
-    private MoveType moveType;
+    private MovieType movieType;
     private EnumSet<Genre> genres;
     private String releaseDate;
     private List<Review> filmsReview = new ArrayList<>();
-    private List<Review> reviewsOnModerations = new ArrayList<>();
     private double rating = 0;
     private String description;
 
-    public Movie(String movieId, String movieName, MoveType moveType, EnumSet<Genre> genres, String releaseDate)
+    public Movie(String movieId, String movieName, MovieType movieType, EnumSet<Genre> genres, String releaseDate)
     {
         this.movieId = movieId;
         this.movieName = movieName;
-        this.moveType = moveType;
+        this.movieType = movieType;
         this.genres = genres;
         this.releaseDate = releaseDate;
     }
 
     public List<Review> getFilmsReview() { return filmsReview; }
 
-    public List<Review> getReviewsOnModerations()
-    {
-        return reviewsOnModerations;
-    }
-
+    public String getMovieName() { return movieName; }
 
     @Override
     public boolean equals(Object o)
