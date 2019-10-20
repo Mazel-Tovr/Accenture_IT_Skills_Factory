@@ -15,18 +15,43 @@ public class Movie
     private double rating = 0;
     private String description;
 
-    public Movie(String movieId, String movieName, MovieType movieType, EnumSet<Genre> genres, String releaseDate)
+    public Movie(String movieId, String movieName, MovieType movieType, EnumSet<Genre> genres, String releaseDate, String description)
     {
         this.movieId = movieId;
         this.movieName = movieName;
         this.movieType = movieType;
         this.genres = genres;
         this.releaseDate = releaseDate;
+        this.description = description;
     }
 
     public List<Review> getFilmsReview() { return filmsReview; }
 
     public String getMovieName() { return movieName; }
+
+    public String getMovieId() {
+        return movieId;
+    }
+
+    public MovieType getMovieType() {
+        return movieType;
+    }
+
+    public EnumSet<Genre> getGenres() {
+        return genres;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 
     @Override
     public boolean equals(Object o)
@@ -45,7 +70,7 @@ public class Movie
     public void recalculateFilmRating()
     {
         int usersRating = 0;
-        for (var item :filmsReview)
+        for (Review item :filmsReview)
         {
            usersRating += item.howYouLikedFilm();
         }

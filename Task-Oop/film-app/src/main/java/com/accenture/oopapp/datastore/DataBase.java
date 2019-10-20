@@ -19,7 +19,10 @@ public class DataBase
 
     {
         userSet.add(new User("User",54, Gender.FEMALE,"User","User"));
-        movieSet.add(new Movie("Movie1","Фильм", MovieType.FILM,EnumSet.of(Genre.ADVENTURE,Genre.COMEDY),"20.01.2019"));
+        movieSet.add(new Movie("Movie1","На парах", MovieType.SERIAL,EnumSet.of(Genre.HORROR,Genre.COMEDY),"20.01.2018",""));
+        movieSet.add(new Movie("Movie2","Самый", MovieType.FILM,EnumSet.of(Genre.ADVENTURE,Genre.COMEDY),"20.01.2019",""));
+        movieSet.add(new Movie("Movie3","Худший", MovieType.FILM,EnumSet.of(Genre.ADVENTURE),"20.01.2018",""));
+        movieSet.add(new Movie("Movie4","Фильм", MovieType.FILM,EnumSet.of(Genre.ADVENTURE,Genre.COMEDY,Genre.HORROR),"01.12.2019",""));
     }
 //    public Set<User> getUserSet() { return userSet; }
 //
@@ -49,7 +52,7 @@ public class DataBase
 
     public boolean isUserExist(String nickName)
      {
-         for (var item:userSet)
+         for (User item :userSet)
          {
            if(item.getNickName().equals(nickName))
            {
@@ -60,7 +63,7 @@ public class DataBase
      }
      public boolean isConnect(String nickName,String password)
      {
-         for (var item:userSet)
+         for (User item:userSet)
          {
              if(item.getNickName().equals(nickName) && item.getPassWord().equals(password))
              {

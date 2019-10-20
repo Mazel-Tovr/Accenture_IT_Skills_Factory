@@ -2,23 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4255455-b12e-4578-8ee5-36628001d451" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datastore/DataBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/films/review/WorkingWithReview.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/frontend/FilmApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/frontend/entrance/EntranceData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/frontend/entrance/singin/SingIn.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/frontend/entrance/singin/SingInController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/frontend/entrance/singup/SingUp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/frontend/entrance/singup/SingUpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/frontend/mainform/MainForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/frontend/mainform/MainFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/film-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/film-app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/datastore/DataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/datastore/DataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/films/MoveType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/films/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/films/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/frontend/FilmApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/frontend/FilmApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/frontend/entrance/EntranceData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/frontend/entrance/EntranceData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/frontend/entrance/singin/SingIn.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/frontend/entrance/singin/SingInController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/frontend/entrance/singup/SingUp.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/frontend/entrance/singup/SingUpController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/frontend/mainform/MainForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/frontend/mainform/MainForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/frontend/mainform/MainFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/frontend/mainform/MainFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/users/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/users/Administrator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/users/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/film-app/com/accenture/oopapp/users/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datastore/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datastore/DataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/films/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/films/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/review/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/films/review/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/review/WorkingWithReview.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/users/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/users/Administrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/frontend/entrance/SingUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/frontend/entrance/SingUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/frontend/mainform/MainForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/frontend/mainform/MainForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/frontend/mainform/MainFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/frontend/mainform/MainFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.accenture.oopapp.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.accenture.oopapp.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.accenture.oopapp.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.accenture.oopapp.AppTest.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +140,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -156,5 +168,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((MainFormController)this).movieId" custom="com.accenture.oopapp.frontend.mainform.MainFormController" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

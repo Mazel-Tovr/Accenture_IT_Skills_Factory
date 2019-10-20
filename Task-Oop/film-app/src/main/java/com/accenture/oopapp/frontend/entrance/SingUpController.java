@@ -82,7 +82,6 @@ public class SingUpController
     {
         Alert errorAlert = new Alert(Alert.AlertType.ERROR);
         errorAlert.setHeaderText("Ошибка ввода");
-        var a = genderId.getValue();
 
         if (!nameId.getText().equals(""))
         {

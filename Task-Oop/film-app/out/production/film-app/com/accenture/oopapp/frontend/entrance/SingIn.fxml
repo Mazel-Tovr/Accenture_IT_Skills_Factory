@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="350.0" prefWidth="487.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.accenture.oopapp.frontend.entrance.singin.SingInController">
+<AnchorPane prefHeight="350.0" prefWidth="487.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.accenture.oopapp.frontend.entrance.SingInController">
    <children>
       <TextField fx:id="loginField" layoutX="188.0" layoutY="86.0" prefHeight="38.0" prefWidth="264.0">
          <font>
