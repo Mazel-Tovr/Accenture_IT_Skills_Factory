@@ -1,7 +1,6 @@
 package com.accenture.oopapp.frontend;
 
 import com.accenture.oopapp.datastore.DataBase;
-import com.accenture.oopapp.frontend.entrance.EntranceData;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,7 +11,6 @@ import java.io.IOException;
 
 public class FilmApp extends Application {
 
-    public static EntranceData entranceData = new EntranceData();
     public static DataBase dataBase = new DataBase();
     public static Stage primaryStage;
     public static void main(String[] args) {

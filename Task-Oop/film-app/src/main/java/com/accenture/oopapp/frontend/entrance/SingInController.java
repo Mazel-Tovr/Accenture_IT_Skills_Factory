@@ -34,9 +34,6 @@ public class SingInController
         {
             if(FilmApp.dataBase.isConnect(userText,passwordText))
             {
-
-                FilmApp.entranceData.setLogin(userText);
-                FilmApp.entranceData.setPassword(passwordText);
                 Parent root = FXMLLoader.load(MainFormController.class.getResource("MainForm.fxml"));
                 FilmApp.primaryStage.close();
                 FilmApp.primaryStage.setScene(new Scene(root));

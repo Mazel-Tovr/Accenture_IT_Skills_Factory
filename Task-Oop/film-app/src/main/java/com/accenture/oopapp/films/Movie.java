@@ -72,7 +72,7 @@ public class Movie
         int usersRating = 0;
         for (Review item :filmsReview)
         {
-           usersRating += item.howYouLikedFilm();
+           usersRating += item.getYouLikedFilm();
         }
         rating = (double) usersRating / filmsReview.size();
     }

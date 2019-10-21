@@ -19,6 +19,10 @@ public class Administrator extends Person implements Comparable<Administrator>
         return nickName;
     }
 
+    public String getPassWord() {
+        return passWord;
+    }
+
     @Override
     public boolean equals(Object o)
     {

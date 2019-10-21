@@ -49,7 +49,7 @@ public class SingUpController
         {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Инофрмация");
-            alert.setContentText("Регистрацияю успешно завершена");
+            alert.setContentText("Регистрация успешно завершена");
             alert.showAndWait();
             FilmApp.dataBase.addUserToUserSet(new User(name,age,gender,nickName,passWord));
             goBack(actionEvent);

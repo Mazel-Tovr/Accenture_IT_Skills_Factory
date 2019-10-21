@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="658.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.accenture.oopapp.frontend.mainform.FilmPageController">
+   <children>
+      <TextArea fx:id="reviewField" layoutX="23.0" layoutY="507.0" prefHeight="135.0" prefWidth="501.0" />
+      <TextField fx:id="ratingField" layoutX="540.0" layoutY="507.0" prefHeight="25.0" prefWidth="57.0" />
+      <Button layoutX="540.0" layoutY="539.0" mnemonicParsing="false" onAction="#postReview" prefHeight="45.0" prefWidth="110.0" text="Оставить отзыв" />
+      <Button layoutX="540.0" layoutY="597.0" mnemonicParsing="false" onAction="#goBack" prefHeight="45.0" prefWidth="110.0" text="Назад" />
+      <Label layoutX="180.0" layoutY="14.0" text="Страница фильма:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="328.0" layoutY="14.0" prefHeight="26.0" prefWidth="215.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="descriptionField" layoutX="114.0" layoutY="54.0" prefHeight="87.0" prefWidth="527.0" />
+      <Label layoutX="23.0" layoutY="64.0" prefHeight="33.0" prefWidth="83.0" text="Описание:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="252.0" layoutY="141.0" text="Отзывы к фильму:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="216.0" layoutY="474.0" text="Оставить отзывы к фильму:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="535.0" layoutY="474.0" prefHeight="26.0" prefWidth="64.0" text="Оценка">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableReview" layoutX="23.0" layoutY="175.0" prefHeight="301.0" prefWidth="619.0">
+        <columns>
+          <TableColumn fx:id="userId" prefWidth="75.0" text="User" />
+          <TableColumn fx:id="dataId" prefWidth="75.0" text="Data" />
+          <TableColumn fx:id="reviewId" prefWidth="75.0" text="Review"/>
+          <TableColumn fx:id="ratingId" prefWidth="75.0" text="Rating"/>
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -26,7 +26,7 @@
             <Font size="17.0" />
          </font>
       </TextField>
-      <Label layoutX="244.0" layoutY="14.0" text="Регистация">
+      <Label layoutX="244.0" layoutY="14.0" text="Регистрация">
          <font>
             <Font size="22.0" />
          </font>
