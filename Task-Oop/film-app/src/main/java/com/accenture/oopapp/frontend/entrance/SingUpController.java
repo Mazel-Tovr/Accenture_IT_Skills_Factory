@@ -66,7 +66,7 @@ public class SingUpController
         FilmApp.primaryStage.show();
     }
 
-    public static boolean tryParseInt(String value)
+    private static boolean tryParseInt(String value)
     {
         try
         {

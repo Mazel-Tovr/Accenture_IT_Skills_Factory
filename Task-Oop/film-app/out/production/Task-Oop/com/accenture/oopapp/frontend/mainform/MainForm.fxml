@@ -39,47 +39,47 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="655.0" layoutY="183.0" prefHeight="26.0" prefWidth="75.0" text="Возраст:">
+      <Label layoutX="656.0" layoutY="183.0" prefHeight="26.0" prefWidth="75.0" text="Возраст:">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="652.0" layoutY="231.0" prefHeight="26.0" prefWidth="43.0" text="Пол:">
+      <Label layoutX="658.0" layoutY="231.0" prefHeight="26.0" prefWidth="43.0" text="Пол:">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="655.0" layoutY="277.0" prefHeight="26.0" prefWidth="75.0" text="Никнейм:">
+      <Label layoutX="656.0" layoutY="277.0" prefHeight="26.0" prefWidth="75.0" text="Никнейм:">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="nameLable" layoutX="706.0" layoutY="137.0" prefHeight="26.0" prefWidth="175.0">
+      <Label fx:id="nameLable" layoutX="701.0" layoutY="137.0" prefHeight="26.0" prefWidth="175.0">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="ageLable" layoutX="740.0" layoutY="183.0" prefHeight="26.0" prefWidth="141.0">
+      <Label fx:id="ageLable" layoutX="723.0" layoutY="183.0" prefHeight="26.0" prefWidth="141.0">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="genderLable" layoutX="693.0" layoutY="231.0" prefHeight="26.0" prefWidth="175.0">
+      <Label fx:id="genderLable" layoutX="694.0" layoutY="231.0" prefHeight="26.0" prefWidth="175.0">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="nickNameLable" layoutX="730.0" layoutY="277.0" prefHeight="26.0" prefWidth="134.0">
+      <Label fx:id="nickNameLable" layoutX="731.0" layoutY="277.0" prefHeight="26.0" prefWidth="134.0">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="655.0" layoutY="323.0" prefHeight="26.0" prefWidth="60.0" text="Статус:">
+      <Label layoutX="656.0" layoutY="323.0" prefHeight="26.0" prefWidth="60.0" text="Статус:">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="statusLable" layoutX="718.0" layoutY="323.0" prefHeight="26.0" prefWidth="158.0">
+      <Label fx:id="statusLable" layoutX="715.0" layoutY="323.0" prefHeight="26.0" prefWidth="158.0">
          <font>
             <Font size="17.0" />
          </font>
@@ -99,5 +99,6 @@
             <Font size="14.0" />
          </font>
       </Button>
+      <Button layoutX="796.0" layoutY="14.0" mnemonicParsing="false" onAction="#logOut" prefHeight="32.0" prefWidth="75.0" text="Log out" />
    </children>
 </AnchorPane>

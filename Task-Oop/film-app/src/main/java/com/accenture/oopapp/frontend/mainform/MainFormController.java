@@ -17,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
@@ -71,14 +72,9 @@ public class MainFormController
     private TableView<Movie> tableView;
 
 
-    private ObservableList<Movie> listOfItems;
-    private Movie movie;
-
-    public Movie getMovie() { return movie; }
-
     public void initialize()
     {
-        Person user = FilmApp.dataBase.getLastEnteredUser();
+        Person user = FilmApp.session.getLastEnteredUser();
         if(user instanceof User)
         {
             User simpleUser = (User) user;
@@ -98,7 +94,7 @@ public class MainFormController
             statusLable.setText("You are Admin");
         }
 
-        listOfItems = FXCollections.observableArrayList();
+        ObservableList<Movie> listOfItems = FXCollections.observableArrayList();
         listOfItems.addAll(FilmApp.dataBase.getMovieSet());
         movieId.setCellValueFactory(new PropertyValueFactory<Movie,String>("movieId"));
         nameId.setCellValueFactory(new PropertyValueFactory<Movie,String>("movieName"));
@@ -112,21 +108,39 @@ public class MainFormController
     }
 
     @FXML
-    void search(ActionEvent event) {
+    void search(ActionEvent event)
+    {
 
     }
 
     public void openFilmPage(ActionEvent actionEvent) throws IOException
     {
-        movie = tableView.getSelectionModel().getSelectedItem();
+        Movie movie = tableView.getSelectionModel().getSelectedItem();
         if(movie != null )
         {
-            FilmApp.dataBase.setMovie(movie);
+            FilmApp.session.setMovie(movie);
             Parent root = FXMLLoader.load(FilmPageController.class.getResource("FilmPageForm.fxml"));
-          //  FilmApp.primaryStage.close();
+            FilmApp.primaryStage.close();
             FilmApp.primaryStage.setScene(new Scene(root));
             FilmApp.primaryStage.setTitle("Страница фильма");
             FilmApp.primaryStage.show();
         }
+        else
+        {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setContentText("Выбирете фильм");
+            alert.showAndWait();
+        }
+    }
+
+    public void logOut(ActionEvent actionEvent) throws IOException
+    {
+        FilmApp.session.logOut();
+        Parent root = FXMLLoader.load(SingInController.class.getResource("SingIn.fxml"));
+        FilmApp.primaryStage.close();
+        FilmApp.primaryStage.setScene(new Scene(root));
+        FilmApp.primaryStage.setTitle("Вход в приложение");
+        FilmApp.primaryStage.show();
     }
 }

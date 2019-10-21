@@ -53,6 +53,8 @@ public class Movie
         return description;
     }
 
+    public boolean removeReview(Review review){ return filmsReview.remove(review);}
+
     @Override
     public boolean equals(Object o)
     {

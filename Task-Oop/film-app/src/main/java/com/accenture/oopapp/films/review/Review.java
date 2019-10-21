@@ -10,7 +10,8 @@ public class Review {
     private String personWhoWroteIt;
     private double youLikedFilm;
 
-    public Review(String textOfReview, String postDate, User person, double youLikedFilm) {
+    public Review(String textOfReview, String postDate, User person, double youLikedFilm)
+    {
         this.textOfReview = textOfReview;
         this.postDate = postDate;
         personWhoWroteIt = person.getNickName();

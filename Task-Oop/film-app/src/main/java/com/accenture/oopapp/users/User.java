@@ -1,5 +1,10 @@
 package com.accenture.oopapp.users;
 
+import com.accenture.oopapp.films.Movie;
+import com.accenture.oopapp.films.review.Review;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
 
 public class User extends Person implements Comparable<User>
@@ -31,6 +36,16 @@ public class User extends Person implements Comparable<User>
         User user = (User) o;
         return nickName.equals(user.nickName);
     }
+
+    public void addReview(Movie movie,String text,double rating)
+    {
+        Date date = new Date();
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyy.MM.dd");
+        movie.getFilmsReview().add(new Review(text,formatForDateNow.format(date),this,rating));
+        movie.recalculateFilmRating();
+    }
+
+
 
     @Override
     public int hashCode() {

@@ -4,6 +4,7 @@ import com.accenture.oopapp.films.Genre;
 import com.accenture.oopapp.films.Movie;
 import com.accenture.oopapp.films.MovieType;
 import com.accenture.oopapp.films.review.Review;
+import com.accenture.oopapp.frontend.FilmApp;
 import com.accenture.oopapp.users.Administrator;
 import com.accenture.oopapp.users.Gender;
 import com.accenture.oopapp.users.Person;
@@ -22,45 +23,30 @@ public class DataBase
     {
         userSet.add(new User("User",54, Gender.FEMALE,"User","User"));
         administratorSet.add(new Administrator("Admin ce god",54,Gender.MALE,"Admin","Admin"));
-        movieSet.add(new Movie("Movie1","На парах", MovieType.SERIAL,EnumSet.of(Genre.HORROR,Genre.COMEDY),"20.01.2018","Описание"));
-        movieSet.add(new Movie("Movie2","Самый", MovieType.FILM,EnumSet.of(Genre.ADVENTURE,Genre.COMEDY),"20.01.2019",""));
-        movieSet.add(new Movie("Movie3","Худший", MovieType.FILM,EnumSet.of(Genre.ADVENTURE),"20.01.2018",""));
-        movieSet.add(new Movie("Movie4","Фильм", MovieType.FILM,EnumSet.of(Genre.ADVENTURE,Genre.COMEDY,Genre.HORROR),"01.12.2019",""));
+        movieSet.add(new Movie("Movie1","На парах", MovieType.SERIAL,EnumSet.of(Genre.HORROR,Genre.COMEDY),"2018.01.21.","Описание"));
+        movieSet.add(new Movie("Movie2","Самый", MovieType.FILM,EnumSet.of(Genre.ADVENTURE,Genre.COMEDY),"2019.01.20.",""));
+        movieSet.add(new Movie("Movie3","Худший", MovieType.FILM,EnumSet.of(Genre.ADVENTURE),"2018.12.01.",""));
+        movieSet.add(new Movie("Movie4","Фильм", MovieType.FILM,EnumSet.of(Genre.ADVENTURE,Genre.COMEDY,Genre.HORROR),"2001.12.19",""));
 
-        movieSet.iterator().next().getFilmsReview().add(new Review("Норм","21.01.2019",userSet.iterator().next(),60));
+        movieSet.iterator().next().getFilmsReview().add(new Review("Норм","2007.07.07",userSet.iterator().next(),60));
         movieSet.iterator().next().recalculateFilmRating();
 
     }
-//    public Set<User> getUserSet() { return userSet; }
-//
-//    public Set<Administrator> getAdministratorSet() { return administratorSet; }
-//
-//    public Set<Movie> getMovieSet() { return movieSet; }
 
     public boolean addUserToUserSet(User user) { return userSet.add(user); }
 
     public boolean addAdministratorToAdministratorSet(Administrator administrator) { return administratorSet.add(administrator); }
 
-    public boolean addMovieTOMovieSet(Movie movie) { return movieSet.add(movie); }
+    public boolean addMovieToMovieSet(Movie movie) { return movieSet.add(movie); }
 
     public Set<Movie> getMovieSet() { return movieSet; }
 
-    public void setMovieSet(Set<Movie> movieSet) {
-        this.movieSet = movieSet;
-    }
 
     /*
         Тут все очень плохо по поиску 19.10
         Шас будет еше хуже 20.10
         Тут все плохо
     */
-    private Person lastEnteredUser = null;
-    public Person getLastEnteredUser() { return lastEnteredUser; }
-
-    private Movie movie = null;
-    public Movie getMovie() { return movie; }
-    public void setMovie(Movie movie) { this.movie = movie; }
-
     public boolean isUserExist(String nickName)
      {
          for (Administrator item : administratorSet)
@@ -87,7 +73,7 @@ public class DataBase
          {
              if(item.getNickName().equals(nickName) && item.getPassWord().equals(password))
              {
-                 lastEnteredUser = item;
+                 FilmApp.session.setLastEnteredUser(item);
                  return true;
              }
          }
@@ -95,7 +81,7 @@ public class DataBase
          {
              if(item.getNickName().equals(nickName) && item.getPassWord().equals(password))
              {
-                 lastEnteredUser = item;
+                 FilmApp.session.setLastEnteredUser(item);
                  return true;
              }
          }
