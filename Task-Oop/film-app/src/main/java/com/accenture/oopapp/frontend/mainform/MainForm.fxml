@@ -54,22 +54,22 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="nameLable" layoutX="701.0" layoutY="137.0" prefHeight="26.0" prefWidth="175.0">
+      <Label fx:id="nameLabel" layoutX="701.0" layoutY="137.0" prefHeight="26.0" prefWidth="175.0">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="ageLable" layoutX="723.0" layoutY="183.0" prefHeight="26.0" prefWidth="141.0">
+      <Label fx:id="ageLabel" layoutX="723.0" layoutY="183.0" prefHeight="26.0" prefWidth="141.0">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="genderLable" layoutX="694.0" layoutY="231.0" prefHeight="26.0" prefWidth="175.0">
+      <Label fx:id="genderLabel" layoutX="694.0" layoutY="231.0" prefHeight="26.0" prefWidth="175.0">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="nickNameLable" layoutX="731.0" layoutY="277.0" prefHeight="26.0" prefWidth="134.0">
+      <Label fx:id="nickNameLabel" layoutX="731.0" layoutY="277.0" prefHeight="26.0" prefWidth="134.0">
          <font>
             <Font size="17.0" />
          </font>
@@ -79,7 +79,7 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="statusLable" layoutX="715.0" layoutY="323.0" prefHeight="26.0" prefWidth="158.0">
+      <Label fx:id="statusLabel" layoutX="715.0" layoutY="323.0" prefHeight="26.0" prefWidth="158.0">
          <font>
             <Font size="17.0" />
          </font>

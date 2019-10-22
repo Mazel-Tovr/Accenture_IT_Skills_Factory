@@ -23,9 +23,9 @@ public class DataBase
     {
         userSet.add(new User("User",54, Gender.FEMALE,"User","User"));
         administratorSet.add(new Administrator("Admin ce god",54,Gender.MALE,"Admin","Admin"));
-        movieSet.add(new Movie("Movie1","На парах", MovieType.SERIAL,EnumSet.of(Genre.HORROR,Genre.COMEDY),"2018.01.21.","Описание"));
-        movieSet.add(new Movie("Movie2","Самый", MovieType.FILM,EnumSet.of(Genre.ADVENTURE,Genre.COMEDY),"2019.01.20.",""));
-        movieSet.add(new Movie("Movie3","Худший", MovieType.FILM,EnumSet.of(Genre.ADVENTURE),"2018.12.01.",""));
+        movieSet.add(new Movie("Movie1","На парах", MovieType.SERIAL,EnumSet.of(Genre.HORROR,Genre.COMEDY),"2018.01.21","Описание"));
+        movieSet.add(new Movie("Movie2","Самый", MovieType.FILM,EnumSet.of(Genre.ADVENTURE,Genre.COMEDY),"2019.01.20",""));
+        movieSet.add(new Movie("Movie3","Худший", MovieType.FILM,EnumSet.of(Genre.ADVENTURE),"2018.12.01",""));
         movieSet.add(new Movie("Movie4","Фильм", MovieType.FILM,EnumSet.of(Genre.ADVENTURE,Genre.COMEDY,Genre.HORROR),"2001.12.19",""));
 
         movieSet.iterator().next().getFilmsReview().add(new Review("Норм","2007.07.07",userSet.iterator().next(),60));

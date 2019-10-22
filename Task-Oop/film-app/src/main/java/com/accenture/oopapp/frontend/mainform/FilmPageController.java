@@ -74,6 +74,7 @@ public class FilmPageController
         reviewObservableList.addAll(movie.getFilmsReview());
         person = FilmApp.session.getLastEnteredUser();
 
+
         if(person instanceof User)
         {
             descriptionField.setDisable(true);
@@ -220,7 +221,7 @@ public class FilmPageController
         }
         else
         {
-           
+
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("Выбирете отзыв");

@@ -6,7 +6,6 @@ import com.accenture.oopapp.films.MovieType;
 import com.accenture.oopapp.frontend.FilmApp;
 import com.accenture.oopapp.frontend.entrance.SingInController;
 import com.accenture.oopapp.users.Administrator;
-import com.accenture.oopapp.users.Gender;
 import com.accenture.oopapp.users.Person;
 import com.accenture.oopapp.users.User;
 import javafx.collections.FXCollections;
@@ -21,34 +20,30 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainFormController
 {
-    @FXML
-    private ListView<String> filmsView;
 
     @FXML
     private TextField findField;
 
     @FXML
-    private ComboBox<?> filterBox;
+    private ComboBox<String> filterBox;
 
     @FXML
-    private Label nameLable;
+    private Label nameLabel;
 
     @FXML
-    private Label ageLable;
+    private Label ageLabel;
 
     @FXML
-    private Label genderLable;
+    private Label genderLabel;
 
     @FXML
-    private Label nickNameLable;
+    private Label nickNameLabel;
 
     @FXML
-    private Label statusLable;
+    private Label statusLabel;
 
     @FXML
     private TableColumn<Movie,String> movieId;
@@ -71,30 +66,33 @@ public class MainFormController
     @FXML
     private TableView<Movie> tableView;
 
+    @FXML
+    private ObservableList<Movie> listOfItems;
 
     public void initialize()
     {
         Person user = FilmApp.session.getLastEnteredUser();
+        filterBox.setItems(FXCollections.observableArrayList("Показать все","По индентификатору","Названию","Дате"));
         if(user instanceof User)
         {
             User simpleUser = (User) user;
-            nameLable.setText(simpleUser.getName());
-            ageLable.setText(simpleUser.getAge().toString());
-            genderLable.setText(simpleUser.getGender().name());
-            nickNameLable.setText(simpleUser.getNickName());
-            statusLable.setText("Simple user");
+            nameLabel.setText(simpleUser.getName());
+            ageLabel.setText(simpleUser.getAge().toString());
+            genderLabel.setText(simpleUser.getGender().name());
+            nickNameLabel.setText(simpleUser.getNickName());
+            statusLabel.setText("Simple user");
         }
         else
         {
             Administrator simpleUser = (Administrator) user;
-            nameLable.setText(simpleUser.getName());
-            ageLable.setText(simpleUser.getAge().toString());
-            genderLable.setText(simpleUser.getGender().name());
-            nickNameLable.setText(simpleUser.getNickName());
-            statusLable.setText("You are Admin");
+            nameLabel.setText(simpleUser.getName());
+            ageLabel.setText(simpleUser.getAge().toString());
+            genderLabel.setText(simpleUser.getGender().name());
+            nickNameLabel.setText(simpleUser.getNickName());
+            statusLabel.setText("You are Admin");
         }
 
-        ObservableList<Movie> listOfItems = FXCollections.observableArrayList();
+        listOfItems = FXCollections.observableArrayList();
         listOfItems.addAll(FilmApp.dataBase.getMovieSet());
         movieId.setCellValueFactory(new PropertyValueFactory<Movie,String>("movieId"));
         nameId.setCellValueFactory(new PropertyValueFactory<Movie,String>("movieName"));
@@ -107,10 +105,32 @@ public class MainFormController
 
     }
 
+
     @FXML
-    void search(ActionEvent event)
+    private void search(ActionEvent event)
     {
 
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Error");
+        switch (filterBox.getValue())
+        {
+            case "Показать все":
+                tableView.setItems(listOfItems);
+                break;
+            case "По индентификатору":
+                searchById();
+                break;
+            case "Названию":
+                searchByName();
+                break;
+            case "Дате":
+                searchByDate();
+                break;
+            default:
+                alert.setContentText("Выбирете значение");
+                alert.showAndWait();
+                break;
+        }
     }
 
     public void openFilmPage(ActionEvent actionEvent) throws IOException
@@ -142,5 +162,68 @@ public class MainFormController
         FilmApp.primaryStage.setScene(new Scene(root));
         FilmApp.primaryStage.setTitle("Вход в приложение");
         FilmApp.primaryStage.show();
+    }
+
+    private void searchById()
+    {
+        ObservableList<Movie> tempo = FXCollections.observableArrayList();
+        if(!findField.getText().equals(""))
+        {
+            String str = findField.getText();
+            for (var item:listOfItems)
+            {
+                if(str.equals(item.getMovieId()))tempo.add(item);
+            }
+            tableView.setItems(tempo);
+        }
+        else
+        {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setHeaderText("Error");
+            alert.setContentText("Введите данные в поле поиска");
+            alert.showAndWait();
+        }
+    }
+
+    private void searchByName()
+    {
+        ObservableList<Movie> tempo = FXCollections.observableArrayList();
+        if(!findField.getText().equals(""))
+        {
+            String str = findField.getText();
+            for (var item:listOfItems)
+            {
+                if(str.equals(item.getMovieName()))tempo.add(item);
+            }
+            tableView.setItems(tempo);
+        }
+        else
+        {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setHeaderText("Error");
+            alert.setContentText("Введите данные в поле поиска");
+            alert.showAndWait();
+        }
+    }
+
+    private void searchByDate()
+    {
+        ObservableList<Movie> tempo = FXCollections.observableArrayList();
+        if(!findField.getText().equals(""))
+        {
+            String str = findField.getText();
+            for (var item:listOfItems)
+            {
+                if(str.equals(item.getReleaseDate()))tempo.add(item);
+            }
+            tableView.setItems(tempo);
+        }
+        else
+        {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setHeaderText("Error");
+            alert.setContentText("Введите данные в поле поиска");
+            alert.showAndWait();
+        }
     }
 }
