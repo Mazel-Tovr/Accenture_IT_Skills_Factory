@@ -1,4 +1,4 @@
-package com.accenture.oopapp.datacheck;
+package com.accenture.oopapp.datacontrol;
 
 public class GeneralVerificationMethods
 {
@@ -13,6 +13,7 @@ public class GeneralVerificationMethods
     {
         return value != null;
     }
+    /*
     public boolean notNullValue(Integer ...value)
     {
         return value != null;
@@ -25,7 +26,7 @@ public class GeneralVerificationMethods
     {
         return value != null;
     }
-
+     */
     public boolean ageCheck(String ageId)
     {
         if(tryParseInt(ageId))

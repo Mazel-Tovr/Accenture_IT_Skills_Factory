@@ -1,4 +1,4 @@
-package com.accenture.oopapp.films.review;
+package com.accenture.oopapp.films;
 
 
 import com.accenture.oopapp.users.User;

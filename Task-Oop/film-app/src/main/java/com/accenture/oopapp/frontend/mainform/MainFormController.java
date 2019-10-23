@@ -1,6 +1,7 @@
 package com.accenture.oopapp.frontend.mainform;
 
-import com.accenture.oopapp.datacheck.GeneralVerificationMethods;
+import com.accenture.oopapp.datacontrol.GeneralVerificationMethods;
+import com.accenture.oopapp.fileinput.CSVParser;
 import com.accenture.oopapp.films.Genre;
 import com.accenture.oopapp.films.Movie;
 import com.accenture.oopapp.films.MovieType;
@@ -17,8 +18,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.Optional;
 
 public class MainFormController
 {
@@ -66,9 +70,12 @@ public class MainFormController
     private TableView<Movie> tableView;
 
     @FXML
-    private ObservableList<Movie> listOfItems;
+    private ObservableList<Movie> movieObservableList;
 
-    GeneralVerificationMethods generalVerificationMethods;
+    @FXML
+    private Button upLoadButton;
+
+    private GeneralVerificationMethods generalVerificationMethods;
 
     public void initialize()
     {
@@ -85,6 +92,7 @@ public class MainFormController
         }
         else
         {
+            upLoadButton.setVisible(true);
             nameLabel.setText(user.getName());
             ageLabel.setText(user.getAge().toString());
             genderLabel.setText(user.getGender().name());
@@ -92,8 +100,8 @@ public class MainFormController
             statusLabel.setText("You are Admin");
         }
 
-        listOfItems = FXCollections.observableArrayList();
-        listOfItems.addAll(FilmApp.moviesDataBase.getMovieSet());
+        movieObservableList = FXCollections.observableArrayList();
+        movieObservableList.addAll(FilmApp.moviesDataBase.getMovieSet());
         movieId.setCellValueFactory(new PropertyValueFactory<Movie,String>("movieId"));
         nameId.setCellValueFactory(new PropertyValueFactory<Movie,String>("movieName"));
         typeId.setCellValueFactory(new PropertyValueFactory<Movie,MovieType>("movieType"));
@@ -101,7 +109,7 @@ public class MainFormController
         dateId.setCellValueFactory(new PropertyValueFactory<Movie,String>("releaseDate"));
         ratingId.setCellValueFactory(new PropertyValueFactory<Movie,Double>("rating"));
 
-        tableView.setItems(listOfItems);
+        tableView.setItems(movieObservableList);
 
     }
 
@@ -111,24 +119,28 @@ public class MainFormController
     {
         Alert alert = new Alert(AlertType.ERROR);
         alert.setTitle("Error");
-        switch (filterBox.getValue())
+        try
         {
-            case "Показать все":
-                tableView.setItems(listOfItems);
-                break;
-            case "По индентификатору":
-                searchById();
-                break;
-            case "Названию":
-                searchByName();
-                break;
-            case "Дате":
-                searchByDate();
-                break;
-            default:
-                alert.setContentText("Выбирете значение");
-                alert.showAndWait();
-                break;
+            switch (filterBox.getValue())
+            {
+                case "Показать все":
+                    tableView.setItems(movieObservableList);
+                    break;
+                case "По индентификатору":
+                    searchByIdToDisplay();
+                    break;
+                case "Названию":
+                    searchByNameToDisplay();
+                    break;
+                case "Дате":
+                    searchByDateToDisplay();
+                    break;
+            }
+        }
+        catch (NullPointerException e)
+        {
+            alert.setContentText("Выберите по чему проводить поиск");
+            alert.showAndWait();
         }
     }
 
@@ -148,7 +160,7 @@ public class MainFormController
         {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Error");
-            alert.setContentText("Выбирете фильм");
+            alert.setContentText("Выберите фильм");
             alert.showAndWait();
         }
     }
@@ -163,18 +175,11 @@ public class MainFormController
         FilmApp.primaryStage.show();
     }
 
-    private void searchById()
+    private void searchByIdToDisplay()
     {
         if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            var a = FilmApp.moviesDataBase.idSearch(findField.getText());
-            ObservableList<Movie> tempo = FXCollections.observableArrayList(a);
-//            String str = findField.getText();
-//            for (var item:listOfItems)
-//            {
-//                if(str.equals(item.getMovieId()))tempo.add(item);
-//            }
-            tableView.setItems(tempo);
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.moviesDataBase.idSearch(findField.getText())));
         }
         else
         {
@@ -185,17 +190,11 @@ public class MainFormController
         }
     }
 
-    private void searchByName()
+    private void searchByNameToDisplay()
     {
-        ObservableList<Movie> tempo = FXCollections.observableArrayList();
-        if(!findField.getText().equals(""))
+        if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            String str = findField.getText();
-            for (var item:listOfItems)
-            {
-                if(str.equals(item.getMovieName()))tempo.add(item);
-            }
-            tableView.setItems(tempo);
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.moviesDataBase.nameSearch(findField.getText())));
         }
         else
         {
@@ -206,17 +205,11 @@ public class MainFormController
         }
     }
 
-    private void searchByDate()
+    private void searchByDateToDisplay()
     {
-        ObservableList<Movie> tempo = FXCollections.observableArrayList();
-        if(!findField.getText().equals(""))
+        if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            String str = findField.getText();
-            for (var item:listOfItems)
-            {
-                if(str.equals(item.getReleaseDate()))tempo.add(item);
-            }
-            tableView.setItems(tempo);
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.moviesDataBase.dataSearch(findField.getText())));
         }
         else
         {
@@ -226,4 +219,47 @@ public class MainFormController
             alert.showAndWait();
         }
     }
+
+   public void upLoad(ActionEvent actionEvent)
+    {
+        FileChooser fileChooser = new FileChooser();
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("CSV File", "*.csv");
+        fileChooser.getExtensionFilters().add(extFilter);
+        File file = fileChooser.showOpenDialog(FilmApp.primaryStage);
+        if(file != null)
+        {
+            CSVParser csvParser = new CSVParser();
+            Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.setTitle("Select");
+            alert.setHeaderText("Выберите опции:");
+
+            ButtonType addTo = new ButtonType("Добавить к существующим");
+            ButtonType replaceAdd = new ButtonType("Заменить новыми");
+            ButtonType cancel = new ButtonType("Отмена");
+
+            alert.getButtonTypes().clear();
+
+            alert.getButtonTypes().addAll(addTo, replaceAdd,cancel);
+
+            Optional<ButtonType> option = alert.showAndWait();
+            if (option.get() == addTo)
+            {
+               csvParser.addToDataBase(file);
+               upDateDisplayInfo();
+            }
+            else if (option.get() == replaceAdd)
+            {
+               csvParser.replaceAllToThis(file);
+                upDateDisplayInfo();
+            }
+        }
+    }
+
+    void upDateDisplayInfo()
+    {
+        movieObservableList.clear();
+        movieObservableList.addAll(FilmApp.moviesDataBase.getMovieSet());
+        tableView.setItems(movieObservableList);
+    }
+
 }

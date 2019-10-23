@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/film-app/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/film-app/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/film-app/out" />
+      <excludeFolder url="file://$MODULE_DIR$/film-app/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -1,6 +1,5 @@
 package com.accenture.oopapp.films;
 
-import com.accenture.oopapp.films.review.Review;
 import com.accenture.oopapp.users.User;
 
 import java.text.SimpleDateFormat;

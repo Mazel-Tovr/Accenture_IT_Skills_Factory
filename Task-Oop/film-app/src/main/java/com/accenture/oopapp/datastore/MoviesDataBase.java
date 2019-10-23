@@ -3,14 +3,11 @@ package com.accenture.oopapp.datastore;
 import com.accenture.oopapp.films.Genre;
 import com.accenture.oopapp.films.Movie;
 import com.accenture.oopapp.films.MovieType;
-import com.accenture.oopapp.films.review.Review;
+import com.accenture.oopapp.films.Review;
 import com.accenture.oopapp.frontend.FilmApp;
 
-import java.util.EnumSet;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.*;
+
 
 public class MoviesDataBase
 {
@@ -27,10 +24,10 @@ public class MoviesDataBase
     }
     public boolean addMovieToMovieSet(Movie movie) { return movieSet.add(movie); }
 
-    public Set<Movie> idSearch(String text)
+    public List<Movie> idSearch(String text)
     {
-        Set<Movie> tempo = new HashSet<>();
-        for (var item:movieSet)
+        List<Movie> tempo = new ArrayList<>(10);
+        for (var item :movieSet)
         {
             if(item.getMovieId().contains(text))
             {
@@ -39,7 +36,27 @@ public class MoviesDataBase
         }
         return tempo;
     }
-
+    public List<Movie> nameSearch(String text)
+    {
+        List<Movie> tempo = new ArrayList<>(10);
+        for (var item : movieSet) {
+            if (item.getMovieName().contains(text)) {
+                tempo.add(item);
+            }
+        }
+        return tempo;
+    }
+    public List<Movie> dataSearch(String text)
+    {
+        List<Movie> tempo = new ArrayList<>(10);
+        for (var item : movieSet)
+        {
+            if (item.getReleaseDate().contains(text)) {
+                tempo.add(item);
+            }
+        }
+        return tempo;
+    }
 
 
     public Set<Movie> getMovieSet() { return movieSet; }

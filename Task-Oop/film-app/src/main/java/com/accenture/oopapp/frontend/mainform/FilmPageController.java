@@ -1,8 +1,8 @@
 package com.accenture.oopapp.frontend.mainform;
 
-import com.accenture.oopapp.datacheck.GeneralVerificationMethods;
+import com.accenture.oopapp.datacontrol.GeneralVerificationMethods;
 import com.accenture.oopapp.films.Movie;
-import com.accenture.oopapp.films.review.Review;
+import com.accenture.oopapp.films.Review;
 import com.accenture.oopapp.frontend.FilmApp;
 import com.accenture.oopapp.users.User;
 import javafx.collections.FXCollections;
@@ -151,7 +151,7 @@ public class FilmPageController
             else
             {
                 alert.setTitle("Error");
-                alert.setContentText( review != null ? "Поле не может быть пустым":"Выбирете отзыв");
+                alert.setContentText( review != null ? "Поле не может быть пустым":"Выберите отзыв");
                 alert.showAndWait();
             }
        }
@@ -217,7 +217,7 @@ public class FilmPageController
 
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setContentText("Выбирете отзыв");
+            alert.setContentText("Выберите отзыв");
             alert.showAndWait();
         }
 
