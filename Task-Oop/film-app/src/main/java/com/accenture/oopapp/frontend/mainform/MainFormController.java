@@ -1,12 +1,11 @@
 package com.accenture.oopapp.frontend.mainform;
 
+import com.accenture.oopapp.datacheck.GeneralVerificationMethods;
 import com.accenture.oopapp.films.Genre;
 import com.accenture.oopapp.films.Movie;
 import com.accenture.oopapp.films.MovieType;
 import com.accenture.oopapp.frontend.FilmApp;
 import com.accenture.oopapp.frontend.entrance.SingInController;
-import com.accenture.oopapp.users.Administrator;
-import com.accenture.oopapp.users.Person;
 import com.accenture.oopapp.users.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -69,31 +68,32 @@ public class MainFormController
     @FXML
     private ObservableList<Movie> listOfItems;
 
+    GeneralVerificationMethods generalVerificationMethods;
+
     public void initialize()
     {
-        Person user = FilmApp.session.getLastEnteredUser();
+        generalVerificationMethods = new GeneralVerificationMethods();
+        User user = FilmApp.session.getCurrentUser();
         filterBox.setItems(FXCollections.observableArrayList("Показать все","По индентификатору","Названию","Дате"));
-        if(user instanceof User)
+        if(!user.isAdmin())
         {
-            User simpleUser = (User) user;
-            nameLabel.setText(simpleUser.getName());
-            ageLabel.setText(simpleUser.getAge().toString());
-            genderLabel.setText(simpleUser.getGender().name());
-            nickNameLabel.setText(simpleUser.getNickName());
+            nameLabel.setText(user.getName());
+            ageLabel.setText(user.getAge().toString());
+            genderLabel.setText(user.getGender().name());
+            nickNameLabel.setText(user.getNickName());
             statusLabel.setText("Simple user");
         }
         else
         {
-            Administrator simpleUser = (Administrator) user;
-            nameLabel.setText(simpleUser.getName());
-            ageLabel.setText(simpleUser.getAge().toString());
-            genderLabel.setText(simpleUser.getGender().name());
-            nickNameLabel.setText(simpleUser.getNickName());
+            nameLabel.setText(user.getName());
+            ageLabel.setText(user.getAge().toString());
+            genderLabel.setText(user.getGender().name());
+            nickNameLabel.setText(user.getNickName());
             statusLabel.setText("You are Admin");
         }
 
         listOfItems = FXCollections.observableArrayList();
-        listOfItems.addAll(FilmApp.dataBase.getMovieSet());
+        listOfItems.addAll(FilmApp.moviesDataBase.getMovieSet());
         movieId.setCellValueFactory(new PropertyValueFactory<Movie,String>("movieId"));
         nameId.setCellValueFactory(new PropertyValueFactory<Movie,String>("movieName"));
         typeId.setCellValueFactory(new PropertyValueFactory<Movie,MovieType>("movieType"));
@@ -109,7 +109,6 @@ public class MainFormController
     @FXML
     private void search(ActionEvent event)
     {
-
         Alert alert = new Alert(AlertType.ERROR);
         alert.setTitle("Error");
         switch (filterBox.getValue())
@@ -166,14 +165,15 @@ public class MainFormController
 
     private void searchById()
     {
-        ObservableList<Movie> tempo = FXCollections.observableArrayList();
-        if(!findField.getText().equals(""))
+        if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            String str = findField.getText();
-            for (var item:listOfItems)
-            {
-                if(str.equals(item.getMovieId()))tempo.add(item);
-            }
+            var a = FilmApp.moviesDataBase.idSearch(findField.getText());
+            ObservableList<Movie> tempo = FXCollections.observableArrayList(a);
+//            String str = findField.getText();
+//            for (var item:listOfItems)
+//            {
+//                if(str.equals(item.getMovieId()))tempo.add(item);
+//            }
             tableView.setItems(tempo);
         }
         else

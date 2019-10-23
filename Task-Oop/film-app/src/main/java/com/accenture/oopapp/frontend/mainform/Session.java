@@ -1,22 +1,23 @@
 package com.accenture.oopapp.frontend.mainform;
 
 import com.accenture.oopapp.films.Movie;
-import com.accenture.oopapp.users.Person;
+import com.accenture.oopapp.users.User;
 
 public class Session
 {
-    private Person lastEnteredUser;
-    Person getLastEnteredUser() { return lastEnteredUser; }
+    private User currentUser;
+    User getCurrentUser() { return currentUser; }
 
     private Movie movie;
     Movie getMovie() { return movie; }
     void setMovie(Movie movie) { this.movie = movie; }
 
-    public void setLastEnteredUser(Person lastEnteredUser) { this.lastEnteredUser = lastEnteredUser; }
+    public void setCurrentUser(User currentUser) { this.currentUser = currentUser; }
 
     void logOut()
     {
-        lastEnteredUser = null;
+        currentUser = null;
         movie = null;
     }
+
 }

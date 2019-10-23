@@ -1,5 +1,6 @@
 package com.accenture.oopapp.frontend.entrance;
 
+import com.accenture.oopapp.datacheck.GeneralVerificationMethods;
 import com.accenture.oopapp.frontend.FilmApp;
 import com.accenture.oopapp.frontend.mainform.MainFormController;
 import javafx.event.ActionEvent;
@@ -26,13 +27,15 @@ public class SingInController
     private Button singUpButton;
 
     @FXML
-    void signingIn(ActionEvent event) throws IOException {
+    void signingIn(ActionEvent event) throws IOException
+    {
+        GeneralVerificationMethods generalVerificationMethods = new GeneralVerificationMethods();
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         String userText = loginField.getText();
         String passwordText = passwordField.getText();
-        if(userText != "" && passwordText != "")
+        if(generalVerificationMethods.notEmptyField(userText) && generalVerificationMethods.notEmptyField(passwordText))
         {
-            if(FilmApp.dataBase.isConnect(userText,passwordText))
+            if(FilmApp.usersDataBase.isConnect(userText,passwordText))
             {
                 Parent root = FXMLLoader.load(MainFormController.class.getResource("MainForm.fxml"));
                 FilmApp.primaryStage.close();

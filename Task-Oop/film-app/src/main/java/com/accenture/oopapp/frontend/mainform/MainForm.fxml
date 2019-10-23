@@ -19,7 +19,7 @@
       </Label>
       <TextField fx:id="findField" layoutX="28.0" layoutY="85.0" prefHeight="25.0" prefWidth="334.0" />
       <ComboBox fx:id="filterBox" layoutX="399.0" layoutY="85.0" prefHeight="25.0" prefWidth="158.0" />
-      <Label layoutX="400.0" layoutY="62.0" text="Задайте филтер поиска">
+      <Label layoutX="400.0" layoutY="62.0" text="Задайте фильтер поиска">
          <font>
             <Font size="14.0" />
          </font>

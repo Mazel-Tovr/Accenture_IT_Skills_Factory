@@ -1,7 +1,9 @@
 package com.accenture.oopapp.films;
 
 import com.accenture.oopapp.films.review.Review;
+import com.accenture.oopapp.users.User;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Movie
@@ -55,6 +57,24 @@ public class Movie
 
     public boolean removeReview(Review review){ return filmsReview.remove(review);}
 
+    public void addReview(User user, String text, double rating)
+    {
+        Date date = new Date();
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyy.MM.dd");
+        filmsReview.add(new Review(text,formatForDateNow.format(date),user,rating));
+        recalculateFilmRating();
+    }
+
+    public void recalculateFilmRating()
+    {
+        int usersRating = 0;
+        for (Review item :filmsReview)
+        {
+            usersRating += item.getYouLikedFilm();
+        }
+        rating = (double) usersRating / filmsReview.size();
+    }
+
     @Override
     public boolean equals(Object o)
     {
@@ -69,14 +89,5 @@ public class Movie
         return Objects.hash(movieId);
     }
 
-    public void recalculateFilmRating()
-    {
-        int usersRating = 0;
-        for (Review item :filmsReview)
-        {
-           usersRating += item.getYouLikedFilm();
-        }
-        rating = (double) usersRating / filmsReview.size();
-    }
 
 }

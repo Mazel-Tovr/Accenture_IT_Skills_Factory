@@ -1,10 +1,9 @@
 package com.accenture.oopapp.frontend.mainform;
 
+import com.accenture.oopapp.datacheck.GeneralVerificationMethods;
 import com.accenture.oopapp.films.Movie;
 import com.accenture.oopapp.films.review.Review;
 import com.accenture.oopapp.frontend.FilmApp;
-import com.accenture.oopapp.users.Administrator;
-import com.accenture.oopapp.users.Person;
 import com.accenture.oopapp.users.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -64,21 +63,20 @@ public class FilmPageController
     private ObservableList<Review> reviewObservableList = FXCollections.observableArrayList();;
 
     private Movie movie;
-    private Person person;
+    private User user;
     private Review review = null;
-    private boolean isUser;
+    private GeneralVerificationMethods generalVerificationMethods;
     public void initialize()
     {
         movie = FilmApp.session.getMovie();
         descriptionField.setText(movie.getDescription());
         reviewObservableList.addAll(movie.getFilmsReview());
-        person = FilmApp.session.getLastEnteredUser();
+        user = FilmApp.session.getCurrentUser();
+        generalVerificationMethods = new GeneralVerificationMethods();
 
-
-        if(person instanceof User)
+        if(!user.isAdmin())
         {
             descriptionField.setDisable(true);
-            isUser = true;
         }
         else
         {
@@ -87,12 +85,11 @@ public class FilmPageController
             buttonReview.setText("Сохранить");
             labelReviewDescription.setText("Редактировать отзывы к фильму");
             delButton.setVisible(true);
-            isUser=false;
         }
 
         userId.setCellValueFactory(new PropertyValueFactory<Review, String>("personWhoWroteIt"));
         dataId.setCellValueFactory(new PropertyValueFactory<Review, String>("postDate"));
-        reviewId.setCellValueFactory(new PropertyValueFactory<Review, String>("textOfReview"));
+        reviewId.setCellValueFactory(new PropertyValueFactory<Review, String>("text"));
         ratingId.setCellValueFactory(new PropertyValueFactory<Review,Double>("youLikedFilm"));
         tableReview.setItems(reviewObservableList);
 
@@ -112,18 +109,15 @@ public class FilmPageController
     void postReview(ActionEvent event)
     {
        Alert alert = new Alert(AlertType.ERROR);
-       if(isUser)
+       if(!user.isAdmin())
        {
-           if (tryParseDouble(ratingField.getText()) &&
-                   (Double.parseDouble(ratingField.getText()) >= 0 && Double.parseDouble(ratingField.getText()) < 100) &&
-                   !reviewField.getText().equals("")) {
+           if (generalVerificationMethods.ratingCheck(ratingField.getText()) && generalVerificationMethods.notEmptyField(ratingField.getText()))
+           {
                alert = new Alert(AlertType.INFORMATION);
                alert.setContentText("Отзыв успешно добавлен");
                alert.setTitle("Info");
                alert.showAndWait();
-               User user = (User) person;
-               user.addReview(movie, reviewField.getText(), Double.parseDouble(ratingField.getText()));
-
+               movie.addReview(user,reviewField.getText(),Double.parseDouble(ratingField.getText()));
                upDateTables();
            }
            else
@@ -135,7 +129,7 @@ public class FilmPageController
        }
        else
        {
-            if(review != null && !reviewField.getText().equals(""))
+            if(generalVerificationMethods.notNullValue(review) && generalVerificationMethods.notEmptyField(reviewField.getText()))
             {
                 alert = new Alert(AlertType.CONFIRMATION);
                 alert.setHeaderText("Подтверждение");
@@ -149,8 +143,7 @@ public class FilmPageController
                     alert.setContentText("Отзыв успешно отредактирован");
                     alert.setTitle("Info");
                     alert.showAndWait();
-                    Administrator admin = (Administrator)person;
-                    review.setTextOfReview(reviewField.getText() + "\nEdited by "+ admin.getNickName());
+                    review.setText(reviewField.getText() + "\nEdited by "+ user.getNickName());
                     review = null;
                     upDateTables();
                 }
@@ -188,18 +181,18 @@ public class FilmPageController
 
     public void chooseItem(MouseEvent mouseEvent)
     {
-        if(!isUser)
+        if(user.isAdmin())
         {
             reviewField.clear();
             review = tableReview.getSelectionModel().getSelectedItem();
-            reviewField.setText(review.getTextOfReview());
+            reviewField.setText(review.getText());
         }
     }
 
     public void deleteReview(ActionEvent actionEvent)
     {
 
-        if(review != null)
+        if(generalVerificationMethods.notNullValue(review))
         {
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setHeaderText("Подтверждение");

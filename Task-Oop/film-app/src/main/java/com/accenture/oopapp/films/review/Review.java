@@ -1,30 +1,29 @@
 package com.accenture.oopapp.films.review;
 
 
-import com.accenture.oopapp.users.Person;
 import com.accenture.oopapp.users.User;
 
 public class Review {
-    private String textOfReview;
+    private String text;
     private String postDate;
     private String personWhoWroteIt;
     private double youLikedFilm;
 
-    public Review(String textOfReview, String postDate, User person, double youLikedFilm)
+    public Review(String text, String postDate, User user, double youLikedFilm)
     {
-        this.textOfReview = textOfReview;
+        this.text = text;
         this.postDate = postDate;
-        personWhoWroteIt = person.getNickName();
+        personWhoWroteIt = user.getNickName();
         this.youLikedFilm = youLikedFilm;
 
     }
 
-    public String getTextOfReview() {
-        return textOfReview;
+    public String getText() {
+        return text;
     }
 
-    public void setTextOfReview(String textOfReview) {
-        this.textOfReview = textOfReview;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public String getPostDate() {

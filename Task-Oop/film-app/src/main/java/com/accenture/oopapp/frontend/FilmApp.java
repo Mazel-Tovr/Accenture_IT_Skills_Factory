@@ -1,6 +1,7 @@
 package com.accenture.oopapp.frontend;
 
-import com.accenture.oopapp.datastore.DataBase;
+import com.accenture.oopapp.datastore.MoviesDataBase;
+import com.accenture.oopapp.datastore.UsersDataBase;
 import com.accenture.oopapp.frontend.mainform.Session;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +14,8 @@ import java.io.IOException;
 public class FilmApp extends Application {
 
     public static Session session = new Session();
-    public static DataBase dataBase = new DataBase();
+    public static UsersDataBase usersDataBase = new UsersDataBase();
+    public static MoviesDataBase moviesDataBase = new MoviesDataBase();
     public static Stage primaryStage;
     public static void main(String[] args) {
         launch(args);

@@ -1,5 +1,6 @@
 package com.accenture.oopapp.frontend.entrance;
 
+import com.accenture.oopapp.datacheck.GeneralVerificationMethods;
 import com.accenture.oopapp.frontend.FilmApp;
 import com.accenture.oopapp.users.Gender;
 import com.accenture.oopapp.users.User;
@@ -51,7 +52,7 @@ public class SingUpController
             alert.setTitle("Инофрмация");
             alert.setContentText("Регистрация успешно завершена");
             alert.showAndWait();
-            FilmApp.dataBase.addUserToUserSet(new User(name,age,gender,nickName,passWord));
+            FilmApp.usersDataBase.addUserToUserMap(new User(name,age,gender,nickName,passWord));
             goBack(actionEvent);
         }
 
@@ -66,24 +67,14 @@ public class SingUpController
         FilmApp.primaryStage.show();
     }
 
-    private static boolean tryParseInt(String value)
-    {
-        try
-        {
-            Integer.parseInt(value);
-            return true;
-        }
-        catch (NumberFormatException e)
-        {
-            return false;
-        }
-    }
+
     private boolean dataCheck()
     {
+        GeneralVerificationMethods generalVerificationMethods = new GeneralVerificationMethods();
         Alert errorAlert = new Alert(Alert.AlertType.ERROR);
         errorAlert.setHeaderText("Ошибка ввода");
 
-        if (!nameId.getText().equals(""))
+        if (generalVerificationMethods.notEmptyField(nameId.getText()))
         {
             name = nameId.getText();
         } else
@@ -92,7 +83,7 @@ public class SingUpController
             errorAlert.showAndWait();
             return false;
         }
-        if (tryParseInt(ageId.getText()) && Integer.parseInt(ageId.getText()) >= 3 && Integer.parseInt(ageId.getText()) <= 100)
+        if (generalVerificationMethods.ageCheck(ageId.getText()))
         {
             age = Integer.parseInt(ageId.getText());
         } else
@@ -101,7 +92,7 @@ public class SingUpController
             errorAlert.showAndWait();
             return false;
         }
-        if (genderId.getValue() != null)
+        if (generalVerificationMethods.notNullValue(genderId.getValue()))
         {
             gender = genderId.getValue();
         }
@@ -111,9 +102,9 @@ public class SingUpController
             errorAlert.showAndWait();
             return false;
         }
-        if (!nickNameId.getText().equals(""))
+        if (generalVerificationMethods.notEmptyField(nickNameId.getText()))
         {
-            if(!FilmApp.dataBase.isUserExist(nickNameId.getText()))
+            if(!FilmApp.usersDataBase.isUserExist(nickNameId.getText()))
             {
                 nickName = nickNameId.getText();
             }
@@ -130,9 +121,9 @@ public class SingUpController
             errorAlert.showAndWait();
             return false;
         }
-        if (!passWordId.getText().equals(""))
+        if (generalVerificationMethods.notEmptyField(passWordId.getText()))
         {
-            passWord= passWordId.getText();
+            passWord = passWordId.getText();
         }
         else
         {

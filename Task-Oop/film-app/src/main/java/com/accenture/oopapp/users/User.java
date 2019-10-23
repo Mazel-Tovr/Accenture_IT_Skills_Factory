@@ -1,24 +1,39 @@
 package com.accenture.oopapp.users;
 
-import com.accenture.oopapp.films.Movie;
-import com.accenture.oopapp.films.review.Review;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Objects;
 
-public class User extends Person implements Comparable<User>
+public class User implements Comparable<User>
 {
+    private String name;
+    private Integer age;
+    private Gender gender;
     private String nickName;
     private String passWord;
-    private String shortDescription;
+    private boolean isAdmin;
     private int rating = 0;
     public User(String name, Integer age, Gender gender, String nickName, String passWord)
     {
-        super(name, age, gender);
+        this.name=name;
+        this.age=age;
+        this.gender= gender;
         this.nickName = nickName;
         this.passWord = passWord;
     }
+    public User(String name, Integer age, Gender gender, String nickName, String passWord, boolean isAdmin)
+    {
+        this.name=name;
+        this.age=age;
+        this.gender= gender;
+        this.nickName = nickName;
+        this.passWord = passWord;
+        this.isAdmin = isAdmin;
+    }
+
+    public String getName() { return name; }
+
+    public Integer getAge() { return age; }
+
+    public Gender getGender() { return gender; }
 
     public String getNickName() {
         return nickName;
@@ -28,6 +43,9 @@ public class User extends Person implements Comparable<User>
         return passWord;
     }
 
+    public boolean isAdmin() { return isAdmin; }
+
+
     @Override
     public boolean equals(Object o)
     {
@@ -36,17 +54,6 @@ public class User extends Person implements Comparable<User>
         User user = (User) o;
         return nickName.equals(user.nickName);
     }
-
-    public void addReview(Movie movie,String text,double rating)
-    {
-        Date date = new Date();
-        SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyy.MM.dd");
-        movie.getFilmsReview().add(new Review(text,formatForDateNow.format(date),this,rating));
-        movie.recalculateFilmRating();
-    }
-
-
-
     @Override
     public int hashCode() {
         return Objects.hash(nickName);
