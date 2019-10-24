@@ -22,6 +22,7 @@ import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.Optional;
 
 public class MainFormController
@@ -179,7 +180,12 @@ public class MainFormController
     {
         if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            tableView.setItems(FXCollections.observableArrayList(FilmApp.moviesDataBase.idSearch(findField.getText())));
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.moviesDataBase.idSearch(findField.getText())).sorted(new Comparator<Movie>() {
+                @Override
+                public int compare(Movie movie, Movie t1) {
+                    return -Double.compare(movie.getRating(), t1.getRating());
+                }
+            }));
         }
         else
         {
@@ -194,7 +200,13 @@ public class MainFormController
     {
         if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            tableView.setItems(FXCollections.observableArrayList(FilmApp.moviesDataBase.nameSearch(findField.getText())));
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.moviesDataBase.nameSearch(findField.getText())).sorted(new Comparator<Movie>() {
+                @Override
+                public int compare(Movie movie, Movie t1)
+                {
+                    return -Double.compare(movie.getRating(), t1.getRating());
+                }
+            }));
         }
         else
         {
@@ -209,7 +221,12 @@ public class MainFormController
     {
         if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            tableView.setItems(FXCollections.observableArrayList(FilmApp.moviesDataBase.dataSearch(findField.getText())));
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.moviesDataBase.dataSearch(findField.getText())).sorted(new Comparator<Movie>() {
+                @Override
+                public int compare(Movie movie, Movie t1) {
+                    return -Double.compare(movie.getRating(), t1.getRating());
+                }
+            }));
         }
         else
         {
