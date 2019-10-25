@@ -5,7 +5,7 @@ public class GeneralVerificationMethods
 
     public boolean notEmptyField(String value)
     {
-        return !value.equals("");
+        return value != null && !value.isEmpty();
     }
 
 

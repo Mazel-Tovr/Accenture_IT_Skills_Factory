@@ -9,8 +9,28 @@ import com.accenture.oopapp.frontend.FilmApp;
 import java.util.*;
 
 
-public class MoviesDataBase
+public class MoviesDataBase implements MoviesDataBaseService
 {
+
+    private static MoviesDataBaseService instance = null;
+
+    private MoviesDataBase(){}
+
+    public static MoviesDataBaseService getInstance()
+    {
+        if(instance == null)
+        {
+            synchronized (MoviesDataBase.class)
+            {
+                if(instance == null)
+                {
+                    instance = new MoviesDataBase();
+                }
+            }
+        }
+        return instance;
+    }
+
     private Set<Movie> movieSet = new HashSet<>();
 
     {
@@ -22,6 +42,8 @@ public class MoviesDataBase
         movieSet.iterator().next().getFilmsReview().add(new Review("Норм","2007.07.07", FilmApp.usersDataBase.getUserMap().iterator().next(),60));
         movieSet.iterator().next().recalculateFilmRating();
     }
+
+    @Override
     public boolean addMovieToMovieSet(Movie movie) { return movieSet.add(movie); }
 
     public List<Movie> idSearch(String text)
@@ -36,16 +58,20 @@ public class MoviesDataBase
         }
         return tempo;
     }
+
+    @Override
     public List<Movie> nameSearch(String text)
     {
         List<Movie> tempo = new ArrayList<>(10);
         for (var item : movieSet) {
             if (item.getMovieName().contains(text)) {
+               // item.getMovieName().matches(".*" + text + ".*");
                 tempo.add(item);
             }
         }
         return tempo;
     }
+    @Override
     public List<Movie> dataSearch(String text)
     {
         List<Movie> tempo = new ArrayList<>(10);
@@ -58,7 +84,7 @@ public class MoviesDataBase
         return tempo;
     }
 
-
+    @Override
     public Set<Movie> getMovieSet() { return movieSet; }
 
 }

@@ -180,12 +180,7 @@ public class MainFormController
     {
         if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            tableView.setItems(FXCollections.observableArrayList(FilmApp.moviesDataBase.idSearch(findField.getText())).sorted(new Comparator<Movie>() {
-                @Override
-                public int compare(Movie movie, Movie t1) {
-                    return -Double.compare(movie.getRating(), t1.getRating());
-                }
-            }));
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.moviesDataBase.idSearch(findField.getText())).sorted((o1,o2)->-Double.compare(o1.getRating(), o2.getRating())));
         }
         else
         {

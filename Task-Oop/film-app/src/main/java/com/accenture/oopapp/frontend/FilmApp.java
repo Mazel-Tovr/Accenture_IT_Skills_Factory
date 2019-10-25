@@ -1,8 +1,11 @@
 package com.accenture.oopapp.frontend;
 
+import com.accenture.oopapp.datastore.MoviesDataBaseService;
 import com.accenture.oopapp.datastore.MoviesDataBase;
 import com.accenture.oopapp.datastore.UsersDataBase;
+import com.accenture.oopapp.datastore.UsersDataBaseService;
 import com.accenture.oopapp.frontend.mainform.Session;
+import com.accenture.oopapp.frontend.mainform.SessionService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,13 +16,11 @@ import java.io.IOException;
 
 public class FilmApp extends Application {
 
-    public static Session session = new Session();
-    public static UsersDataBase usersDataBase = new UsersDataBase();
-    public static MoviesDataBase moviesDataBase = new MoviesDataBase();
+    public static SessionService session = Session.getInstance();
+    public static UsersDataBaseService usersDataBase = UsersDataBase.getInstance();
+    public static MoviesDataBaseService moviesDataBase = MoviesDataBase.getInstance();
     public static Stage primaryStage;
-    public static void main(String[] args) {
-        launch(args);
-    }
+    public static void main(String[] args) { launch(args); }
 
     @Override
     public void start(Stage primaryStage) throws Exception
