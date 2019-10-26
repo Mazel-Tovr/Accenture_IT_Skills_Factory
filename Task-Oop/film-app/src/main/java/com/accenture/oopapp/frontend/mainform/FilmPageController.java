@@ -90,7 +90,7 @@ public class FilmPageController
         userId.setCellValueFactory(new PropertyValueFactory<Review, String>("personWhoWroteIt"));
         dataId.setCellValueFactory(new PropertyValueFactory<Review, String>("postDate"));
         reviewId.setCellValueFactory(new PropertyValueFactory<Review, String>("text"));
-        ratingId.setCellValueFactory(new PropertyValueFactory<Review,Double>("youLikedFilm"));
+        ratingId.setCellValueFactory(new PropertyValueFactory<Review,Double>("userRating"));
         tableReview.setItems(reviewObservableList);
 
     }
