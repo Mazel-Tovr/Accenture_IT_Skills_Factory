@@ -2,56 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7861760-8acd-459e-ab37-3f0000b76c93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_48.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/mysqldatabase/DataBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/mysqldatabase/MySqlDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Task-Oop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Task-Oop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/datacontrol/GeneralVerificationMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/datacontrol/GeneralVerificationMethods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/datastore/MoviesDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/datastore/MoviesDataBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/datastore/UsersDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/datastore/UsersDataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/datastore/MoviesDataBaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/datastore/MoviesDataBaseService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/fileinput/CSVParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/fileinput/CSVParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/films/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/films/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/films/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/films/Review.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/FilmApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/FilmApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/entrance/SingInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/entrance/SingInController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/entrance/SingUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/entrance/SingUpController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/mainform/FilmPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/mainform/FilmPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/mainform/MainForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/mainform/MainForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/mainform/MainFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/mainform/MainFormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/mainform/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/mainform/Session.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/META-INF/film-app.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/datacontrol/GeneralVerificationMethods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/datastore/MoviesDataBase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/datastore/MoviesDataBaseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/datastore/UsersDataBase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/datastore/UsersDataBaseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/fileinput/CSVParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/films/Genre.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/films/Movie.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/films/MovieType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/films/Review.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/frontend/FilmApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/frontend/entrance/SingIn.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/frontend/entrance/SingInController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/frontend/entrance/SingUp.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/frontend/entrance/SingUpController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/frontend/mainform/FilmPageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/frontend/mainform/FilmPageForm.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/frontend/mainform/MainForm.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/frontend/mainform/MainFormController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/frontend/mainform/MainFormController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/frontend/mainform/MainFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/frontend/mainform/Session.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/frontend/mainform/SessionService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/users/Gender.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/film-app/com/accenture/oopapp/users/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/test/film-app/com/accenture/oopapp/AppTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/films/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/films/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/films/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/films/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/frontend/mainform/FilmPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/frontend/mainform/FilmPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/mysqldatabase/DataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/mysqldatabase/DataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/mysqldatabase/MySqlDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/mysqldatabase/MySqlDataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/datastore/MoviesDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/datastore/MoviesDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/datastore/MoviesDataBaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/datastore/MoviesDataBaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/fileinput/CSVParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/fileinput/CSVParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/frontend/mainform/MainFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/frontend/mainform/MainFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/mysqldatabase/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/mysqldatabase/DataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/mysqldatabase/MySqlDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/mysqldatabase/MySqlDataBase.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DataBase">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.accenture.oopapp.App" />
       <module name="Task-Oop" />
@@ -190,9 +154,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
         <item itemvalue="Application.DataBase" />
         <item itemvalue="Application.FilmApp" />
-        <item itemvalue="Application.App" />
         <item itemvalue="Application.FilmApp" />
         <item itemvalue="Application.FilmApp" />
       </list>
@@ -229,8 +193,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/mysqldatabase/DataBase.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="4" />
+          <line>7</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

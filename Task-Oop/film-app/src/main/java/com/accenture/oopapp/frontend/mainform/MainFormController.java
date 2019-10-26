@@ -102,7 +102,7 @@ public class MainFormController
         }
 
         movieObservableList = FXCollections.observableArrayList();
-        movieObservableList.addAll(FilmApp.moviesDataBase.getMovieSet());
+        movieObservableList.addAll(FilmApp.moviesDataBase.getMovieList());
         movieId.setCellValueFactory(new PropertyValueFactory<Movie,String>("movieId"));
         nameId.setCellValueFactory(new PropertyValueFactory<Movie,String>("movieName"));
         typeId.setCellValueFactory(new PropertyValueFactory<Movie,MovieType>("movieType"));
@@ -270,7 +270,7 @@ public class MainFormController
     void upDateDisplayInfo()
     {
         movieObservableList.clear();
-        movieObservableList.addAll(FilmApp.moviesDataBase.getMovieSet());
+        movieObservableList.addAll(FilmApp.moviesDataBase.getMovieList());
         tableView.setItems(movieObservableList);
     }
 

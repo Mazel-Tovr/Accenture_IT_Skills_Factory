@@ -85,6 +85,6 @@ public class MoviesDataBase implements MoviesDataBaseService
     }
 
     @Override
-    public Set<Movie> getMovieSet() { return movieSet; }
+    public Set<Movie> getMovieList() { return movieSet; }
 
 }

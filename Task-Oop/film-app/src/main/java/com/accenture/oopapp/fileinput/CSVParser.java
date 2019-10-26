@@ -30,7 +30,7 @@ public class CSVParser
     public void replaceAllToThis(String path)
     {
         List<String[]> movieDataListLines = ParsingInLines(path);
-        FilmApp.moviesDataBase.getMovieSet().clear();
+        FilmApp.moviesDataBase.getMovieList().clear();
         for (String[] filmDataIn : movieDataListLines)
         {
             String[] genresString = filmDataIn[3].split(",");
@@ -59,7 +59,7 @@ public class CSVParser
     public void replaceAllToThis(File file)
     {
         List<String[]> movieDataListLines = ParsingInLines(file);
-        FilmApp.moviesDataBase.getMovieSet().clear();
+        FilmApp.moviesDataBase.getMovieList().clear();
         for (String[] filmDataIn : movieDataListLines)
         {
             String[] genresString = filmDataIn[3].split(",");
