@@ -3,7 +3,9 @@ package com.accenture.oopapp.films;
 
 import com.accenture.oopapp.users.User;
 
-public class Review {
+public class Review
+{
+    private Integer reviewId;
     private String text;
     private String postDate;
     private String personWhoWroteIt;
@@ -15,7 +17,6 @@ public class Review {
         this.postDate = postDate;
         personWhoWroteIt = user.getNickName();
         this.userRating = userRating;
-
     }
 
     public String getText() {

@@ -52,7 +52,7 @@ public class SingUpController
             alert.setTitle("Инофрмация");
             alert.setContentText("Регистрация успешно завершена");
             alert.showAndWait();
-            FilmApp.usersDataBase.addUserToUserMap(new User(name,age,gender,nickName,passWord));
+            FilmApp.usersDataBase.addUserToDataBase(new User(name,age,gender,nickName,passWord));
             goBack(actionEvent);
         }
 

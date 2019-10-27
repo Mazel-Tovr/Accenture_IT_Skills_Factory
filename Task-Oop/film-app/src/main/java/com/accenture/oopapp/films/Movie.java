@@ -54,8 +54,10 @@ public class Movie
         return description;
     }
 
+    //TODO вынести в бд
     public boolean removeReview(Review review){ return filmsReview.remove(review);}
 
+    //TODO вынести в бд
     public void addReview(User user, String text, double rating)
     {
         Date date = new Date();

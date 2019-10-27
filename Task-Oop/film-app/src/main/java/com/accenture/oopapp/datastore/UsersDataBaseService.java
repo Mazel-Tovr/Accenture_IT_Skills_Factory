@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface UsersDataBaseService
 {
-    void addUserToUserMap(User user);
+    void addUserToDataBase(User user);
     Collection<User> getUserMap();
     boolean isUserExist(String nickName);
     boolean isConnect(String nickName,String password);
