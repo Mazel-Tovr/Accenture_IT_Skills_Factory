@@ -3,27 +3,25 @@ package com.accenture.oopapp.films;
 
 import com.accenture.oopapp.users.User;
 
-public class Review {
+public class Review
+{
+    private int reviewId;
     private String text;
     private String postDate;
     private String personWhoWroteIt;
-    private double youLikedFilm;
+    private double userRating;
 
-    public Review(String text, String postDate, User user, double youLikedFilm)
+    public Review(int reviewId,String text, String postDate, String user, double userRating)
     {
+        this.reviewId = reviewId;
         this.text = text;
         this.postDate = postDate;
-        personWhoWroteIt = user.getNickName();
-        this.youLikedFilm = youLikedFilm;
-
+        personWhoWroteIt = user;
+        this.userRating = userRating;
     }
 
     public String getText() {
         return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
     }
 
     public String getPostDate() {
@@ -34,8 +32,10 @@ public class Review {
         return personWhoWroteIt;
     }
 
-    public double getYouLikedFilm() {
-        return youLikedFilm;
+    public double getUserRating() {
+        return userRating;
     }
+
+    public int getReviewId() { return reviewId; }
 
 }

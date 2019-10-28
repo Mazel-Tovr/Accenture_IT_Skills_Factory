@@ -35,8 +35,9 @@ public class UsersDataBase implements UsersDataBaseService
         userMap.put("Admin",new User("Admin ce god",54,Gender.MALE,"Admin","Admin",true));
     }
 
-    public void addUserToUserMap(User user) { userMap.put(user.getNickName(),user);}
+    public void addUserToDataBase(User user) { userMap.put(user.getNickName(),user);}
 
+    //Delete this method
     public Collection<User> getUserMap() {return userMap.values();}
 
     public boolean isUserExist(String nickName)

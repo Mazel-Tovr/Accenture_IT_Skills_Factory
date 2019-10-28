@@ -23,25 +23,10 @@ public class CSVParser
             {
                 genres.add(Genre.valueOf(s.toUpperCase()));
             }
-            FilmApp.moviesDataBase.addMovieToMovieSet(new Movie(filmDataIn[0], filmDataIn[1], MovieType.valueOf(filmDataIn[2].toUpperCase()), EnumSet.copyOf(genres), filmDataIn[4], filmDataIn[5]));
+            FilmApp.dataBase.addMoveToDataBase(new Movie(filmDataIn[0], filmDataIn[1], MovieType.valueOf(filmDataIn[2].toUpperCase()), EnumSet.copyOf(genres), filmDataIn[4], filmDataIn[5],0));
         }
+    }
 
-    }
-    public void replaceAllToThis(String path)
-    {
-        List<String[]> movieDataListLines = ParsingInLines(path);
-        FilmApp.moviesDataBase.getMovieSet().clear();
-        for (String[] filmDataIn : movieDataListLines)
-        {
-            String[] genresString = filmDataIn[3].split(",");
-            Set<Genre> genres = new HashSet<>();
-            for (String s : genresString)
-            {
-                genres.add(Genre.valueOf(s.toUpperCase()));
-            }
-            FilmApp.moviesDataBase.addMovieToMovieSet(new Movie(filmDataIn[0], filmDataIn[1], MovieType.valueOf(filmDataIn[2].toUpperCase()), EnumSet.copyOf(genres), filmDataIn[4], filmDataIn[5]));
-        }
-    }
     public void addToDataBase(File file)
     {
         List<String[]> movieDataListLines = ParsingInLines(file);
@@ -53,22 +38,7 @@ public class CSVParser
             {
                 genres.add(Genre.valueOf(s.toUpperCase()));
             }
-            FilmApp.moviesDataBase.addMovieToMovieSet(new Movie(filmDataIn[0], filmDataIn[1], MovieType.valueOf(filmDataIn[2].toUpperCase()), EnumSet.copyOf(genres), filmDataIn[4], filmDataIn[5]));
-        }
-    }
-    public void replaceAllToThis(File file)
-    {
-        List<String[]> movieDataListLines = ParsingInLines(file);
-        FilmApp.moviesDataBase.getMovieSet().clear();
-        for (String[] filmDataIn : movieDataListLines)
-        {
-            String[] genresString = filmDataIn[3].split(",");
-            Set<Genre> genres = new HashSet<>();
-            for (String s : genresString)
-            {
-                genres.add(Genre.valueOf(s.toUpperCase()));
-            }
-            FilmApp.moviesDataBase.addMovieToMovieSet(new Movie(filmDataIn[0], filmDataIn[1], MovieType.valueOf(filmDataIn[2].toUpperCase()), EnumSet.copyOf(genres), filmDataIn[4], filmDataIn[5]));
+            FilmApp.dataBase.addMoveToDataBase(new Movie(filmDataIn[0], filmDataIn[1], MovieType.valueOf(filmDataIn[2].toUpperCase()), EnumSet.copyOf(genres), filmDataIn[4], filmDataIn[5],0));
         }
     }
 

@@ -6,19 +6,23 @@ import com.accenture.oopapp.datastore.UsersDataBase;
 import com.accenture.oopapp.datastore.UsersDataBaseService;
 import com.accenture.oopapp.frontend.mainform.Session;
 import com.accenture.oopapp.frontend.mainform.SessionService;
+import com.accenture.oopapp.mysqldatabase.DataBase;
+import com.accenture.oopapp.mysqldatabase.MySqlDataBase;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.xml.crypto.Data;
 import java.io.IOException;
 
 public class FilmApp extends Application {
 
     public static SessionService session = Session.getInstance();
-    public static UsersDataBaseService usersDataBase = UsersDataBase.getInstance();
-    public static MoviesDataBaseService moviesDataBase = MoviesDataBase.getInstance();
+   // public static UsersDataBaseService dataBase = UsersDataBase.getInstance();
+    //public static MoviesDataBaseService dataBase = MoviesDataBase.getInstance();
+    public static DataBase dataBase = MySqlDataBase.getInstance();
     public static Stage primaryStage;
     public static void main(String[] args) { launch(args); }
 

@@ -11,6 +11,6 @@ public interface MoviesDataBaseService
     List<Movie> idSearch(String text);
     List<Movie> nameSearch(String text);
     List<Movie> dataSearch(String text);
-    Set<Movie> getMovieSet();
+    Set<Movie> getMovieList();
 
 }

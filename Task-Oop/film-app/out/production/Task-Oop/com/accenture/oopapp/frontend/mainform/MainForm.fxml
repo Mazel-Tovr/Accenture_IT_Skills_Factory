@@ -100,5 +100,6 @@
          </font>
       </Button>
       <Button layoutX="796.0" layoutY="14.0" mnemonicParsing="false" onAction="#logOut" prefHeight="32.0" prefWidth="75.0" text="Log out" />
+      <Button fx:id="upLoadButton" layoutX="668.0" layoutY="399.0" mnemonicParsing="false" onAction="#upLoad" prefHeight="57.0" prefWidth="125.0" text="Загрузить из CSV" visible="false" />
    </children>
 </AnchorPane>
