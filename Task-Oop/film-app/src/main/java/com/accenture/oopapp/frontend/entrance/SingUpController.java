@@ -52,7 +52,7 @@ public class SingUpController
             alert.setTitle("Инофрмация");
             alert.setContentText("Регистрация успешно завершена");
             alert.showAndWait();
-            FilmApp.usersDataBase.addUserToDataBase(new User(name,age,gender,nickName,passWord));
+            FilmApp.dataBase.addUserToDataBase(new User(name,age,gender,nickName,passWord));
             goBack(actionEvent);
         }
 
@@ -104,7 +104,7 @@ public class SingUpController
         }
         if (generalVerificationMethods.notEmptyField(nickNameId.getText()))
         {
-            if(!FilmApp.usersDataBase.isUserExist(nickNameId.getText()))
+            if(!FilmApp.dataBase.isUserExist(nickNameId.getText()))
             {
                 nickName = nickNameId.getText();
             }

@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7861760-8acd-459e-ab37-3f0000b76c93" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/datastore/MoviesDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/datastore/MoviesDataBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/datastore/MoviesDataBaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/datastore/MoviesDataBaseService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/fileinput/CSVParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/fileinput/CSVParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/mainform/MainFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/frontend/mainform/MainFormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/mysqldatabase/DataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/mysqldatabase/DataBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/mysqldatabase/MySqlDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/out/production/Task-Oop/com/accenture/oopapp/mysqldatabase/MySqlDataBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/film-app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/datastore/MoviesDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/datastore/MoviesDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/datastore/MoviesDataBaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/datastore/MoviesDataBaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/fileinput/CSVParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/fileinput/CSVParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/frontend/mainform/MainFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/frontend/mainform/MainFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/mysqldatabase/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/mysqldatabase/DataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/mysqldatabase/MySqlDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/film-app/src/main/java/com/accenture/oopapp/mysqldatabase/MySqlDataBase.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +35,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/SceneBuilder/SceneBuilder.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />

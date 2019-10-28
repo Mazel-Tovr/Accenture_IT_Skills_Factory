@@ -33,21 +33,11 @@ public class MoviesDataBase implements MoviesDataBaseService
 
     private Set<Movie> movieSet = new HashSet<>();
 
-    {
-        movieSet.add(new Movie("Movie1","На парах", MovieType.SERIAL, EnumSet.of(Genre.HORROR,Genre.COMEDY),"2018.01.21","Описание"));
-        movieSet.add(new Movie("Movie2","Самый", MovieType.FILM,EnumSet.of(Genre.ADVENTURE,Genre.COMEDY),"2019.01.20",""));
-        movieSet.add(new Movie("Movie3","Худший", MovieType.FILM,EnumSet.of(Genre.ADVENTURE),"2018.12.01",""));
-        movieSet.add(new Movie("Movie4","Фильм", MovieType.FILM,EnumSet.of(Genre.ADVENTURE,Genre.COMEDY,Genre.HORROR),"2001.12.19",""));
-
-        movieSet.iterator().next().getFilmsReview().add(new Review("Норм","2007.07.07", FilmApp.usersDataBase.getUserMap().iterator().next(),60));
-        movieSet.iterator().next().recalculateFilmRating();
-    }
-
     @Override
     public boolean addMovieToMovieSet(Movie movie) { return movieSet.add(movie); }
 
     public List<Movie> idSearch(String text)
-    {
+        {
         List<Movie> tempo = new ArrayList<>(10);
         for (var item :movieSet)
         {
@@ -58,7 +48,6 @@ public class MoviesDataBase implements MoviesDataBaseService
         }
         return tempo;
     }
-
     @Override
     public List<Movie> nameSearch(String text)
     {

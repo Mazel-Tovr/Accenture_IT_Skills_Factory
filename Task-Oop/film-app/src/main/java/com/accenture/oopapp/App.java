@@ -29,6 +29,6 @@ public class App
 //        dataBase.getDBConnection("com.mysql.jdbc.Driver","jdbc:mysql://127.0.0.1:3306/filmappdb?autoReconnect=true&useSSL=false","root","");
 //        dataBase.getMovieList().stream().forEach(x -> System.out.println(x.getMovieId()+"\t"+x.getMovieName()+"\t"+x.getMovieType()+"\t"+x.getGenres().toString()+"\t"+x.getDescription()));
        var dataBase = MySqlDataBase.getInstance();
-        dataBase.addUserToDataBase(new User("Gaga",54, Gender.FEMALE,"Gaga","gaga"));
+        dataBase.idSearch("0");
     }
 }

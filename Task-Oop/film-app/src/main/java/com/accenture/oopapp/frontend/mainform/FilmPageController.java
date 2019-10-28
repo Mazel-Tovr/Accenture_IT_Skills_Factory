@@ -70,7 +70,7 @@ public class FilmPageController
     {
         movie = FilmApp.session.getMovie();
         descriptionField.setText(movie.getDescription());
-        reviewObservableList.addAll(movie.getFilmsReview());
+        reviewObservableList.addAll(FilmApp.dataBase.getFilmsReview(movie));
         user = FilmApp.session.getCurrentUser();
         generalVerificationMethods = new GeneralVerificationMethods();
 
@@ -92,7 +92,6 @@ public class FilmPageController
         reviewId.setCellValueFactory(new PropertyValueFactory<Review, String>("text"));
         ratingId.setCellValueFactory(new PropertyValueFactory<Review,Double>("userRating"));
         tableReview.setItems(reviewObservableList);
-
     }
 
     @FXML
@@ -117,7 +116,8 @@ public class FilmPageController
                alert.setContentText("Отзыв успешно добавлен");
                alert.setTitle("Info");
                alert.showAndWait();
-               movie.addReview(user,reviewField.getText(),Double.parseDouble(ratingField.getText()));
+               FilmApp.dataBase.addReview(movie,user,reviewField.getText(),Double.parseDouble(ratingField.getText()));
+               FilmApp.dataBase.recalculateFilmRating(movie);
                upDateTables();
            }
            else
@@ -143,7 +143,7 @@ public class FilmPageController
                     alert.setContentText("Отзыв успешно отредактирован");
                     alert.setTitle("Info");
                     alert.showAndWait();
-                    review.setText(reviewField.getText() + "\nEdited by "+ user.getNickName());
+                    FilmApp.dataBase.editingReview(review,reviewField.getText() + "\nEdited by "+ user.getNickName());
                     review = null;
                     upDateTables();
                 }
@@ -158,26 +158,12 @@ public class FilmPageController
     }
 
 
-    void upDateTables()
+    private void upDateTables()
     {
         reviewObservableList.clear();
-        reviewObservableList.addAll(movie.getFilmsReview());
+        reviewObservableList.addAll(FilmApp.dataBase.getFilmsReview(movie));
         tableReview.setItems(reviewObservableList);
     }
-
-    private static boolean tryParseDouble(String value)
-    {
-        try
-        {
-            Double.parseDouble(value);
-            return true;
-        }
-        catch (NumberFormatException e)
-        {
-            return false;
-        }
-    }
-
 
     public void chooseItem(MouseEvent mouseEvent)
     {
@@ -206,21 +192,19 @@ public class FilmPageController
                 alert.setContentText("Отзыв успешно удален");
                 alert.setTitle("Info");
                 alert.showAndWait();
-                movie.removeReview(review);
-                movie.recalculateFilmRating();
+                FilmApp.dataBase.removeReview(review);
+                FilmApp.dataBase.recalculateFilmRating(movie);
                 upDateTables();
                 review = null;
             }
         }
         else
         {
-
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("Выберите отзыв");
             alert.showAndWait();
         }
-
     }
 }
 

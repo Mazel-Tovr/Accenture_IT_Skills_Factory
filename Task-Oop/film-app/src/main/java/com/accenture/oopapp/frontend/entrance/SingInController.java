@@ -35,7 +35,7 @@ public class SingInController
         String passwordText = passwordField.getText();
         if(generalVerificationMethods.notEmptyField(userText) && generalVerificationMethods.notEmptyField(passwordText))
         {
-            if(FilmApp.usersDataBase.isConnect(userText,passwordText))
+            if(FilmApp.dataBase.isConnect(userText,passwordText))
             {
                 Parent root = FXMLLoader.load(MainFormController.class.getResource("MainForm.fxml"));
                 FilmApp.primaryStage.close();

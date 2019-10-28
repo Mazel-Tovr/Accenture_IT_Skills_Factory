@@ -102,7 +102,7 @@ public class MainFormController
         }
 
         movieObservableList = FXCollections.observableArrayList();
-        movieObservableList.addAll(FilmApp.moviesDataBase.getMovieList());
+        movieObservableList.addAll(FilmApp.dataBase.getMovieList());
         movieId.setCellValueFactory(new PropertyValueFactory<Movie,String>("movieId"));
         nameId.setCellValueFactory(new PropertyValueFactory<Movie,String>("movieName"));
         typeId.setCellValueFactory(new PropertyValueFactory<Movie,MovieType>("movieType"));
@@ -180,7 +180,7 @@ public class MainFormController
     {
         if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            tableView.setItems(FXCollections.observableArrayList(FilmApp.moviesDataBase.idSearch(findField.getText())).sorted((o1,o2)->-Double.compare(o1.getRating(), o2.getRating())));
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.dataBase.idSearch(findField.getText())).sorted((o1, o2)->-Double.compare(o1.getRating(), o2.getRating())));
         }
         else
         {
@@ -195,7 +195,7 @@ public class MainFormController
     {
         if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            tableView.setItems(FXCollections.observableArrayList(FilmApp.moviesDataBase.nameSearch(findField.getText())).sorted(new Comparator<Movie>() {
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.dataBase.nameSearch(findField.getText())).sorted(new Comparator<Movie>() {
                 @Override
                 public int compare(Movie movie, Movie t1)
                 {
@@ -216,7 +216,7 @@ public class MainFormController
     {
         if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            tableView.setItems(FXCollections.observableArrayList(FilmApp.moviesDataBase.dataSearch(findField.getText())).sorted(new Comparator<Movie>() {
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.dataBase.dataSearch(findField.getText())).sorted(new Comparator<Movie>() {
                 @Override
                 public int compare(Movie movie, Movie t1) {
                     return -Double.compare(movie.getRating(), t1.getRating());
@@ -246,12 +246,12 @@ public class MainFormController
             alert.setHeaderText("Выберите опции:");
 
             ButtonType addTo = new ButtonType("Добавить к существующим");
-            ButtonType replaceAdd = new ButtonType("Заменить новыми");
+           // ButtonType replaceAdd = new ButtonType("Заменить новыми");
             ButtonType cancel = new ButtonType("Отмена");
 
             alert.getButtonTypes().clear();
 
-            alert.getButtonTypes().addAll(addTo, replaceAdd,cancel);
+            alert.getButtonTypes().addAll(addTo,cancel);
 
             Optional<ButtonType> option = alert.showAndWait();
             if (option.get() == addTo)
@@ -259,18 +259,13 @@ public class MainFormController
                csvParser.addToDataBase(file);
                upDateDisplayInfo();
             }
-            else if (option.get() == replaceAdd)
-            {
-               csvParser.replaceAllToThis(file);
-                upDateDisplayInfo();
-            }
         }
     }
 
     void upDateDisplayInfo()
     {
         movieObservableList.clear();
-        movieObservableList.addAll(FilmApp.moviesDataBase.getMovieList());
+        movieObservableList.addAll(FilmApp.dataBase.getMovieList());
         tableView.setItems(movieObservableList);
     }
 

@@ -5,26 +5,23 @@ import com.accenture.oopapp.users.User;
 
 public class Review
 {
-    private Integer reviewId;
+    private int reviewId;
     private String text;
     private String postDate;
     private String personWhoWroteIt;
     private double userRating;
 
-    public Review(String text, String postDate, User user, double userRating)
+    public Review(int reviewId,String text, String postDate, String user, double userRating)
     {
+        this.reviewId = reviewId;
         this.text = text;
         this.postDate = postDate;
-        personWhoWroteIt = user.getNickName();
+        personWhoWroteIt = user;
         this.userRating = userRating;
     }
 
     public String getText() {
         return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
     }
 
     public String getPostDate() {
@@ -38,5 +35,7 @@ public class Review
     public double getUserRating() {
         return userRating;
     }
+
+    public int getReviewId() { return reviewId; }
 
 }
