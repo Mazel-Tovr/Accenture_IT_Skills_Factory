@@ -7,6 +7,7 @@ import com.accenture.oopapp.films.Movie;
 import com.accenture.oopapp.films.MovieType;
 import com.accenture.oopapp.frontend.FilmApp;
 import com.accenture.oopapp.frontend.entrance.SingInController;
+import com.accenture.oopapp.threadpackage.SomeName;
 import com.accenture.oopapp.users.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -122,6 +123,8 @@ public class MainFormController
         alert.setTitle("Error");
         try
         {
+            Thread SomeName = new Thread();
+            SomeName.start();
             switch (filterBox.getValue())
             {
                 case "Показать все":
@@ -180,7 +183,7 @@ public class MainFormController
     {
         if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            tableView.setItems(FXCollections.observableArrayList(FilmApp.dataBase.idSearch(findField.getText())).sorted((o1, o2)->-Double.compare(o1.getRating(), o2.getRating())));
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.dataBase.search("movieId",findField.getText())).sorted((o1, o2)->-Double.compare(o1.getRating(), o2.getRating())));
         }
         else
         {
@@ -195,7 +198,7 @@ public class MainFormController
     {
         if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            tableView.setItems(FXCollections.observableArrayList(FilmApp.dataBase.nameSearch(findField.getText())).sorted(new Comparator<Movie>() {
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.dataBase.search("movieName",findField.getText())).sorted(new Comparator<Movie>() {
                 @Override
                 public int compare(Movie movie, Movie t1)
                 {
@@ -216,7 +219,7 @@ public class MainFormController
     {
         if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            tableView.setItems(FXCollections.observableArrayList(FilmApp.dataBase.dataSearch(findField.getText())).sorted(new Comparator<Movie>() {
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.dataBase.search("releaseDate",findField.getText())).sorted(new Comparator<Movie>() {
                 @Override
                 public int compare(Movie movie, Movie t1) {
                     return -Double.compare(movie.getRating(), t1.getRating());

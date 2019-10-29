@@ -13,9 +13,10 @@ public interface DataBase
     boolean isUserExist(String nickName);
     boolean isConnect(String nickName,String password);
     void addUserToDataBase(User user);
-    List<Movie> idSearch(String text);
-    List<Movie> nameSearch(String text);
-    List<Movie> dataSearch(String text);
+    List<Movie> search(String filter,String text);
+    //List<Movie> idSearch(String text);
+    //List<Movie> nameSearch(String text);
+    //List<Movie> dataSearch(String text);
     List<Review> getFilmsReview(Movie movie);
     boolean removeReview(Review review);
     void addReview(Movie movie,User user, String text, double rating);

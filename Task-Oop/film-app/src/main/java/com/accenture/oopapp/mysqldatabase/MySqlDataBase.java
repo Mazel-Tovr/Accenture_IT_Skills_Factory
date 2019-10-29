@@ -155,14 +155,13 @@ public class MySqlDataBase implements DataBase
         }
     }
 
-    //Тут можно сделать фильтер поиска и текст и все это в одном методе
     @Override
-    public List<Movie> idSearch(String text)
+    public List<Movie> search(String filter,String text)
     {
         List<Movie> movieList = new ArrayList<>();
         try
         {
-            PreparedStatement stmt = dbConnection.prepareStatement("SELECT * FROM movie WHERE movieId LIKE ?");
+            PreparedStatement stmt = dbConnection.prepareStatement("SELECT * FROM movie WHERE "+filter+" LIKE ?");
             stmt.setString(1,"%"+text+"%");
             ResultSet rs = stmt.executeQuery();
             while (rs.next())
@@ -183,59 +182,83 @@ public class MySqlDataBase implements DataBase
         return movieList;
     }
 
-    @Override
-    public List<Movie> nameSearch(String text)
-    {
-        List<Movie> movieList = new ArrayList<>();
-        try
-        {
-            PreparedStatement stmt = dbConnection.prepareStatement("SELECT * FROM movie WHERE movieName LIKE ?");
-            stmt.setString(1,"%"+text+"%");
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next())
-            {
-                String[] genresString  = rs.getString("genres").split(",");
-                Set<Genre> genres = new HashSet<>();
-                for (String s : genresString)
-                {
-                    genres.add(Genre.valueOf(s));
-                }
-                movieList.add(new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),EnumSet.copyOf(genres),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating")));
-            }
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-        }
-        return movieList;
-    }
-
-    @Override
-    public List<Movie> dataSearch(String text)
-    {
-        List<Movie> movieList = new ArrayList<>();
-        try
-        {
-            PreparedStatement stmt = dbConnection.prepareStatement("SELECT * FROM movie WHERE releaseDate LIKE ?");
-            stmt.setString(1,"%"+text+"%");
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next())
-            {
-                String[] genresString  = rs.getString("genres").split(",");
-                Set<Genre> genres = new HashSet<>();
-                for (String s : genresString)
-                {
-                    genres.add(Genre.valueOf(s));
-                }
-                movieList.add(new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),EnumSet.copyOf(genres),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating")));
-            }
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-        }
-        return movieList;
-    }
+//    public List<Movie> idSearch(String text)
+//    {
+//        List<Movie> movieList = new ArrayList<>();
+//        try
+//        {
+//            PreparedStatement stmt = dbConnection.prepareStatement("SELECT * FROM movie WHERE movieId LIKE ?");
+//            stmt.setString(1,"%"+text+"%");
+//            ResultSet rs = stmt.executeQuery();
+//            while (rs.next())
+//            {
+//                String[] genresString  = rs.getString("genres").split(",");
+//                Set<Genre> genres = new HashSet<>();
+//                for (String s : genresString)
+//                {
+//                    genres.add(Genre.valueOf(s));
+//                }
+//                movieList.add(new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),EnumSet.copyOf(genres),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating")));
+//            }
+//        }
+//        catch (SQLException e)
+//        {
+//            e.printStackTrace();
+//        }
+//        return movieList;
+//    }
+//
+//    public List<Movie> nameSearch(String text)
+//    {
+//        List<Movie> movieList = new ArrayList<>();
+//        try
+//        {
+//            PreparedStatement stmt = dbConnection.prepareStatement("SELECT * FROM movie WHERE movieName LIKE ?");
+//            stmt.setString(1,"%"+text+"%");
+//            ResultSet rs = stmt.executeQuery();
+//            while (rs.next())
+//            {
+//                String[] genresString  = rs.getString("genres").split(",");
+//                Set<Genre> genres = new HashSet<>();
+//                for (String s : genresString)
+//                {
+//                    genres.add(Genre.valueOf(s));
+//                }
+//                movieList.add(new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),EnumSet.copyOf(genres),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating")));
+//            }
+//        }
+//        catch (SQLException e)
+//        {
+//            e.printStackTrace();
+//        }
+//        return movieList;
+//    }
+//
+//    public List<Movie> dataSearch(String text)
+//    {
+//        List<Movie> movieList = new ArrayList<>();
+//        try
+//        {
+//            PreparedStatement stmt = dbConnection.prepareStatement("SELECT * FROM movie WHERE releaseDate LIKE ?");
+//            stmt.setString(1,"%"+text+"%");
+//            ResultSet rs = stmt.executeQuery();
+//            while (rs.next())
+//            {
+//                String[] genresString  = rs.getString("genres").split(",");
+//                Set<Genre> genres = new HashSet<>();
+//                for (String s : genresString)
+//                {
+//                    genres.add(Genre.valueOf(s));
+//                }
+//                movieList.add(new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),EnumSet.copyOf(genres),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating")));
+//            }
+//        }
+//        catch (SQLException e)
+//        {
+//            e.printStackTrace();
+//        }
+//        return movieList;
+//    }
 
     @Override
     public List<Review> getFilmsReview(Movie movie)

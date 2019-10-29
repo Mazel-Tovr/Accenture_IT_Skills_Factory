@@ -5,6 +5,10 @@ import com.accenture.oopapp.mysqldatabase.MySqlDataBase;
 import com.accenture.oopapp.users.Gender;
 import com.accenture.oopapp.users.User;
 
+import javax.xml.crypto.Data;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Hello world!
  *
@@ -29,6 +33,8 @@ public class App
 //        dataBase.getDBConnection("com.mysql.jdbc.Driver","jdbc:mysql://127.0.0.1:3306/filmappdb?autoReconnect=true&useSSL=false","root","");
 //        dataBase.getMovieList().stream().forEach(x -> System.out.println(x.getMovieId()+"\t"+x.getMovieName()+"\t"+x.getMovieType()+"\t"+x.getGenres().toString()+"\t"+x.getDescription()));
        var dataBase = MySqlDataBase.getInstance();
-        dataBase.idSearch("0");
+      //  dataBase.idSearch("0");
+
+
     }
 }
