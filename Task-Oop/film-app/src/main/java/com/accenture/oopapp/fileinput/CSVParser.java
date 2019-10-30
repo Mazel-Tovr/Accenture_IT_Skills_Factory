@@ -23,7 +23,7 @@ public class CSVParser
             {
                 genres.add(Genre.valueOf(s.toUpperCase()));
             }
-            FilmApp.dataBase.addMoveToDataBase(new Movie(filmDataIn[0], filmDataIn[1], MovieType.valueOf(filmDataIn[2].toUpperCase()), EnumSet.copyOf(genres), filmDataIn[4], filmDataIn[5],0));
+            FilmApp.movieOperation.addMoveToDataBase(new Movie(filmDataIn[0], filmDataIn[1], MovieType.valueOf(filmDataIn[2].toUpperCase()), EnumSet.copyOf(genres), filmDataIn[4], filmDataIn[5],0));
         }
     }
 
@@ -38,7 +38,7 @@ public class CSVParser
             {
                 genres.add(Genre.valueOf(s.toUpperCase()));
             }
-            FilmApp.dataBase.addMoveToDataBase(new Movie(filmDataIn[0], filmDataIn[1], MovieType.valueOf(filmDataIn[2].toUpperCase()), EnumSet.copyOf(genres), filmDataIn[4], filmDataIn[5],0));
+            FilmApp.movieOperation.addMoveToDataBase(new Movie(filmDataIn[0], filmDataIn[1], MovieType.valueOf(filmDataIn[2].toUpperCase()), EnumSet.copyOf(genres), filmDataIn[4], filmDataIn[5],0));
         }
     }
 

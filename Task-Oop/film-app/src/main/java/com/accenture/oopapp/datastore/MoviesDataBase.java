@@ -39,7 +39,7 @@ public class MoviesDataBase implements MoviesDataBaseService
     public List<Movie> idSearch(String text)
         {
         List<Movie> tempo = new ArrayList<>(10);
-        for (var item :movieSet)
+        for (Movie item :movieSet)
         {
             if(item.getMovieId().contains(text))
             {
@@ -52,7 +52,7 @@ public class MoviesDataBase implements MoviesDataBaseService
     public List<Movie> nameSearch(String text)
     {
         List<Movie> tempo = new ArrayList<>(10);
-        for (var item : movieSet) {
+        for (Movie item : movieSet) {
             if (item.getMovieName().contains(text)) {
                // item.getMovieName().matches(".*" + text + ".*");
                 tempo.add(item);
@@ -64,7 +64,7 @@ public class MoviesDataBase implements MoviesDataBaseService
     public List<Movie> dataSearch(String text)
     {
         List<Movie> tempo = new ArrayList<>(10);
-        for (var item : movieSet)
+        for (Movie item : movieSet)
         {
             if (item.getReleaseDate().contains(text)) {
                 tempo.add(item);

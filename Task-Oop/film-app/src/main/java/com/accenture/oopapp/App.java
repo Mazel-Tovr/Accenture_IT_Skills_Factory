@@ -1,13 +1,11 @@
 package com.accenture.oopapp;
 
-import com.accenture.oopapp.mysqldatabase.DataBase;
-import com.accenture.oopapp.mysqldatabase.MySqlDataBase;
-import com.accenture.oopapp.users.Gender;
-import com.accenture.oopapp.users.User;
+import com.accenture.oopapp.mysqldatabase.ConnectToDB;
 
-import javax.xml.crypto.Data;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * Hello world!
@@ -15,8 +13,8 @@ import java.util.Date;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
+
+    public static void main( String[] args ) throws SQLException {
         //    String DB_DRIVER = "com.mysql.jdbc.Driver" ;
 //    String DB_CONNECTION = "jdbc:mysql://127.0.0.1:3306/filmappdb?autoReconnect=true&useSSL=false";
 //    String DB_USER = "root" ;
@@ -32,9 +30,8 @@ public class App
 //        DataBase dataBase = MySqlDataBase.getInstance();
 //        dataBase.getDBConnection("com.mysql.jdbc.Driver","jdbc:mysql://127.0.0.1:3306/filmappdb?autoReconnect=true&useSSL=false","root","");
 //        dataBase.getMovieList().stream().forEach(x -> System.out.println(x.getMovieId()+"\t"+x.getMovieName()+"\t"+x.getMovieType()+"\t"+x.getGenres().toString()+"\t"+x.getDescription()));
-       var dataBase = MySqlDataBase.getInstance();
+       //var dataBase = MySqlDataBase.getInstance();
       //  dataBase.idSearch("0");
-
 
     }
 }

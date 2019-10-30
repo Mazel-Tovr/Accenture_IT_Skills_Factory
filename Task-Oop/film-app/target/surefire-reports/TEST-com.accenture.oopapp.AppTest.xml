@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.accenture.oopapp.AppTest" time="0.16" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.accenture.oopapp.AppTest" time="0.232" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1251"/>
-    <property name="java.class.path" value="C:\GitHub\Accenture_IT_Skills_Factory\Task-Oop\film-app\target\test-classes;C:\GitHub\Accenture_IT_Skills_Factory\Task-Oop\film-app\target\classes;C:\Users\Светлана\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Светлана\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.class.path" value="C:\GitHub\Accenture_IT_Skills_Factory\Task-Oop\film-app\target\test-classes;C:\GitHub\Accenture_IT_Skills_Factory\Task-Oop\film-app\target\classes;C:\Users\Светлана\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Светлана\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Светлана\.m2\repository\mysql\mysql-connector-java\5.1.48\mysql-connector-java-5.1.48.jar;"/>
     <property name="java.vm.vendor" value="JetBrains s.r.o"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -17,9 +17,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.1\jbr\bin"/>
-    <property name="sun.java.command" value="C:\Users\B215~1\AppData\Local\Temp\surefire14808153364693521832\surefirebooter6510789929881492657.jar C:\Users\Светлана\AppData\Local\Temp\surefire14808153364693521832 2019-10-20T21-53-03_408-jvmRun1 surefire17362688861142296935tmp surefire_012236954283739039095tmp"/>
+    <property name="sun.java.command" value="C:\Users\B215~1\AppData\Local\Temp\surefire11916970782993857813\surefirebooter13153266652690726672.jar C:\Users\Светлана\AppData\Local\Temp\surefire11916970782993857813 2019-10-29T19-31-09_912-jvmRun1 surefire14222450557433652632tmp surefire_012189981229444558104tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\GitHub\Accenture_IT_Skills_Factory\Task-Oop\film-app\target\test-classes;C:\GitHub\Accenture_IT_Skills_Factory\Task-Oop\film-app\target\classes;C:\Users\Светлана\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Светлана\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="surefire.test.class.path" value="C:\GitHub\Accenture_IT_Skills_Factory\Task-Oop\film-app\target\test-classes;C:\GitHub\Accenture_IT_Skills_Factory\Task-Oop\film-app\target\classes;C:\Users\Светлана\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Светлана\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Светлана\.m2\repository\mysql\mysql-connector-java\5.1.48\mysql-connector-java-5.1.48.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Светлана"/>
     <property name="user.language" value="ru"/>
@@ -34,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\B215~1\AppData\Local\Temp\surefire14808153364693521832\surefirebooter6510789929881492657.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\B215~1\AppData\Local\Temp\surefire11916970782993857813\surefirebooter13153266652690726672.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.3+12-b304.39"/>
@@ -60,5 +60,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="com.accenture.oopapp.AppTest" time="0.016"/>
+  <testcase name="shouldAnswerWithTrue" classname="com.accenture.oopapp.AppTest" time="0.001"/>
 </testsuite>

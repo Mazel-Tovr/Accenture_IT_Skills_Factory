@@ -1,28 +1,28 @@
 package com.accenture.oopapp.frontend;
 
-import com.accenture.oopapp.datastore.MoviesDataBaseService;
-import com.accenture.oopapp.datastore.MoviesDataBase;
-import com.accenture.oopapp.datastore.UsersDataBase;
-import com.accenture.oopapp.datastore.UsersDataBaseService;
+import com.accenture.oopapp.films.Review;
 import com.accenture.oopapp.frontend.mainform.Session;
 import com.accenture.oopapp.frontend.mainform.SessionService;
-import com.accenture.oopapp.mysqldatabase.DataBase;
-import com.accenture.oopapp.mysqldatabase.MySqlDataBase;
+import com.accenture.oopapp.mysqldatabase.ReviewTable;
+import com.accenture.oopapp.mysqldatabase.UserTable;
+import com.accenture.oopapp.mysqldatabase.interfaces.MovieOperation;
+import com.accenture.oopapp.mysqldatabase.FilmTable;
+import com.accenture.oopapp.mysqldatabase.interfaces.ReviewOperation;
+import com.accenture.oopapp.mysqldatabase.interfaces.UserOperation;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import javax.xml.crypto.Data;
 import java.io.IOException;
 
 public class FilmApp extends Application {
 
     public static SessionService session = Session.getInstance();
-   // public static UsersDataBaseService dataBase = UsersDataBase.getInstance();
-    //public static MoviesDataBaseService dataBase = MoviesDataBase.getInstance();
-    public static DataBase dataBase = MySqlDataBase.getInstance();
+    public static UserOperation userOperation = UserTable.getInstance();
+    public static ReviewOperation reviewOperation = ReviewTable.getInstance();
+    public static MovieOperation movieOperation = FilmTable.getInstance();
     public static Stage primaryStage;
     public static void main(String[] args) { launch(args); }
 

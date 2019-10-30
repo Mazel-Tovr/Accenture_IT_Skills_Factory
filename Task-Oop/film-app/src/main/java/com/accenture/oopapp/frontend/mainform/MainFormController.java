@@ -7,7 +7,6 @@ import com.accenture.oopapp.films.Movie;
 import com.accenture.oopapp.films.MovieType;
 import com.accenture.oopapp.frontend.FilmApp;
 import com.accenture.oopapp.frontend.entrance.SingInController;
-import com.accenture.oopapp.threadpackage.SomeName;
 import com.accenture.oopapp.users.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -103,7 +102,7 @@ public class MainFormController
         }
 
         movieObservableList = FXCollections.observableArrayList();
-        movieObservableList.addAll(FilmApp.dataBase.getMovieList());
+        movieObservableList.addAll(FilmApp.movieOperation.getMovieList());
         movieId.setCellValueFactory(new PropertyValueFactory<Movie,String>("movieId"));
         nameId.setCellValueFactory(new PropertyValueFactory<Movie,String>("movieName"));
         typeId.setCellValueFactory(new PropertyValueFactory<Movie,MovieType>("movieType"));
@@ -183,7 +182,7 @@ public class MainFormController
     {
         if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            tableView.setItems(FXCollections.observableArrayList(FilmApp.dataBase.search("movieId",findField.getText())).sorted((o1, o2)->-Double.compare(o1.getRating(), o2.getRating())));
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.movieOperation.search("movieId",findField.getText())).sorted((o1, o2)->-Double.compare(o1.getRating(), o2.getRating())));
         }
         else
         {
@@ -198,7 +197,7 @@ public class MainFormController
     {
         if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            tableView.setItems(FXCollections.observableArrayList(FilmApp.dataBase.search("movieName",findField.getText())).sorted(new Comparator<Movie>() {
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.movieOperation.search("movieName",findField.getText())).sorted(new Comparator<Movie>() {
                 @Override
                 public int compare(Movie movie, Movie t1)
                 {
@@ -219,7 +218,7 @@ public class MainFormController
     {
         if(generalVerificationMethods.notEmptyField(findField.getText()))
         {
-            tableView.setItems(FXCollections.observableArrayList(FilmApp.dataBase.search("releaseDate",findField.getText())).sorted(new Comparator<Movie>() {
+            tableView.setItems(FXCollections.observableArrayList(FilmApp.movieOperation.search("releaseDate",findField.getText())).sorted(new Comparator<Movie>() {
                 @Override
                 public int compare(Movie movie, Movie t1) {
                     return -Double.compare(movie.getRating(), t1.getRating());
@@ -268,7 +267,7 @@ public class MainFormController
     void upDateDisplayInfo()
     {
         movieObservableList.clear();
-        movieObservableList.addAll(FilmApp.dataBase.getMovieList());
+        movieObservableList.addAll(FilmApp.movieOperation.getMovieList());
         tableView.setItems(movieObservableList);
     }
 

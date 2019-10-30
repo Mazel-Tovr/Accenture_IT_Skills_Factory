@@ -70,7 +70,7 @@ public class FilmPageController
     {
         movie = FilmApp.session.getMovie();
         descriptionField.setText(movie.getDescription());
-        reviewObservableList.addAll(FilmApp.dataBase.getFilmsReview(movie));
+        reviewObservableList.addAll(FilmApp.reviewOperation.getFilmsReview(movie));
         user = FilmApp.session.getCurrentUser();
         generalVerificationMethods = new GeneralVerificationMethods();
 
@@ -116,8 +116,8 @@ public class FilmPageController
                alert.setContentText("Отзыв успешно добавлен");
                alert.setTitle("Info");
                alert.showAndWait();
-               FilmApp.dataBase.addReview(movie,user,reviewField.getText(),Double.parseDouble(ratingField.getText()));
-               FilmApp.dataBase.recalculateFilmRating(movie);
+               FilmApp.reviewOperation.addReview(movie,user,reviewField.getText(),Double.parseDouble(ratingField.getText()));
+               FilmApp.movieOperation.recalculateFilmRating(movie);
                upDateTables();
            }
            else
@@ -143,7 +143,7 @@ public class FilmPageController
                     alert.setContentText("Отзыв успешно отредактирован");
                     alert.setTitle("Info");
                     alert.showAndWait();
-                    FilmApp.dataBase.editingReview(review,reviewField.getText() + "\nEdited by "+ user.getNickName());
+                    FilmApp.reviewOperation.editingReview(review,reviewField.getText() + "\nEdited by "+ user.getNickName());
                     review = null;
                     upDateTables();
                 }
@@ -161,7 +161,7 @@ public class FilmPageController
     private void upDateTables()
     {
         reviewObservableList.clear();
-        reviewObservableList.addAll(FilmApp.dataBase.getFilmsReview(movie));
+        reviewObservableList.addAll(FilmApp.reviewOperation.getFilmsReview(movie));
         tableReview.setItems(reviewObservableList);
     }
 
@@ -192,8 +192,8 @@ public class FilmPageController
                 alert.setContentText("Отзыв успешно удален");
                 alert.setTitle("Info");
                 alert.showAndWait();
-                FilmApp.dataBase.removeReview(review);
-                FilmApp.dataBase.recalculateFilmRating(movie);
+                FilmApp.reviewOperation.removeReview(review);
+                FilmApp.movieOperation.recalculateFilmRating(movie);
                 upDateTables();
                 review = null;
             }
