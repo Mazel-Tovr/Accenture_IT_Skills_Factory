@@ -1,4 +1,10 @@
-package com.accenture.oopapp.mysqldatabase;
+package com.accenture.oopapp.mysqldatabase.interfaces;
 
-public class UserOperation {
+import com.accenture.oopapp.users.User;
+
+public interface UserOperation
+{
+     boolean isUserExist(String nickName);
+    boolean isConnect(String nickName,String password);
+     void addUserToDataBase(User user);
 }
