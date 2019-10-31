@@ -2,6 +2,7 @@ package com.accenture.oopapp;
 
 import com.accenture.oopapp.mysqldatabase.ConnectToDB;
 
+import javax.servlet.annotation.WebServlet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
