@@ -2,6 +2,10 @@ package com.accenture.oopapp.businesslayer.datacontrol;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @Service
 public class InDataControl
 {
@@ -42,6 +46,14 @@ public class InDataControl
     public boolean ageCheck(int age)
     {
             return age >= 3 && age <= 100;
+    }
+
+
+    public boolean filterValidation(String filter)
+    {
+        List<String> filtersEnum = Arrays.asList("movieId", "movieName", "releaseDate");//TODO continue enum
+        return filtersEnum.contains(filter);
+
     }
 
     public boolean ratingCheck(String ratingId)
