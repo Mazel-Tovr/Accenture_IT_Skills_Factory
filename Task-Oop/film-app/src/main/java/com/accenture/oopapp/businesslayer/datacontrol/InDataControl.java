@@ -1,5 +1,8 @@
 package com.accenture.oopapp.businesslayer.datacontrol;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class InDataControl
 {
 
