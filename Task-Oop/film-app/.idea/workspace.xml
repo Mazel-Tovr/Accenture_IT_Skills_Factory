@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3f1c4f4-fb38-44cb-b8e8-d08b58b07836" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/entrence/SingIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/datacontrol/InDataControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/datacontrol/InDataControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/entrence/SingUp.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
