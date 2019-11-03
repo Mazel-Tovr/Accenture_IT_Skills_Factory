@@ -30,6 +30,10 @@ public class MovieService
         }
         return movieOperation.search(filter,txt);
     }
+    public void addMovieToBase()//Some params
+    {
+        //In progress
+    }
     public void upLoad()
     {
         //In progress (no ofc)

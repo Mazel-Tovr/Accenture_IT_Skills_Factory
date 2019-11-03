@@ -1,5 +1,6 @@
 package com.accenture.oopapp.controll;
 
+import com.accenture.oopapp.businesslayer.main.MovieService;
 import com.accenture.oopapp.model.films.Movie;
 import com.accenture.oopapp.mysqldatabase.FilmTable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +14,12 @@ import java.util.List;
 @RestController
 public class MovieControl
 {
+    @Autowired
+    private MovieService movieService;
 
     @RequestMapping("/movie")
     public List<Movie> getAll()
     {
-     return null;
+     return movieService.getAll();
     }
 }

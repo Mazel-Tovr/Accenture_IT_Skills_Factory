@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3f1c4f4-fb38-44cb-b8e8-d08b58b07836" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/MovieService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/FilmPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/datacontrol/InDataControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/datacontrol/InDataControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/mysql-connector-java-5.1.48.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/MovieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/controll/MovieControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/controll/MovieControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/datacontrol/InDataControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/datacontrol/InDataControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/controll/MovieControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/controll/MovieControl.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
