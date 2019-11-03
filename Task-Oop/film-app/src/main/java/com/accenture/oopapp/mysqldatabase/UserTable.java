@@ -56,7 +56,7 @@ public class UserTable implements UserOperation
         {
             e.printStackTrace();
         }
-
+        return null;
     }
     @Override
     public void addUserToDataBase(User user)

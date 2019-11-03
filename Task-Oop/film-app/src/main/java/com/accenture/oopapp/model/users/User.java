@@ -10,7 +10,6 @@ public class User implements Comparable<User>
     private String nickName;
     private String passWord;
     private boolean isAdmin;
-    private int rating = 0;
     public User(String name, Integer age, Gender gender, String nickName, String passWord)
     {
         this.name=name;

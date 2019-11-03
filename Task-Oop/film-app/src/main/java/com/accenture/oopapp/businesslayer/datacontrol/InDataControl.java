@@ -32,9 +32,13 @@ public class InDataControl
         if(tryParseInt(ageId))
         {
             int age = Integer.parseInt(ageId);
-            return Integer.parseInt(ageId) >= 3 && Integer.parseInt(ageId) <= 100;
+            return age >= 3 && age <= 100;
         }
         return false;
+    }
+    public boolean ageCheck(int age)
+    {
+            return age >= 3 && age <= 100;
     }
 
     public boolean ratingCheck(String ratingId)

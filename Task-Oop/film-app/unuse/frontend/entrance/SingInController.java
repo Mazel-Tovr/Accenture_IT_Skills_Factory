@@ -1,6 +1,6 @@
 package com.accenture.oopapp.frontend.entrance;
 
-import com.accenture.oopapp.datacontrol.GeneralVerificationMethods;
+import com.accenture.oopapp.businesslayer.datacontrol.GeneralVerificationMethods;
 import com.accenture.oopapp.frontend.FilmApp;
 import com.accenture.oopapp.frontend.mainform.MainFormController;
 import javafx.event.ActionEvent;

@@ -3,7 +3,13 @@ package com.accenture.oopapp.businesslayer.fileinput;
 import com.accenture.oopapp.model.films.Genre;
 import com.accenture.oopapp.model.films.Movie;
 import com.accenture.oopapp.model.films.MovieType;
-import com.accenture.oopapp.frontend.FilmApp;
+
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.*;
+
 
 public class CSVParser
 {
@@ -20,7 +26,7 @@ public class CSVParser
             {
                 genres.add(Genre.valueOf(s.toUpperCase()));
             }
-            FilmApp.movieOperation.addMoveToDataBase(new Movie(filmDataIn[0], filmDataIn[1], MovieType.valueOf(filmDataIn[2].toUpperCase()), EnumSet.copyOf(genres), filmDataIn[4], filmDataIn[5],0));
+           // FilmApp.movieOperation.addMoveToDataBase(new Movie(filmDataIn[0], filmDataIn[1], MovieType.valueOf(filmDataIn[2].toUpperCase()), EnumSet.copyOf(genres), filmDataIn[4], filmDataIn[5],0));
         }
     }
 
@@ -35,7 +41,7 @@ public class CSVParser
             {
                 genres.add(Genre.valueOf(s.toUpperCase()));
             }
-            FilmApp.movieOperation.addMoveToDataBase(new Movie(filmDataIn[0], filmDataIn[1], MovieType.valueOf(filmDataIn[2].toUpperCase()), EnumSet.copyOf(genres), filmDataIn[4], filmDataIn[5],0));
+          //  FilmApp.movieOperation.addMoveToDataBase(new Movie(filmDataIn[0], filmDataIn[1], MovieType.valueOf(filmDataIn[2].toUpperCase()), EnumSet.copyOf(genres), filmDataIn[4], filmDataIn[5],0));
         }
     }
 

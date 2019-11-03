@@ -1,9 +1,9 @@
 package com.accenture.oopapp.frontend.entrance;
 
-import com.accenture.oopapp.datacontrol.GeneralVerificationMethods;
+import com.accenture.oopapp.businesslayer.datacontrol.GeneralVerificationMethods;
 import com.accenture.oopapp.frontend.FilmApp;
-import com.accenture.oopapp.users.Gender;
-import com.accenture.oopapp.users.User;
+import com.accenture.oopapp.model.users.Gender;
+import com.accenture.oopapp.model.users.User;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
