@@ -1,10 +1,7 @@
 package com.accenture.oopapp.mysqldatabase.interfaces;
 
-import com.accenture.oopapp.films.Movie;
-import com.accenture.oopapp.films.Review;
-import com.accenture.oopapp.users.User;
+import com.accenture.oopapp.model.films.Movie;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface MovieOperation

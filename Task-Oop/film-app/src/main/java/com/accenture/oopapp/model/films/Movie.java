@@ -1,8 +1,5 @@
-package com.accenture.oopapp.films;
+package com.accenture.oopapp.model.films;
 
-import com.accenture.oopapp.users.User;
-
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Movie

@@ -1,6 +1,6 @@
 package com.accenture.oopapp.frontend;
 
-import com.accenture.oopapp.films.Review;
+import com.accenture.oopapp.model.films.Review;
 import com.accenture.oopapp.frontend.mainform.Session;
 import com.accenture.oopapp.frontend.mainform.SessionService;
 import com.accenture.oopapp.mysqldatabase.ReviewTable;

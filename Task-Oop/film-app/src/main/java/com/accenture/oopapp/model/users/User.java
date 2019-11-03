@@ -1,4 +1,4 @@
-package com.accenture.oopapp.users;
+package com.accenture.oopapp.model.users;
 
 import java.util.Objects;
 

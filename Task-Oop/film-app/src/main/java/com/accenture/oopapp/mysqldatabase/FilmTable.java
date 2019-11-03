@@ -1,44 +1,23 @@
 package com.accenture.oopapp.mysqldatabase;
 
-import com.accenture.oopapp.films.Genre;
-import com.accenture.oopapp.films.Movie;
-import com.accenture.oopapp.films.MovieType;
-import com.accenture.oopapp.films.Review;
-import com.accenture.oopapp.frontend.FilmApp;
+import com.accenture.oopapp.model.films.Genre;
+import com.accenture.oopapp.model.films.Movie;
+import com.accenture.oopapp.model.films.MovieType;
 import com.accenture.oopapp.mysqldatabase.interfaces.MovieOperation;
-import com.accenture.oopapp.users.Gender;
-import com.accenture.oopapp.users.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-import java.sql.*;
-import java.text.SimpleDateFormat;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
-import java.util.Date;
 
+@Repository
 public class FilmTable implements MovieOperation
 {
 
-    private static MovieOperation instance = null;
-    private static ConnectToDB connectToDB = ConnectToDB.getInstance();
-    private Connection dbConnection;
-    private FilmTable()
-    {
-        dbConnection = connectToDB.getDbConnection();
-    }
-
-    public static MovieOperation getInstance()
-    {
-        if(instance == null)
-        {
-            synchronized (FilmTable.class)
-            {
-                if(instance == null)
-                {
-                    instance = new FilmTable();
-                }
-            }
-        }
-        return instance;
-    }
+    @Autowired
+    private ConnectToDB dbConnection;
 
     @Override
     public List<Movie> getMovieList()
@@ -46,7 +25,7 @@ public class FilmTable implements MovieOperation
         List<Movie> movieList = new ArrayList<>(10);
         try
         {
-            PreparedStatement stmt = dbConnection.prepareStatement("SELECT * FROM movie");
+            PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("SELECT * FROM movie");
             ResultSet rs = stmt.executeQuery();
             while (rs.next())
             {
@@ -66,7 +45,7 @@ public class FilmTable implements MovieOperation
         List<Movie> movieList = new ArrayList<>();
         try
         {
-            PreparedStatement stmt = dbConnection.prepareStatement("SELECT * FROM movie WHERE "+filter+" LIKE ?");
+            PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("SELECT * FROM movie WHERE "+filter+" LIKE ?");
             stmt.setString(1,"%"+text+"%");
             ResultSet rs = stmt.executeQuery();
             while (rs.next())
@@ -86,7 +65,7 @@ public class FilmTable implements MovieOperation
     {
         try
         {
-            PreparedStatement stmt = dbConnection.prepareStatement("SELECT AVG(userRating) FROM review WHERE movieId =?");
+            PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("SELECT AVG(userRating) FROM review WHERE movieId =?");
             stmt.setString(1,movie.getMovieId());
             ResultSet rs = stmt.executeQuery();
             double rating = 0;
@@ -94,7 +73,7 @@ public class FilmTable implements MovieOperation
             {
                rating = rs.getDouble(1);
             }
-            PreparedStatement stmtUpDate = dbConnection.prepareStatement("UPDATE movie SET rating =? WHERE movieId =?");
+            PreparedStatement stmtUpDate = dbConnection.getDbConnection().prepareStatement("UPDATE movie SET rating =? WHERE movieId =?");
             stmtUpDate.setDouble(1,rating);
             stmtUpDate.setString(2,movie.getMovieId());
             stmtUpDate.executeUpdate();
@@ -110,7 +89,7 @@ public class FilmTable implements MovieOperation
     {
         try
         {
-        PreparedStatement stmt = dbConnection.prepareStatement("INSERT INTO movie VALUES (?, ?, ?, ?, ?, ?, ?)");
+        PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("INSERT INTO movie VALUES (?, ?, ?, ?, ?, ?, ?)");
         stmt.setString(1,movie.getMovieId());stmt.setString(2,movie.getMovieName());stmt.setString(3,movie.getMovieType().name());
         stmt.setString(4,unParseGenres(movie.getGenres()));stmt.setString(5,movie.getReleaseDate());
         stmt.setDouble(6,movie.getRating());stmt.setString(7,movie.getDescription());

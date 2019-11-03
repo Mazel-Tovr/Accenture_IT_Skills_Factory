@@ -1,11 +1,14 @@
 package com.accenture.oopapp.mysqldatabase;
 
+import org.springframework.stereotype.Repository;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
+@Repository
 public class ConnectToDB
 {
-    private static ConnectToDB instance = null;
     private Connection dbConnection = null;
 
     private final String DB_DRIVER;
@@ -20,21 +23,6 @@ public class ConnectToDB
         DB_USER = "root";
         DB_PASSWORD = "";
         getDBConnection();
-    }
-
-    public static ConnectToDB getInstance()
-    {
-        if(instance == null)
-        {
-            synchronized (ConnectToDB.class)
-            {
-                if(instance == null)
-                {
-                    instance = new ConnectToDB();
-                }
-            }
-        }
-        return instance;
     }
 
     public Connection getDbConnection()

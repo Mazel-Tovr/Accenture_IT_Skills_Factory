@@ -1,12 +1,9 @@
-package com.accenture.oopapp.fileinput;
+package com.accenture.oopapp.businesslayer.fileinput;
 
-import com.accenture.oopapp.films.Genre;
-import com.accenture.oopapp.films.Movie;
-import com.accenture.oopapp.films.MovieType;
+import com.accenture.oopapp.model.films.Genre;
+import com.accenture.oopapp.model.films.Movie;
+import com.accenture.oopapp.model.films.MovieType;
 import com.accenture.oopapp.frontend.FilmApp;
-
-import java.io.*;
-import java.util.*;
 
 public class CSVParser
 {

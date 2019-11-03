@@ -1,10 +1,10 @@
 package com.accenture.oopapp.frontend.mainform;
 
-import com.accenture.oopapp.datacontrol.GeneralVerificationMethods;
-import com.accenture.oopapp.films.Movie;
-import com.accenture.oopapp.films.Review;
+import com.accenture.oopapp.businesslayer.datacontrol.GeneralVerificationMethods;
+import com.accenture.oopapp.model.films.Movie;
+import com.accenture.oopapp.model.films.Review;
 import com.accenture.oopapp.frontend.FilmApp;
-import com.accenture.oopapp.users.User;
+import com.accenture.oopapp.model.users.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

@@ -1,6 +1,6 @@
-package com.accenture.oopapp.datacontrol;
+package com.accenture.oopapp.businesslayer.datacontrol;
 
-public class GeneralVerificationMethods
+public class InDataControl
 {
 
     public boolean notEmptyField(String value)

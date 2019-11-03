@@ -1,11 +1,11 @@
 package com.accenture.oopapp.mysqldatabase;
 
-import com.accenture.oopapp.films.Movie;
-import com.accenture.oopapp.films.Review;
+import com.accenture.oopapp.model.films.Movie;
+import com.accenture.oopapp.model.films.Review;
 import com.accenture.oopapp.mysqldatabase.interfaces.ReviewOperation;
-import com.accenture.oopapp.users.User;
+import com.accenture.oopapp.model.users.User;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,32 +16,15 @@ import java.util.List;
 
 public class ReviewTable implements ReviewOperation
 {
-    private static ReviewTable instance = null;
-    private static ConnectToDB connectToDB = ConnectToDB.getInstance();
-    private Connection dbConnection;
-    private ReviewTable(){dbConnection = connectToDB.getDbConnection();}
-    public static ReviewOperation getInstance()
-    {
-        if(instance == null)
-        {
-            synchronized (ReviewTable.class)
-            {
-                if(instance == null)
-                {
-                    instance = new ReviewTable();
-                }
-            }
-        }
-        return instance;
-    }
-
+    @Autowired
+    private  ConnectToDB dbConnection;
     @Override
     public List<Review> getFilmsReview(Movie movie)
     {
         List<Review> reviewList = new ArrayList<>();
         try
         {
-            PreparedStatement stmt = dbConnection.prepareStatement("SELECT * FROM review WHERE movieId=?");
+            PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("SELECT * FROM review WHERE movieId=?");
             stmt.setString(1,movie.getMovieId());
             ResultSet rs = stmt.executeQuery();
             while (rs.next())
@@ -61,7 +44,7 @@ public class ReviewTable implements ReviewOperation
     {
         try
         {
-            PreparedStatement stmt = dbConnection.prepareStatement("DELETE FROM review WHERE reviewId=?");
+            PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("DELETE FROM review WHERE reviewId=?");
             stmt.setInt(1,review.getReviewId());
             stmt.executeUpdate();
         }
@@ -78,7 +61,7 @@ public class ReviewTable implements ReviewOperation
     {
         try
         {
-            PreparedStatement stmt =dbConnection.prepareStatement("INSERT INTO review (`movieId`, `text`, `postData`, `userId`, `userRating`) VALUES (?, ?, ?, ?, ?)");
+            PreparedStatement stmt =dbConnection.getDbConnection().prepareStatement("INSERT INTO review (`movieId`, `text`, `postData`, `userId`, `userRating`) VALUES (?, ?, ?, ?, ?)");
             stmt.setString(1,movie.getMovieId());stmt.setString(2,text);stmt.setString(3,new SimpleDateFormat("yyyy.MM.dd").format(new Date()));
             stmt.setString(4,user.getNickName());stmt.setDouble(5,rating);
             stmt.executeUpdate();
@@ -93,7 +76,7 @@ public class ReviewTable implements ReviewOperation
     public void editingReview(Review review, String text) {
         try
         {
-            PreparedStatement stmt = dbConnection.prepareStatement("UPDATE review SET text =? WHERE reviewId =?");
+            PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("UPDATE review SET text =? WHERE reviewId =?");
             stmt.setString(1,text);stmt.setInt(2,review.getReviewId());
             stmt.executeUpdate();
         }

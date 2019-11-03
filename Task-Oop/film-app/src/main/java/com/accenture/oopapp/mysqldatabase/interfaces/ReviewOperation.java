@@ -1,8 +1,8 @@
 package com.accenture.oopapp.mysqldatabase.interfaces;
 
-import com.accenture.oopapp.films.Movie;
-import com.accenture.oopapp.films.Review;
-import com.accenture.oopapp.users.User;
+import com.accenture.oopapp.model.films.Movie;
+import com.accenture.oopapp.model.films.Review;
+import com.accenture.oopapp.model.users.User;
 
 import java.util.List;
 

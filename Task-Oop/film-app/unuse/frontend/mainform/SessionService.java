@@ -1,7 +1,7 @@
 package com.accenture.oopapp.frontend.mainform;
 
-import com.accenture.oopapp.films.Movie;
-import com.accenture.oopapp.users.User;
+import com.accenture.oopapp.model.films.Movie;
+import com.accenture.oopapp.model.users.User;
 
 public interface SessionService
 {

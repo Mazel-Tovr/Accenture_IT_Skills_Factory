@@ -1,7 +1,5 @@
-package com.accenture.oopapp.films;
+package com.accenture.oopapp.model.films;
 
-
-import com.accenture.oopapp.users.User;
 
 public class Review
 {

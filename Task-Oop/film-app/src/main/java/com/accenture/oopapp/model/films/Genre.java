@@ -1,4 +1,4 @@
-package com.accenture.oopapp.films;
+package com.accenture.oopapp.model.films;
 
 public enum Genre
 {
