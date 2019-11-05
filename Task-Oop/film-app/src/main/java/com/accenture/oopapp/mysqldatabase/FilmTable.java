@@ -61,27 +61,21 @@ public class FilmTable implements MovieOperation
     }
 
     @Override
-    public void recalculateFilmRating(Movie movie)
+    public Movie getMovie(String movieId)
     {
         try
         {
-            PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("SELECT AVG(userRating) FROM review WHERE movieId =?");
-            stmt.setString(1,movie.getMovieId());
+            PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("SELECT * FROM movie WHERE movieId= ?");
+            stmt.setString(1,movieId);
             ResultSet rs = stmt.executeQuery();
-            double rating = 0;
-            while (rs.next())
-            {
-               rating = rs.getDouble(1);
-            }
-            PreparedStatement stmtUpDate = dbConnection.getDbConnection().prepareStatement("UPDATE movie SET rating =? WHERE movieId =?");
-            stmtUpDate.setDouble(1,rating);
-            stmtUpDate.setString(2,movie.getMovieId());
-            stmtUpDate.executeUpdate();
+            rs.next();
+            return new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),EnumSet.copyOf(parseGenres(rs.getString("genres"))),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating"));
         }
         catch (SQLException e)
         {
             e.printStackTrace();
         }
+        return null;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.accenture.oopapp.businesslayer.entrence;
+package com.accenture.oopapp.businesslayer.main;
 
 import com.accenture.oopapp.businesslayer.datacontrol.InDataControl;
 import com.accenture.oopapp.businesslayer.datacontrol.InputDataException;
@@ -6,13 +6,35 @@ import com.accenture.oopapp.model.users.Gender;
 import com.accenture.oopapp.model.users.User;
 import com.accenture.oopapp.mysqldatabase.interfaces.UserOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class SingUp
+@Service
+public class Entrance
 {
     @Autowired
     private InDataControl inDataControl;
     @Autowired
     private UserOperation userOperation;
+
+    public User login(String nickName, String passWord) throws InputDataException
+    {
+        if(inDataControl.notEmptyField(nickName)&&inDataControl.notEmptyField(nickName))
+        {
+            User user = userOperation.getUser(nickName,passWord);
+            if(inDataControl.notNullValue(user))
+            {
+                return user;
+            }
+            else
+            {
+                throw new InputDataException("Проверьте правильность ввода данных");
+            }
+        }
+        else
+        {
+            throw new InputDataException("Вы должны заполнить все поля");
+        }
+    }
 
     public void toRegister(String name, String nickName, String passWord, int age, Gender gender) throws InputDataException
     {
@@ -21,7 +43,6 @@ public class SingUp
             userOperation.addUserToDataBase(new User(name,age,gender,nickName,passWord));
         }
     }
-
 
     private boolean dataCheck(String name, String nickName, String passWord, int age, Gender gender)throws InputDataException
     {

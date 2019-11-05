@@ -61,10 +61,7 @@ public class InDataControl
        if(tryParseDouble(ratingId))
        {
            double value = Double.parseDouble(ratingId);
-           if(value >= 0 && value < 100)
-           {
-               return true;
-           }
+           return value >= 0 && value < 100;
        }
        return false;
     }

@@ -8,6 +8,7 @@ public interface MovieOperation
 {
     List<Movie> getMovieList();
     List<Movie> search(String filter,String text);
-    void recalculateFilmRating(Movie movie);
+    Movie getMovie(String movieId);
+    //void recalculateFilmRating(Movie movie);
     void addMoveToDataBase(Movie movie);
 }

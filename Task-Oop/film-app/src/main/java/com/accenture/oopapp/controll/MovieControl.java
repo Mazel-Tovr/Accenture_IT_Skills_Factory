@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 
-@RestController
+@RestController("/movie")
 public class MovieControl
 {
     @Autowired
@@ -22,4 +22,6 @@ public class MovieControl
     {
      return movieService.getAll();
     }
+
+    
 }
