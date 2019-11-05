@@ -35,8 +35,8 @@ public class FilmPage
         }
         reviewOperation.addReview(movieId,userId,txt,Double.parseDouble(rating));
     }
-    public void deleteReview(String reviewId)
+    public boolean deleteReview(int reviewId)
     {
-        
+        return reviewOperation.removeReview(reviewId);
     }
 }

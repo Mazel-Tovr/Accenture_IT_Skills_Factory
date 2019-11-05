@@ -2,57 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0ecdfaa-3e2e-45c2-8601-d13d84d02d2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/film-app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/datacontrol/InDataControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/datacontrol/InDataControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/entrence/SingIn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/entrence/SingUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/Entrance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/FilmPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/FilmPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/controll/MovieControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/controll/MovieControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/FilmTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/FilmTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/ReviewTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/ReviewTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/interfaces/MovieOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/interfaces/MovieOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/interfaces/ReviewOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/interfaces/ReviewOperation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/entrence/SingIn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/entrence/SingUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/datacontrol/InDataControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/datacontrol/InDataControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/FilmPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/FilmPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/controll/MovieControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/controll/MovieControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/datacontrol/GeneralVerificationMethods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/fileinput/CSVParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/films/Genre.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/films/Movie.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/films/MovieType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/films/Review.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/frontend/FilmApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/frontend/entrance/SingInController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/frontend/entrance/SingUpController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/frontend/mainform/FilmPageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/frontend/mainform/MainFormController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/frontend/mainform/MainFormController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/frontend/mainform/MainFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/frontend/mainform/Session.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/frontend/mainform/SessionService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/FilmTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/FilmTable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/ReviewTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/ReviewTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/MovieOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/MovieOperation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/ReviewOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/ReviewOperation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/servlets/HomeServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/servlets/LogInServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/users/Gender.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/users/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/logging.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/tomcat-users.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-10-31" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/home/org/apache/jsp/index_jsp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/home/org/apache/jsp/index_jsp.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

@@ -5,6 +5,7 @@ import com.accenture.oopapp.model.films.Review;
 import com.accenture.oopapp.mysqldatabase.interfaces.ReviewOperation;
 import com.accenture.oopapp.model.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,18 +15,17 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Repository
 public class ReviewTable implements ReviewOperation
 {
     @Autowired
     private  ConnectToDB dbConnection;
     @Override
-    public List<Review> getFilmsReview(Movie movie)
-    {
+    public List<Review> getFilmsReview(Movie movie) {
         List<Review> reviewList = new ArrayList<>();
-        try
-        {
+        try {
             PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("SELECT * FROM review WHERE movieId=?");
-            stmt.setString(1,movie.getMovieId());
+            stmt.setString(1, movie.getMovieId());
             ResultSet rs = stmt.executeQuery();
             while (rs.next())
             {
