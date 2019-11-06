@@ -1,6 +1,9 @@
 package com.accenture.oopapp.model.films;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.*;
+
 
 public class Movie
 {

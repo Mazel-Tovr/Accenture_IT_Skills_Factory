@@ -36,8 +36,9 @@ public class Entrance
         }
     }
 
-    public void toRegister(String name, String nickName, String passWord, int age, Gender gender) throws InputDataException
+    public void toRegister(String name, String nickName, String passWord, int age, String gender1) throws InputDataException
     {
+        Gender gender = Gender.valueOf(gender1.toUpperCase());
         if(dataCheck(name,nickName,passWord,age,gender))
         {
             userOperation.addUserToDataBase(new User(name,age,gender,nickName,passWord));

@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0ecdfaa-3e2e-45c2-8601-d13d84d02d2a" name="Default Changelist" comment="">
+    <list default="true" id="a9761f4a-55cd-4656-b6b8-803e31125914" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/controll/EntranceControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/FilmPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/FilmPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/Entrance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/Entrance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/controll/MovieControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/controll/MovieControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/ReviewTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/ReviewTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/model/films/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/model/films/Movie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/datacontrol/InDataControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/datacontrol/InDataControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/FilmPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/FilmPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/Entrance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/Entrance.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/controll/MovieControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/controll/MovieControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/ReviewTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/ReviewTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/ReviewOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/ReviewOperation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/films/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/films/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unuse/frontend/FilmApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/javafx/frontend/FilmApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unuse/frontend/entrance/SingIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/javafx/frontend/entrance/SingIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unuse/frontend/entrance/SingInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/javafx/frontend/entrance/SingInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unuse/frontend/entrance/SingUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/javafx/frontend/entrance/SingUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unuse/frontend/entrance/SingUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/javafx/frontend/entrance/SingUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unuse/frontend/mainform/FilmPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/javafx/frontend/mainform/FilmPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unuse/frontend/mainform/FilmPageForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/javafx/frontend/mainform/FilmPageForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unuse/frontend/mainform/MainForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/javafx/frontend/mainform/MainForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unuse/frontend/mainform/MainFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/javafx/frontend/mainform/MainFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unuse/frontend/mainform/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/javafx/frontend/mainform/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unuse/frontend/mainform/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/javafx/frontend/mainform/SessionService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,10 +43,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1TAFp9keCDzezQTdkyuGQHd0oKY" />
+  <component name="ProjectId" id="1TEVejIRomHtLwDWw1V9im75ITo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -72,11 +85,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c0ecdfaa-3e2e-45c2-8601-d13d84d02d2a" name="Default Changelist" comment="" />
-      <created>1572895173157</created>
+      <changelist id="a9761f4a-55cd-4656-b6b8-803e31125914" name="Default Changelist" comment="" />
+      <created>1573025338752</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1572895173157</updated>
+      <updated>1573025338752</updated>
     </task>
     <servers />
   </component>
@@ -85,9 +98,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>

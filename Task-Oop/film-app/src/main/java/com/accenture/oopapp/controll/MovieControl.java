@@ -21,13 +21,13 @@ public class MovieControl
     @Autowired
     private FilmPage filmPage;
 
-    @RequestMapping("/movie")
+    @RequestMapping(value = "/movie",method = RequestMethod.GET)
     public List<Movie> getAll()
     {
      return movieService.getAll();
     }
 
-    @RequestMapping(value = "/movie/{id}")
+    @RequestMapping(value = "/movie/{id}",method = RequestMethod.GET)
     public List<Movie> getMovieById(@PathVariable(value = "id") String id)
     {
         try
