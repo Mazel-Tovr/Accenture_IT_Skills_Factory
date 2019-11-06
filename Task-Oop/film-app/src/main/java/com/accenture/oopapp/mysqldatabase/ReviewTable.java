@@ -83,7 +83,7 @@ public class ReviewTable implements ReviewOperation
     }
 
     @Override
-    public boolean removeReview(int reviewId)
+    public boolean removeReview(Integer reviewId)
     {
         try
         {

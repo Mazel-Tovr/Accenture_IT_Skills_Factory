@@ -27,16 +27,19 @@ public class FilmPage
       return objects;
     }
 
-    public void addReview(String movieId,String userId,String txt,String rating) throws InputDataException
+    public void addReview(String movieId,String userId,String txt,Double rating) throws InputDataException
     {
         if(!inDataControl.ratingCheck(rating) && !inDataControl.notEmptyField(txt))
         {
             throw new InputDataException("Вы должны ввети текст отзыва,а также поставить оценку фильму (от 0 до 100) ");
         }
-        reviewOperation.addReview(movieId,userId,txt,Double.parseDouble(rating));
+        reviewOperation.addReview(movieId,userId,txt,rating);
     }
-    public boolean deleteReview(int reviewId)
-    {
+    public boolean deleteReview(Integer reviewId) throws InputDataException {
+        if(!inDataControl.notNullValue(reviewId))
+        {
+            throw new InputDataException("Введите id отызва");
+        }
         return reviewOperation.removeReview(reviewId);
     }
 }

@@ -56,11 +56,15 @@ public class InDataControl
 
     }
 
-    public boolean ratingCheck(String ratingId)
+    public boolean ratingCheck(Double rating)
     {
-       if(tryParseDouble(ratingId))
+        return rating >= 0 && rating < 100;
+    }
+    public boolean ratingCheck(String rating)
+    {
+       if(tryParseDouble(rating))
        {
-           double value = Double.parseDouble(ratingId);
+           double value = Double.parseDouble(rating);
            return value >= 0 && value < 100;
        }
        return false;
