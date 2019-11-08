@@ -29,7 +29,7 @@ public class ReviewTable implements ReviewOperation
             ResultSet rs = stmt.executeQuery();
             while (rs.next())
             {
-                reviewList.add(new Review(rs.getInt("reviewId"),rs.getString("text"),rs.getString("postData"),rs.getString("userId"),rs.getDouble("userRating")));
+                reviewList.add(new Review(rs.getLong("reviewId"),rs.getString("movieId"),rs.getString("text"),rs.getString("postData"),rs.getString("userId"),rs.getDouble("userRating")));
             }
 
         }
@@ -41,15 +41,15 @@ public class ReviewTable implements ReviewOperation
     }
 
     @Override
-    public Review getReview(String reviewId)
+    public Review getReview(Long reviewId)
     {
         try
         {
             PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("SELECT * FROM review WHERE reviewId=?");
-            stmt.setString(1,reviewId);
+            stmt.setLong(1,reviewId);
             ResultSet rs = stmt.executeQuery();
             rs.next();
-            return new Review(rs.getInt("reviewId"),rs.getString("text"),rs.getString("postData"),rs.getString("userId"),rs.getDouble("userRating"));
+            return new Review(rs.getLong("reviewId"),rs.getString("movieId"),rs.getString("text"),rs.getString("postData"),rs.getString("userId"),rs.getDouble("userRating"));
         }
         catch (SQLException e)
         {
@@ -64,13 +64,13 @@ public class ReviewTable implements ReviewOperation
         try
         {
             PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("Select movieId FROM review WHERE reviewId=?");
-            stmt.setInt(1,review.getReviewId());
+            stmt.setLong(1,review.getReviewId());
             ResultSet rs = stmt.executeQuery();
             rs.next();
             String movieId = rs.getString("movieId");
 
             stmt = dbConnection.getDbConnection().prepareStatement("DELETE FROM review WHERE reviewId=?");
-            stmt.setInt(1,review.getReviewId());
+            stmt.setLong(1,review.getReviewId());
             stmt.executeUpdate();
             recalculateFilmRating(movieId);
         }
@@ -83,18 +83,18 @@ public class ReviewTable implements ReviewOperation
     }
 
     @Override
-    public boolean removeReview(Integer reviewId)
+    public boolean removeReview(Long reviewId)
     {
         try
         {
             PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("Select movieId FROM review WHERE reviewId=?");
-            stmt.setInt(1,reviewId);
+            stmt.setLong(1,reviewId);
             ResultSet rs = stmt.executeQuery();
             rs.next();
             String movieId = rs.getString("movieId");
 
             stmt = dbConnection.getDbConnection().prepareStatement("DELETE FROM review WHERE reviewId=?");
-            stmt.setInt(1,reviewId);
+            stmt.setLong(1,reviewId);
             stmt.executeUpdate();
             recalculateFilmRating(movieId);
         }
@@ -147,7 +147,7 @@ public class ReviewTable implements ReviewOperation
         try
         {
             PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("UPDATE review SET text =? WHERE reviewId =?");
-            stmt.setString(1,text);stmt.setInt(2,review.getReviewId());
+            stmt.setString(1,text);stmt.setLong(2,review.getReviewId());
             stmt.executeUpdate();
         }
         catch (SQLException e)
@@ -157,12 +157,12 @@ public class ReviewTable implements ReviewOperation
     }
 
     @Override
-    public void editingReview(int reviewId, String text)
+    public void editingReview(Long reviewId, String text)
     {
         try
         {
             PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("UPDATE review SET text =? WHERE reviewId =?");
-            stmt.setString(1,text);stmt.setInt(2,reviewId);
+            stmt.setString(1,text);stmt.setLong(2,reviewId);
             stmt.executeUpdate();
         }
         catch (SQLException e)

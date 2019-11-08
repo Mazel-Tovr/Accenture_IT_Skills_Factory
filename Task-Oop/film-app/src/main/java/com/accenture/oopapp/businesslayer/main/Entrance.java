@@ -1,7 +1,7 @@
 package com.accenture.oopapp.businesslayer.main;
 
-import com.accenture.oopapp.businesslayer.datacontrol.InDataControl;
-import com.accenture.oopapp.businesslayer.datacontrol.InputDataException;
+import com.accenture.oopapp.businesslayer.exceptionhandler.InDataControl;
+import com.accenture.oopapp.businesslayer.exceptionhandler.InputDataException;
 import com.accenture.oopapp.model.users.Gender;
 import com.accenture.oopapp.model.users.User;
 import com.accenture.oopapp.mysqldatabase.interfaces.UserOperation;

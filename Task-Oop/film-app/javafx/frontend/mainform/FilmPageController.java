@@ -1,6 +1,6 @@
 package com.accenture.oopapp.frontend.mainform;
 
-import com.accenture.oopapp.businesslayer.datacontrol.GeneralVerificationMethods;
+import com.accenture.oopapp.businesslayer.exceptionhandler.GeneralVerificationMethods;
 import com.accenture.oopapp.model.films.Movie;
 import com.accenture.oopapp.model.films.Review;
 import com.accenture.oopapp.frontend.FilmApp;

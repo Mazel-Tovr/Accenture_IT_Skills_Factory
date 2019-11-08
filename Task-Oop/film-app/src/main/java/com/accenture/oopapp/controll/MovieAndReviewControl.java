@@ -1,6 +1,6 @@
 package com.accenture.oopapp.controll;
 
-import com.accenture.oopapp.businesslayer.datacontrol.InputDataException;
+import com.accenture.oopapp.businesslayer.exceptionhandler.InputDataException;
 import com.accenture.oopapp.businesslayer.main.FilmPage;
 import com.accenture.oopapp.businesslayer.main.MovieService;
 import com.accenture.oopapp.model.films.Movie;
@@ -26,30 +26,16 @@ public class MovieAndReviewControl
     }
 
     @RequestMapping(value = "/movie/{id}",method = RequestMethod.GET)
-    public List<Movie> getMovieById(@PathVariable(value = "id") String id)
+    public Object[]  getMovieById(@PathVariable(value = "id") String id)
     {
-        try
-        {
-            return movieService.searchBy("movieId",id);
-
-        }
-        catch (InputDataException e)
-        {
-            e.getMessage();
-            return null;
-        }
-    }
-    @RequestMapping(value = "/movie/{id}/review",method = RequestMethod.GET)
-    public Object[] getFilmsReview(@PathVariable(value = "id") String id)
-    {
-        return filmPage.getAllMovieDetails(id);
+            return filmPage.getAllMovieDetails(id);
     }
 
     //http://localhost:8080/movie/shit/review/delete/16
     @RequestMapping(value = "/movie/{id}/review/delete/{reviewId}",method=RequestMethod.DELETE)
-    public void deleteReview(@PathVariable(value = "reviewId") Integer reviewId) throws InputDataException
+    public boolean deleteReview(@PathVariable(value = "id")String id ,@PathVariable(value = "reviewId") Long reviewId) throws InputDataException
     {
-        filmPage.deleteReview(reviewId);
+       return filmPage.deleteReview(id,reviewId);
     }
 
     //http://localhost:8080/movie/Movie9/review/add?nickname=User&txt=some txt idk&rating=60
@@ -59,4 +45,11 @@ public class MovieAndReviewControl
     {
         filmPage.addReview(id,nickName,txt,rating);
     }
+    //http://localhost:8080/movie/Movie9/review/editing?reviewid=19&txt=some txt v3
+    @RequestMapping(value="/movie/{id}/review/editing",method=RequestMethod.POST)
+    public void editReview(@PathVariable(value = "id")String id ,@RequestParam(value = "reviewid") Long reviewId,@RequestParam(value = "txt") String txt) throws InputDataException
+    {
+        filmPage.editReview(id,reviewId,txt);
+    }
+
 }
