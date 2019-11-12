@@ -1,14 +1,27 @@
 package com.accenture.oopapp.model.users;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Objects;
 
+@Entity
+@Table(name = "user")
 public class User implements Comparable<User>
 {
+    @Column(name = "name")
     private String name;
+    @Column(name = "age")
     private Integer age;
+    @Column(name = "gender")
     private Gender gender;
+    @Id
+    @Column(name = "nickName")
     private String nickName;
+    @Column(name = "passWord")
     private String passWord;
+    @Column(name = "isAdmin")
     private boolean isAdmin;
     public User(String name, Integer age, Gender gender, String nickName, String passWord)
     {
