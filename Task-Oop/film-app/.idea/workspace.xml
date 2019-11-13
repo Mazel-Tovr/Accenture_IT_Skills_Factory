@@ -2,15 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9761f4a-55cd-4656-b6b8-803e31125914" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/jpa/UserJPA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/jpa/UserJPAClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/controll/JPATest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/model/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/model/users/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/jpa/UserJPAClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/jpa/UserJPAClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/ConnectToDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/ConnectToDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/exceptionhandler/InDataControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/exceptionhandler/InDataControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/exceptionhandler/InputDataException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/exceptionhandler/InputDataException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/fileinput/CSVParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/fileinput/CSVParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/Entrance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/Entrance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/FilmPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/FilmPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/MovieService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/MovieService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/controll/EntranceControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/controll/EntranceControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/controll/MovieAndReviewControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/controll/MovieAndReviewControl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/films/Genre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/films/Genre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/films/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/films/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/films/MovieType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/films/MovieType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/films/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/films/Review.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/users/Gender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/users/Gender.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/users/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/users/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/ConnectToDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/ConnectToDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/FilmTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/FilmTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/ReviewTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/ReviewTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/UserTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/UserTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/MovieOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/MovieOperation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/ReviewOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/ReviewOperation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/UserOperation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/UserOperation.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

@@ -15,7 +15,7 @@ public class UserJPAClass implements UserJPA
 {
 
     @PersistenceContext
-    private EntityManager entityManager;
+    private EntityManager entityManager;//problem here
 
     @Override
     public List<User> getAll()

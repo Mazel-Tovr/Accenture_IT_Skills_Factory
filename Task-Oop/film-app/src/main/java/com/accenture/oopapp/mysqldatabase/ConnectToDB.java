@@ -16,7 +16,7 @@ public class ConnectToDB
     private final String DB_USER;
     private final String DB_PASSWORD;
 
-    private ConnectToDB()
+    public ConnectToDB()
     {
         DB_DRIVER = "com.mysql.jdbc.Driver";
         DB_CONNECTION = "jdbc:mysql://127.0.0.1:3306/filmappdb?autoReconnect=true&useSSL=false";

@@ -20,7 +20,7 @@
   </properties>
   <parent>
     <groupId>org.springframework.boot</groupId>
-    <version>1.5.9.RELEASE</version>
+    <version>2.2.0.RELEASE</version>
     <artifactId>spring-boot-starter-parent</artifactId>
   </parent>
   <dependencies>
@@ -45,13 +45,14 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.48</version>
     </dependency>
-  <!-- https://mvnrepository.com/artifact/javax/javaee-api -->
+  <!-- https://mvnrepository.com/artifact/javax/javaee-api
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-api</artifactId>
       <version>7.0</version>
       <scope>provided</scope>
     </dependency>
+    -->
       <dependency>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-data-jpa</artifactId>
