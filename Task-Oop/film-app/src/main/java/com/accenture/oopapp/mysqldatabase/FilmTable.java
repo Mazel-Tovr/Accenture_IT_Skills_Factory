@@ -29,7 +29,8 @@ public class FilmTable implements MovieOperation
             ResultSet rs = stmt.executeQuery();
             while (rs.next())
             {
-                movieList.add(new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),EnumSet.copyOf(parseGenres(rs.getString("genres"))),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating")));
+
+                movieList.add(new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),EnumSet.copyOf(parseGenres(getGenres(rs.getString("movieId")))),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating")));
             }
         }
         catch (SQLException e)
@@ -39,6 +40,7 @@ public class FilmTable implements MovieOperation
         return  movieList;
     }
 
+    //TODO этого небудт в sql, в jpa сделю
     @Override
     public List<Movie> search(String filter,String text)
     {
@@ -69,7 +71,7 @@ public class FilmTable implements MovieOperation
             stmt.setString(1,movieId);
             ResultSet rs = stmt.executeQuery();
             rs.next();
-            return new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),EnumSet.copyOf(parseGenres(rs.getString("genres"))),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating"));
+            return new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),EnumSet.copyOf(parseGenres(getGenres(movieId))),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating"));
         }
         catch (SQLException e)
         {
@@ -85,8 +87,10 @@ public class FilmTable implements MovieOperation
         {
         PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("INSERT INTO movie VALUES (?, ?, ?, ?, ?, ?, ?)");
         stmt.setString(1,movie.getMovieId());stmt.setString(2,movie.getMovieName());stmt.setString(3,movie.getMovieType().name());
-        stmt.setString(4,unParseGenres(movie.getGenres()));stmt.setString(5,movie.getReleaseDate());
-        stmt.setDouble(6,movie.getRating());stmt.setString(7,movie.getDescription());
+
+        stmt.setString(4,unParseGenres(movie.getGenres()));
+
+        stmt.setString(5,movie.getReleaseDate());stmt.setDouble(6,movie.getRating());stmt.setString(7,movie.getDescription());
         stmt.executeUpdate();
         }
         catch (SQLException e)
@@ -95,6 +99,19 @@ public class FilmTable implements MovieOperation
         }
     }
 
+
+    private String getGenres(String movieId) throws SQLException
+    {
+        PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("SELECT g.genre FROM genre g JOIN genres gs ON g.genre_id = gs.genre Where gs.film_id = ? ");
+        stmt.setString(1,movieId);
+        ResultSet resultSet = stmt.executeQuery();
+        String s="";
+        while (resultSet.next())
+        {
+            s+=resultSet.getString("genre")+",";
+        }
+        return s;
+    }
 
     private String unParseGenres(EnumSet<Genre> genre)
     {
@@ -111,6 +128,7 @@ public class FilmTable implements MovieOperation
         Set<Genre> genres = new HashSet<>();
         for (String s : rs.split(","))
         {
+            if(rs != null && !rs.isEmpty())
             genres.add(Genre.valueOf(s));
         }
      return genres;

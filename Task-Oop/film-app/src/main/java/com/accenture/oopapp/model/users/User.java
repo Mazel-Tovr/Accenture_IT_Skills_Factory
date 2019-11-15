@@ -1,9 +1,6 @@
 package com.accenture.oopapp.model.users;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -14,14 +11,14 @@ public class User implements Comparable<User>
     private String name;
     @Column(name = "age")
     private Integer age;
-    @Column(name = "gender")
+    @Enumerated(EnumType.STRING)
     private Gender gender;
     @Id
-    @Column(name = "nickName")
+    @Column(name = "nickname")
     private String nickName;
-    @Column(name = "passWord")
+    @Column(name = "password")
     private String passWord;
-    @Column(name = "isAdmin")
+    @Column(name = "isadmin")
     private boolean isAdmin;
     public User(String name, Integer age, Gender gender, String nickName, String passWord)
     {
@@ -31,6 +28,9 @@ public class User implements Comparable<User>
         this.nickName = nickName;
         this.passWord = passWord;
     }
+
+    public User() {}
+
     public User(String name, Integer age, Gender gender, String nickName, String passWord, boolean isAdmin)
     {
         this.name=name;

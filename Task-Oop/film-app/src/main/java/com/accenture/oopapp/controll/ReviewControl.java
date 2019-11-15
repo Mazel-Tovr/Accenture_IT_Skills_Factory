@@ -1,41 +1,30 @@
 package com.accenture.oopapp.controll;
 
 import com.accenture.oopapp.businesslayer.exceptionhandler.InputDataException;
+import com.accenture.oopapp.businesslayer.jpa.MovieJPA;
 import com.accenture.oopapp.businesslayer.main.FilmPage;
 import com.accenture.oopapp.businesslayer.main.MovieService;
 import com.accenture.oopapp.model.films.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
 import java.util.List;
 
-
-@RestController("/movie")
-public class MovieAndReviewControl
+@RestController()
+public class ReviewControl
 {
-    @Autowired
-    private MovieService movieService;
-    @Autowired
-    private FilmPage filmPage;//short info about fill and all reviews to it
 
-    @RequestMapping(value = "/movie",method = RequestMethod.GET)
-    public List<Movie> getAll()
-    {
-     return movieService.getAll();
-    }
+    @Autowired
+    private FilmPage filmPage;
 
-    @RequestMapping(value = "/movie/{id}",method = RequestMethod.GET)
-    public Object[]  getMovieById(@PathVariable(value = "id") String id)
-    {
-            return filmPage.getAllMovieDetails(id);
-    }
+    @Autowired
+    private MovieJPA movieJPA;
 
     //http://localhost:8080/movie/shit/review/delete/16
-    @RequestMapping(value = "/movie/{id}/review/delete/{reviewId}",method=RequestMethod.DELETE)
-    public boolean deleteReview(@PathVariable(value = "id")String id ,@PathVariable(value = "reviewId") Long reviewId) throws InputDataException
+    @RequestMapping(value = "/movie/{id}/review/delete/{reviewId}",method= RequestMethod.DELETE)
+    public boolean deleteReview(@PathVariable(value = "id")String id , @PathVariable(value = "reviewId") Long reviewId) throws InputDataException
     {
-       return filmPage.deleteReview(id,reviewId);
+        return filmPage.deleteReview(id,reviewId);
     }
 
     //http://localhost:8080/movie/Movie9/review/add?nickname=User&txt=some txt idk&rating=60
@@ -51,5 +40,14 @@ public class MovieAndReviewControl
     {
         filmPage.editReview(id,reviewId,txt);
     }
-
+    @RequestMapping(value = "/movie/genre",method=RequestMethod.GET)
+    public List<Movie> getAllTitleType(@RequestParam(value = "type") String type)
+    {
+        return movieJPA.getMovieByMovieType(type);
+    }
+    @RequestMapping(value = "/movie/titletype",method=RequestMethod.GET)
+    public List<Movie> getAllGenres()
+    {
+        return null;
+    }
 }

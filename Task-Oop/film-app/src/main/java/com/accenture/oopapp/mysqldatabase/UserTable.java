@@ -40,7 +40,8 @@ public class UserTable implements UserOperation
     @Override
     public User getUser(String nickName, String password)
     {
-        try {
+        try
+        {
             PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("SELECT * FROM user WHERE nickName =? AND passWord=?");
             stmt.setString(1, nickName);
             stmt.setString(2, password);
@@ -74,6 +75,4 @@ public class UserTable implements UserOperation
             e.printStackTrace();
         }
     }
-
-
 }

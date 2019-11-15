@@ -1,19 +1,33 @@
 package com.accenture.oopapp.model.films;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.*;
 
 
+@Entity
+@Table(name = "movie")
 public class Movie
 {
+    @Id
+    @Column(name = "movieid")
     private String movieId;
+    @Column(name = "moviename")
     private String movieName;
+    @Column(name="movietype")
+    @Enumerated(EnumType.STRING )
     private MovieType movieType;
+    @Transient//How to fix it ?
+    //@ManyToMany()
+
     private EnumSet<Genre> genres;
+    @Column(name = "releasedate")
     private String releaseDate;
+    @Column(name = "rating")
     private double rating = 0;
+    @Column(name = "description")
     private String description;
+
+    public Movie(){}
 
     public Movie(String movieId, String movieName, MovieType movieType, EnumSet<Genre> genres, String releaseDate, String description,double rating)
     {
