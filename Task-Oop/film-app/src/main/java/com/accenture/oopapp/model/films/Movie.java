@@ -16,10 +16,9 @@ public class Movie
     @Column(name="movietype")
     @Enumerated(EnumType.STRING )
     private MovieType movieType;
-    @Transient//How to fix it ?
-    //@ManyToMany()
-
-    private EnumSet<Genre> genres;
+    @ManyToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER)
+    @JoinTable(name = "genres",joinColumns = {@JoinColumn(name = "film_id")},inverseJoinColumns = {@JoinColumn(name="genre")})
+    private Set<GenreModel> genres;
     @Column(name = "releasedate")
     private String releaseDate;
     @Column(name = "rating")
@@ -29,7 +28,7 @@ public class Movie
 
     public Movie(){}
 
-    public Movie(String movieId, String movieName, MovieType movieType, EnumSet<Genre> genres, String releaseDate, String description,double rating)
+    public Movie(String movieId, String movieName, MovieType movieType, Set<GenreModel> genres, String releaseDate, String description,double rating)
     {
         this.movieId = movieId;
         this.movieName = movieName;
@@ -51,10 +50,6 @@ public class Movie
         return movieType;
     }
 
-    public EnumSet<Genre> getGenres() {
-        return genres;
-    }
-
     public String getReleaseDate() {
         return releaseDate;
     }
@@ -67,8 +62,7 @@ public class Movie
         return description;
     }
 
-
-
+    public Set<GenreModel> getGenres() { return genres; }
 
     @Override
     public boolean equals(Object o)

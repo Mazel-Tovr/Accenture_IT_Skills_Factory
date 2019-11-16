@@ -1,6 +1,7 @@
 package com.accenture.oopapp.mysqldatabase;
 
 import com.accenture.oopapp.model.films.Genre;
+import com.accenture.oopapp.model.films.GenreModel;
 import com.accenture.oopapp.model.films.Movie;
 import com.accenture.oopapp.model.films.MovieType;
 import com.accenture.oopapp.mysqldatabase.interfaces.MovieOperation;
@@ -30,7 +31,7 @@ public class FilmTable implements MovieOperation
             while (rs.next())
             {
 
-                movieList.add(new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),EnumSet.copyOf(parseGenres(getGenres(rs.getString("movieId")))),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating")));
+                movieList.add(new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),getGenres(rs.getString("movieId")),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating")));
             }
         }
         catch (SQLException e)
@@ -52,7 +53,7 @@ public class FilmTable implements MovieOperation
             ResultSet rs = stmt.executeQuery();
             while (rs.next())
             {
-                movieList.add(new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),EnumSet.copyOf(parseGenres(rs.getString("genres"))),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating")));
+                movieList.add(new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),getGenres(rs.getString("genres")),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating")));
             }
         }
         catch (SQLException e)
@@ -71,7 +72,7 @@ public class FilmTable implements MovieOperation
             stmt.setString(1,movieId);
             ResultSet rs = stmt.executeQuery();
             rs.next();
-            return new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),EnumSet.copyOf(parseGenres(getGenres(movieId))),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating"));
+            return new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),getGenres(movieId),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating"));
         }
         catch (SQLException e)
         {
@@ -88,7 +89,7 @@ public class FilmTable implements MovieOperation
         PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("INSERT INTO movie VALUES (?, ?, ?, ?, ?, ?, ?)");
         stmt.setString(1,movie.getMovieId());stmt.setString(2,movie.getMovieName());stmt.setString(3,movie.getMovieType().name());
 
-        stmt.setString(4,unParseGenres(movie.getGenres()));
+       // stmt.setString(4,unParseGenres(movie.getGenres()));
 
         stmt.setString(5,movie.getReleaseDate());stmt.setDouble(6,movie.getRating());stmt.setString(7,movie.getDescription());
         stmt.executeUpdate();
@@ -100,38 +101,38 @@ public class FilmTable implements MovieOperation
     }
 
 
-    private String getGenres(String movieId) throws SQLException
+    private Set<GenreModel> getGenres(String movieId) throws SQLException
     {
-        PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("SELECT g.genre FROM genre g JOIN genres gs ON g.genre_id = gs.genre Where gs.film_id = ? ");
+        Set<GenreModel> set = new HashSet<>();
+        PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("SELECT g.* FROM genre g JOIN genres gs ON g.genre_id = gs.genre Where gs.film_id = ? ");
         stmt.setString(1,movieId);
         ResultSet resultSet = stmt.executeQuery();
-        String s="";
         while (resultSet.next())
         {
-            s+=resultSet.getString("genre")+",";
+           set.add(new GenreModel(resultSet.getLong("genre_id"),Genre.valueOf(resultSet.getString("genre"))));
         }
-        return s;
+        return set;
     }
 
-    private String unParseGenres(EnumSet<Genre> genre)
-    {
-        String genres ="";
-        for (Genre item:genre)
-        {
-            genres +=item.name()+",";
-        }
-        return new StringBuilder(genres).deleteCharAt(genres.length()-1).toString();
-    }
-
-    private Set<Genre> parseGenres(String rs)
-    {
-        Set<Genre> genres = new HashSet<>();
-        for (String s : rs.split(","))
-        {
-            if(rs != null && !rs.isEmpty())
-            genres.add(Genre.valueOf(s));
-        }
-     return genres;
-    }
+//    private String unParseGenres(EnumSet<Genre> genre)
+//    {
+//        String genres ="";
+//        for (Genre item:genre)
+//        {
+//            genres +=item.name()+",";
+//        }
+//        return new StringBuilder(genres).deleteCharAt(genres.length()-1).toString();
+//    }
+//
+//    private Set<Genre> parseGenres(String rs)
+//    {
+//        Set<Genre> genres = new HashSet<>();
+//        for (String s : rs.split(","))
+//        {
+//            if(rs != null && !rs.isEmpty())
+//            genres.add(Genre.valueOf(s));
+//        }
+//     return genres;
+//    }
 
 }
