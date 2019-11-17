@@ -2,36 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9761f4a-55cd-4656-b6b8-803e31125914" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/MovieTableJPA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/interfaces/MovieOperationJPA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javafx/frontend/FilmApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/javafx/frontend/FilmApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/jpa/MovieJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/jpa/MovieJPA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/Entrance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/Entrance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/FilmPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/FilmPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/MovieService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/controll/JPATest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/controll/JPATest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/model/films/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/model/films/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/ConnectToDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/ConnectToDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/FilmTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/FilmTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/ReviewTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/ReviewTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/UserTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/UserTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/interfaces/MovieOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/MovieOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/interfaces/ReviewOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/ReviewOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/mysqldatabase/interfaces/UserOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/UserOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/jpa/MovieJPA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/jpa/MovieJPA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/Entrance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/Entrance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/FilmPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/FilmPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/MovieService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/main/MovieService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/controll/JPATest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/controll/JPATest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/films/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/films/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/ConnectToDB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/FilmTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/ReviewTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/UserTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/MovieOperation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/ReviewOperation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/mysqldatabase/interfaces/UserOperation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/MovieTableJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/MovieTableJPA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/interfaces/MovieOperationJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/interfaces/MovieOperationJPA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/MovieOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/MovieOperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/ReviewOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/ReviewOperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/UserOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/UserOperation.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,6 +124,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/MovieTableJPA.java</url>
           <line>39</line>
           <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/jpa/MovieJPA.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

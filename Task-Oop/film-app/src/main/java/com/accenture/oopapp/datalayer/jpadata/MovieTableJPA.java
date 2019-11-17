@@ -61,4 +61,10 @@ public class MovieTableJPA implements MovieOperationJPA
                 "Select c from Movie c", Movie.class);
         return  q.getResultList();
     }
+
+    @Override
+    public void addMovie(Movie movie)
+    {
+        entityManager.persist(movie);
+    }
 }

@@ -1,4 +1,4 @@
-package com.accenture.oopapp.mysqldatabase.interfaces;
+package com.accenture.oopapp.datalayer.mysqldatabase.interfaces;
 
 import com.accenture.oopapp.model.users.User;
 
