@@ -1,4 +1,4 @@
-package com.accenture.oopapp.mysqldatabase;
+package com.accenture.oopapp.datalayer.mysqldatabase;
 
 import org.springframework.stereotype.Repository;
 

@@ -64,6 +64,28 @@ public class Movie
 
     public Set<GenreModel> getGenres() { return genres; }
 
+    public void setMovieId(String movieId) { this.movieId = movieId; }
+
+    public void setMovieName(String movieName) { this.movieName = movieName; }
+
+    public void setMovieType(MovieType movieType) { this.movieType = movieType; }
+
+    public void setGenres(Set<GenreModel> genres) {
+        this.genres = genres;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(Object o)
     {

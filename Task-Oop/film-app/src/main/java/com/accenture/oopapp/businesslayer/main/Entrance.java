@@ -4,7 +4,7 @@ import com.accenture.oopapp.businesslayer.exceptionhandler.InDataControl;
 import com.accenture.oopapp.businesslayer.exceptionhandler.InputDataException;
 import com.accenture.oopapp.model.users.Gender;
 import com.accenture.oopapp.model.users.User;
-import com.accenture.oopapp.mysqldatabase.interfaces.UserOperation;
+import com.accenture.oopapp.datalayer.mysqldatabase.interfaces.UserOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

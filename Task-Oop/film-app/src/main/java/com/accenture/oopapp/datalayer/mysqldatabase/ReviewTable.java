@@ -1,8 +1,8 @@
-package com.accenture.oopapp.mysqldatabase;
+package com.accenture.oopapp.datalayer.mysqldatabase;
 
 import com.accenture.oopapp.model.films.Movie;
 import com.accenture.oopapp.model.films.Review;
-import com.accenture.oopapp.mysqldatabase.interfaces.ReviewOperation;
+import com.accenture.oopapp.datalayer.mysqldatabase.interfaces.ReviewOperation;
 import com.accenture.oopapp.model.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

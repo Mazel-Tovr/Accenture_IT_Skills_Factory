@@ -1,6 +1,9 @@
 package com.accenture.oopapp.controll;
 
 import com.accenture.oopapp.businesslayer.jpa.UserJPA;
+import com.accenture.oopapp.datalayer.jpadata.interfaces.MovieOperationJPA;
+import com.accenture.oopapp.datalayer.mysqldatabase.interfaces.MovieOperation;
+import com.accenture.oopapp.model.films.Genre;
 import com.accenture.oopapp.model.films.Movie;
 import com.accenture.oopapp.model.films.Review;
 import com.accenture.oopapp.model.users.User;
@@ -11,6 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import java.sql.SQLException;
 import java.util.List;
 
 @RestController( "/test")
@@ -21,6 +27,8 @@ public class JPATest
 
     @Autowired
     private UserJPA userJPA;
+    @Autowired
+    private MovieOperationJPA movieOperationJPA;
 
     @RequestMapping(value = "/test",method = RequestMethod.GET)
     public List<User> getAll()
@@ -33,8 +41,11 @@ public class JPATest
         return userJPA.getAllRev();
     }
     @RequestMapping(value = "/test2",method = RequestMethod.GET)
-    public List<Movie> getAllMovie()
-    {
-        return userJPA.getAllMovie();
+    public List<Movie> getAllMovie()  {
+        return movieOperationJPA.searchByGenre(Genre.HORROR,Genre.ANIMATION);
+    }
+    @RequestMapping(value = "/test3",method = RequestMethod.GET)
+    public List<Movie> getAllMovie3(){
+        return movieOperationJPA.searchByRating(1,50);
     }
 }

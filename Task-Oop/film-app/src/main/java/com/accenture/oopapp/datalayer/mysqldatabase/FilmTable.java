@@ -1,10 +1,10 @@
-package com.accenture.oopapp.mysqldatabase;
+package com.accenture.oopapp.datalayer.mysqldatabase;
 
 import com.accenture.oopapp.model.films.Genre;
 import com.accenture.oopapp.model.films.GenreModel;
 import com.accenture.oopapp.model.films.Movie;
 import com.accenture.oopapp.model.films.MovieType;
-import com.accenture.oopapp.mysqldatabase.interfaces.MovieOperation;
+import com.accenture.oopapp.datalayer.mysqldatabase.interfaces.MovieOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -86,11 +86,11 @@ public class FilmTable implements MovieOperation
     {
         try
         {
-        PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("INSERT INTO movie VALUES (?, ?, ?, ?, ?, ?, ?)");
+        PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("INSERT INTO movie VALUES (?, ?, ?, ?, ?, ?)");
         stmt.setString(1,movie.getMovieId());stmt.setString(2,movie.getMovieName());stmt.setString(3,movie.getMovieType().name());
 
        // stmt.setString(4,unParseGenres(movie.getGenres()));
-
+        //TODO Сделать запрос на вставку жанров к фильму , в эту функцию добавить параметр
         stmt.setString(5,movie.getReleaseDate());stmt.setDouble(6,movie.getRating());stmt.setString(7,movie.getDescription());
         stmt.executeUpdate();
         }

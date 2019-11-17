@@ -1,7 +1,7 @@
-package com.accenture.oopapp.mysqldatabase;
+package com.accenture.oopapp.datalayer.mysqldatabase;
 
 
-import com.accenture.oopapp.mysqldatabase.interfaces.UserOperation;
+import com.accenture.oopapp.datalayer.mysqldatabase.interfaces.UserOperation;
 import com.accenture.oopapp.model.users.Gender;
 import com.accenture.oopapp.model.users.User;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,10 @@
 package com.accenture.oopapp.businesslayer.jpa;
 
+import com.accenture.oopapp.datalayer.mysqldatabase.interfaces.MovieOperation;
 import com.accenture.oopapp.model.films.Genre;
 import com.accenture.oopapp.model.films.Movie;
 import com.accenture.oopapp.model.films.MovieType;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -15,6 +17,9 @@ public class MovieJPA
 {
     @PersistenceContext
     private EntityManager entityManager;
+
+    @Autowired
+    private MovieOperation movieOperation;
 
 
     public List<Movie> getMovieByMovieType(String genre)
