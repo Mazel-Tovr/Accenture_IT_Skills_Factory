@@ -90,7 +90,7 @@ public class FilmTable implements MovieOperation
         stmt.setString(1,movie.getMovieId());stmt.setString(2,movie.getMovieName());stmt.setString(3,movie.getMovieType().name());
 
        // stmt.setString(4,unParseGenres(movie.getGenres()));
-        //TODO Сделать запрос на вставку жанров к фильму , в эту функцию добавить параметр
+        //TODO Сделать  sql запрос на вставку жанрова к этому фильму , в эту функцию добавить параметр
         stmt.setString(5,movie.getReleaseDate());stmt.setDouble(6,movie.getRating());stmt.setString(7,movie.getDescription());
         stmt.executeUpdate();
         }

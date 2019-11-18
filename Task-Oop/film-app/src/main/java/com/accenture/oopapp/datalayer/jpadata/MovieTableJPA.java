@@ -25,17 +25,17 @@ public class MovieTableJPA implements MovieOperationJPA
     @PersistenceContext
     private EntityManager entityManager;
     @Autowired
-    private UseFullTools useFullTools;
+    private QueryBuilder queryBuilder;
     @Autowired
     private GenreOperationJPA genreOperationJPA;
 
     @Override
     public List<Movie> searchMovieByGenre(Genre... genre)
     {
-        //Почему это не робит, а нижнее робит, я не понимаю, хотя, в обычном sql все норм, наверное, это скорее все изи связи MtoM в сущносте.PS ya vse ponyal ya dyrak
+
         //String query = "SELECT m FROM Movie m INNER JOIN genres gs ON gs.film_id = m.movieid INNER JOIN genre g ON gs.genre = g.genre_id Where "+s;
 
-        String query = "SELECT m FROM Movie m JOIN m.genres g Where g IN "+useFullTools.createGenreWhereInQuery(genre);
+        String query = "SELECT m FROM Movie m JOIN m.genres g Where g IN "+ queryBuilder.createInQuery(genre.length);
         TypedQuery<Movie> typedQuery = entityManager.createQuery(query,Movie.class);
 
         int i = 1;
@@ -67,7 +67,14 @@ public class MovieTableJPA implements MovieOperationJPA
     }
 
     @Override
-    public List<Movie> getAllMovie()
+    public void removeMovie(Movie movie)
+    {
+        entityManager.remove(movie);
+    }
+
+
+    @Override
+    public List<Movie> getMovieList()
     {
         TypedQuery<Movie> q = entityManager.createQuery(
                 "Select c from Movie c", Movie.class);
@@ -75,8 +82,22 @@ public class MovieTableJPA implements MovieOperationJPA
     }
 
     @Override
-    public void addMovie(Movie movie)
+    public Movie getMovie(String movieId)
     {
+        TypedQuery<Movie> q = entityManager.createQuery(
+                "Select c from Movie c Where c.movieId =: movieId", Movie.class);
+        q.setParameter("movieId",movieId);
+        return q.getSingleResult();
+    }
+
+    @Override
+    public void addMoveToDataBase(Movie movie) {
         entityManager.persist(movie);
+    }
+
+    @Override
+    public List<Movie> search(String filter, String text)
+    {
+        return null;
     }
 }

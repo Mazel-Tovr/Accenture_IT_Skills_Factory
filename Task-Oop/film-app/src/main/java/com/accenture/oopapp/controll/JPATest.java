@@ -1,8 +1,7 @@
 package com.accenture.oopapp.controll;
 
-import com.accenture.oopapp.businesslayer.jpa.MovieJPA;
 import com.accenture.oopapp.datalayer.jpadata.interfaces.MovieOperationJPA;
-import com.accenture.oopapp.datalayer.mysqldatabase.interfaces.ReviewOperation;
+import com.accenture.oopapp.datalayer.jpadata.interfaces.ReviewOperationJPA;
 import com.accenture.oopapp.model.films.Genre;
 import com.accenture.oopapp.model.films.Movie;
 import com.accenture.oopapp.model.films.Review;
@@ -21,15 +20,11 @@ public class JPATest
     @PersistenceContext
     private EntityManager entityManager;
 
-
-    //Бд
     @Autowired
     private MovieOperationJPA movieOperationJPA;
-    @Autowired
-    private MovieJPA movieJPA;
 
     @Autowired
-    private ReviewOperation reviewOperation;
+    private ReviewOperationJPA reviewOperation;
 
 //    @RequestMapping(value = "/test",method = RequestMethod.GET)
 //    public List<User> getAll()
@@ -50,8 +45,9 @@ public class JPATest
         return movieOperationJPA.searchByRating(1,50);
     }
     @RequestMapping(value = "/test4",method = RequestMethod.GET)
-    public void getAllMovie4(){
-        movieJPA.addMovie();
+    public void getAllMovie4()
+    {
+        reviewOperation.findById(1l);
     }
     @RequestMapping(value = "/test5",method = RequestMethod.GET)
     public Review getAllMovie5(){

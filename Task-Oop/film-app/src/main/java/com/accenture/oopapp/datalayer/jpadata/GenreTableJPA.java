@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,7 +18,7 @@ public class GenreTableJPA implements GenreOperationJPA
     @Autowired
     private EntityManager entityManager;
     @Autowired
-    private UseFullTools useFullTools;
+    private QueryBuilder queryBuilder;
 
     @Override
     public GenreModel getGenreById(Long id)
@@ -40,7 +39,7 @@ public class GenreTableJPA implements GenreOperationJPA
     @Override
     public Set<GenreModel> getGenreByName(Genre... genres)
     {
-        String query = "Select g from GenreModel g Where g.genre IN "+useFullTools.createGenreWhereInQuery(genres);
+        String query = "Select g from GenreModel g Where g.genre IN "+ queryBuilder.createInQuery(genres.length);
         TypedQuery<GenreModel> typedQuery = entityManager.createQuery(query,GenreModel.class);
         for (int i = 1; i <= genres.length; i++)
         {

@@ -1,16 +1,14 @@
 package com.accenture.oopapp.datalayer.jpadata.interfaces;
 
 
+import com.accenture.oopapp.datalayer.mysqldatabase.interfaces.MovieOperation;
 import com.accenture.oopapp.model.films.Genre;
 import com.accenture.oopapp.model.films.Movie;
 
-import java.sql.SQLException;
 import java.util.List;
 
-public interface MovieOperationJPA
-{
+public interface MovieOperationJPA extends MovieOperation {
     List<Movie> searchMovieByGenre(Genre ...genre);
     List<Movie> searchByRating(double from ,double to);
-    List<Movie> getAllMovie();
-    void addMovie(Movie movie);
+    void removeMovie(Movie movie);
 }

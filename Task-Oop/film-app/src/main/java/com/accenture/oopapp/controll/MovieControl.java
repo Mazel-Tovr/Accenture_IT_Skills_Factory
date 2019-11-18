@@ -1,7 +1,6 @@
 package com.accenture.oopapp.controll;
 
-import com.accenture.oopapp.businesslayer.exceptionhandler.InputDataException;
-import com.accenture.oopapp.businesslayer.main.FilmPage;
+import com.accenture.oopapp.businesslayer.main.ReviewService;
 import com.accenture.oopapp.businesslayer.main.MovieService;
 import com.accenture.oopapp.model.films.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,7 @@ public class MovieControl
     @Autowired
     private MovieService movieService;
     @Autowired
-    private FilmPage filmPage;//short info about fill and all reviews to it
+    private ReviewService reviewService;//short info about fill and all reviews to it
 
     @RequestMapping(value = "/movie",method = RequestMethod.GET)
     public List<Movie> getAll()
@@ -28,7 +27,7 @@ public class MovieControl
     @RequestMapping(value = "/movie/{id}",method = RequestMethod.GET)
     public Object[]  getMovieById(@PathVariable(value = "id") String id)
     {
-            return filmPage.getAllMovieDetails(id);
+            return movieService.getAllMovieDetails(id);
     }
 
 

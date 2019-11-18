@@ -1,7 +1,7 @@
 package com.accenture.oopapp.controll;
 
 import com.accenture.oopapp.businesslayer.exceptionhandler.InputDataException;
-import com.accenture.oopapp.businesslayer.main.Entrance;
+import com.accenture.oopapp.businesslayer.main.interfaces.EntranceBusinessLayer;
 import com.accenture.oopapp.model.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class EntranceControl
 {
     @Autowired
-    private Entrance entrance;
+    private EntranceBusinessLayer entrance;
 
     @RequestMapping(value = "/logging",method = RequestMethod.GET)
     public String loggingPage()

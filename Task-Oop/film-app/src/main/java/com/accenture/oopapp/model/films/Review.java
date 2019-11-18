@@ -1,9 +1,6 @@
 package com.accenture.oopapp.model.films;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "review")
@@ -11,6 +8,7 @@ public class Review
 {
     @Id
     @Column(name = "reviewid")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reviewId;
     @Column(name = "movieid")
     private String movieId;
@@ -28,6 +26,16 @@ public class Review
     public Review(Long reviewId, String movieId, String text, String postDate, String personWhoWroteIt, double userRating)
     {
         this.reviewId = reviewId;
+        this.movieId = movieId;
+        this.text = text;
+        this.postDate = postDate;
+        this.personWhoWroteIt = personWhoWroteIt;
+        this.userRating = userRating;
+    }
+
+    //В бд айди авто инкрисемент стоит
+    public Review(String movieId, String text, String postDate, String personWhoWroteIt, double userRating)
+    {
         this.movieId = movieId;
         this.text = text;
         this.postDate = postDate;
