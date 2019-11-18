@@ -1,8 +1,9 @@
 package com.accenture.oopapp.datalayer.jpadata;
 
+import com.accenture.oopapp.datalayer.jpadata.interfaces.GenreOperationJPA;
 import com.accenture.oopapp.datalayer.jpadata.interfaces.MovieOperationJPA;
-import com.accenture.oopapp.datalayer.mysqldatabase.ConnectToDB;
 import com.accenture.oopapp.model.films.Genre;
+import com.accenture.oopapp.model.films.GenreModel;
 import com.accenture.oopapp.model.films.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -10,39 +11,50 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Repository
 public class MovieTableJPA implements MovieOperationJPA
 {
     @PersistenceContext
     private EntityManager entityManager;
-
     @Autowired
-    private ConnectToDB dbConnection;
+    private UseFullTools useFullTools;
+    @Autowired
+    private GenreOperationJPA genreOperationJPA;
 
     @Override
-    public List<Movie> searchByGenre(Genre... genre)
+    public List<Movie> searchMovieByGenre(Genre... genre)
     {
-        StringBuilder s = new StringBuilder();
-        for (int i = 0; i < genre.length ; i++)
-        {
-                s.append("g.genre = ?").append(i + 1);
-                s.append(i + 1 < genre.length ? " and " : "");//с and ничего не выдает с or все норм
-        }
-        //Почему это не робит, а нижнее робит, я не понимаю, хотя, в обычном sql все норм, наверное, это скорее все изи связи MtoM в сущносте
+        //Почему это не робит, а нижнее робит, я не понимаю, хотя, в обычном sql все норм, наверное, это скорее все изи связи MtoM в сущносте.PS ya vse ponyal ya dyrak
         //String query = "SELECT m FROM Movie m INNER JOIN genres gs ON gs.film_id = m.movieid INNER JOIN genre g ON gs.genre = g.genre_id Where "+s;
-        String query = "SELECT m FROM Movie m JOIN m.genres g Where "+s;
+
+        String query = "SELECT m FROM Movie m JOIN m.genres g Where g IN "+useFullTools.createGenreWhereInQuery(genre);
         TypedQuery<Movie> typedQuery = entityManager.createQuery(query,Movie.class);
-        for (int i = 1; i <= genre.length; i++)
+
+        int i = 1;
+        Set<GenreModel> genreModels = genreOperationJPA.getGenreByName(genre);
+        for (GenreModel item :genreModels)
         {
-            typedQuery.setParameter(i,genre[i-1]);
+            typedQuery.setParameter(i,item);
+            i++;
         }
-        return typedQuery.getResultList();
+
+        Set<Movie> movies = new HashSet<>();
+        for (Movie item: typedQuery.getResultList())
+        {
+            if(item.getGenres().containsAll(genreModels))
+            {
+                movies.add(item);
+            }
+        }
+        return new ArrayList<>(movies);
     }
 
     @Override

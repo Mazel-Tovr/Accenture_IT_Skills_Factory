@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface MovieOperationJPA
 {
-    List<Movie> searchByGenre(Genre ...genre);
+    List<Movie> searchMovieByGenre(Genre ...genre);
     List<Movie> searchByRating(double from ,double to);
     List<Movie> getAllMovie();
     void addMovie(Movie movie);

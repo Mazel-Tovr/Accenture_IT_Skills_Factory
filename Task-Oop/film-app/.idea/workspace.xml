@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9761f4a-55cd-4656-b6b8-803e31125914" name="Default Changelist" comment="">
+    <list default="true" id="307fac61-7221-4174-860d-92f2646952bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/GenreTableJPA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/UseFullTools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/interfaces/GenreOperationJPA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/interfaces/ReviewOperationJPA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/jpa/MovieJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/jpa/MovieJPA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/jpa/UserJPA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/jpa/UserJPAClass.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/controll/JPATest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/controll/JPATest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/MovieTableJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/MovieTableJPA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/interfaces/MovieOperationJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/interfaces/MovieOperationJPA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/MovieOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/MovieOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/ReviewOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/ReviewOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/UserOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/mysqldatabase/interfaces/UserOperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/model/films/GenreModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/oopapp/model/films/GenreModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/jpa/MovieJPA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/jpa/MovieJPA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/jpa/UserJPA.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/businesslayer/jpa/UserJPAClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/controll/JPATest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/controll/JPATest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/datalayer/jpadata/MovieTableJPA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/datalayer/jpadata/MovieTableJPA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/datalayer/jpadata/interfaces/MovieOperationJPA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/datalayer/jpadata/interfaces/MovieOperationJPA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/films/GenreModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/accenture/oopapp/model/films/GenreModel.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,13 +42,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="D:\GitHub\Accenture_IT_Skills_Factory\Task-Oop\film-app\.idea" />
-      </set>
-    </option>
-  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -42,17 +49,13 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1TEVejIRomHtLwDWw1V9im75ITo" />
+  <component name="ProjectId" id="1TkkPlKkaG7b5rkuHU7kLQY8aHj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Optimization" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -91,11 +94,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a9761f4a-55cd-4656-b6b8-803e31125914" name="Default Changelist" comment="" />
-      <created>1573025338752</created>
+      <changelist id="307fac61-7221-4174-860d-92f2646952bc" name="Default Changelist" comment="" />
+      <created>1574011458734</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573025338752</updated>
+      <updated>1574011458734</updated>
     </task>
     <servers />
   </component>
@@ -116,26 +119,16 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/main/FilmPage.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/accenture/oopapp/datalayer/jpadata/MovieTableJPA.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/accenture/oopapp/businesslayer/jpa/MovieJPA.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="46" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/accenture/oopapp/controll/JPATest.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="((java.util.ArrayList)((RowDataStatic)((JDBC42ResultSet)resultSet).rowData).rows).get(1)" custom="java.util.ArrayList,com.mysql.jdbc.JDBC42ResultSet,com.mysql.jdbc.RowDataStatic" />
-        <watch expression="this.fastClassInfo" language="JAVA" />
+        <watch expression="((StaticUnadvisedInterceptor)this.CGLIB$CALLBACK_1).target" custom="org.springframework.aop.framework.CglibAopProxy.StaticUnadvisedInterceptor,com.accenture.oopapp.datalayer.jpadata.MovieTableJPA" />
+        <watch expression="this.CGLIB$CALLBACK_2" custom="com.accenture.oopapp.datalayer.jpadata.MovieTableJPA" />
       </configuration>
     </watches-manager>
   </component>

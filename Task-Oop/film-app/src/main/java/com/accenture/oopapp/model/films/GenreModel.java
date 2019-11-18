@@ -3,6 +3,7 @@ package com.accenture.oopapp.model.films;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -12,6 +13,7 @@ public class GenreModel
     @Id
     @Column(name = "genre_id")
     private Long genreId;
+    @Column(name = "genre")
     @Enumerated(EnumType.STRING)
     private Genre genre;
 
@@ -34,5 +36,17 @@ public class GenreModel
 
     public void setGenre(Genre genre) { this.genre = genre; }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(genreId);
+    }
 
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GenreModel genre = (GenreModel) o;
+        return genreId.equals(genre.getGenreId());
+    }
 }

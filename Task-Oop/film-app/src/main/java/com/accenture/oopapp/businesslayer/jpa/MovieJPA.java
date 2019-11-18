@@ -1,5 +1,7 @@
 package com.accenture.oopapp.businesslayer.jpa;
 
+import com.accenture.oopapp.datalayer.jpadata.GenreTableJPA;
+import com.accenture.oopapp.datalayer.jpadata.interfaces.GenreOperationJPA;
 import com.accenture.oopapp.datalayer.jpadata.interfaces.MovieOperationJPA;
 import com.accenture.oopapp.datalayer.mysqldatabase.interfaces.MovieOperation;
 import com.accenture.oopapp.model.films.Genre;
@@ -24,7 +26,7 @@ public class MovieJPA
     @Autowired
     private MovieOperationJPA movieOperationJPA;
     @Autowired
-    private EntityManager entityManager;
+    private GenreOperationJPA genreOperationJPA;
 
     public List<Movie> getMovieByMovieType(String genre)
     {
@@ -36,10 +38,10 @@ public class MovieJPA
     @Transactional
     public void addMovie()
     {
-        Set<GenreModel> genreModelSet = new HashSet<>();
-        genreModelSet.add(entityManager.createQuery("Select g from GenreModel g Where g.genreId = 1 ",GenreModel.class).getSingleResult());
-        Movie movie = new Movie("forTest", "AddTest", MovieType.FILM, genreModelSet , "2018.10.14", "some",0 );
-        movieOperationJPA.addMovie(movie);
-
+//        Set<GenreModel> genreModelSet = new HashSet<>();
+//        genreModelSet.add(entityManager.createQuery("Select g from GenreModel g Where g.genreId = 1 ",GenreModel.class).getSingleResult());
+//        Movie movie = new Movie("forTest", "AddTest", MovieType.FILM, genreModelSet , "2018.10.14", "some",0 );
+//        movieOperationJPA.addMovie(movie);
+          genreOperationJPA.getGenreByName(Genre.valueOf("HORROR"),Genre.valueOf("ACTION")).forEach(a-> System.out.println(a.getGenre()));
     }
 }
