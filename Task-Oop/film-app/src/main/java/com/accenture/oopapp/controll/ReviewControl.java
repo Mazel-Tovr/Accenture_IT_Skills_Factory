@@ -39,14 +39,4 @@ public class ReviewControl
     {
         reviewService.editReview(id,reviewId,txt);
     }
-    @RequestMapping(value = "/movie/genre",method=RequestMethod.GET)
-    public List<Movie> getAllTitleType(@RequestParam(value = "type") String type)
-    {
-        return null;//movieJPA.getMovieByMovieType(type);
-    }
-    @RequestMapping(value = "/movie/titletype",method=RequestMethod.GET)
-    public List<Movie> getAllGenres()
-    {
-        return null;
-    }
 }

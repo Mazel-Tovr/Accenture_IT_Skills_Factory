@@ -5,6 +5,7 @@ import com.accenture.oopapp.datalayer.jpadata.interfaces.MovieOperationJPA;
 import com.accenture.oopapp.model.films.Genre;
 import com.accenture.oopapp.model.films.GenreModel;
 import com.accenture.oopapp.model.films.Movie;
+import com.accenture.oopapp.model.films.MovieType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 
 
 import java.util.ArrayList;
@@ -29,6 +31,7 @@ public class MovieTableJPA implements MovieOperationJPA
     @Autowired
     private GenreOperationJPA genreOperationJPA;
 
+    //TODO Такой же только с типами
     @Override
     public List<Movie> searchMovieByGenre(Genre... genre)
     {
@@ -58,6 +61,15 @@ public class MovieTableJPA implements MovieOperationJPA
     }
 
     @Override
+    public List<Movie> searchMovieByType(MovieType type)
+    {
+        TypedQuery<Movie> typedQuery = entityManager.createQuery("Select m from Movie m WHERE m.movieType = ?1",Movie.class);
+        typedQuery.setParameter(1,type);
+        return typedQuery.getResultList();
+    }
+
+    
+    @Override
     public List<Movie> searchByRating(double from, double to)
     {
         TypedQuery<Movie> typedQuery = entityManager.createQuery("Select m from Movie m WHERE m.rating BETWEEN ?1 AND ?2",Movie.class);
@@ -66,6 +78,7 @@ public class MovieTableJPA implements MovieOperationJPA
         return  typedQuery.getResultList();
     }
 
+    @Transactional
     @Override
     public void removeMovie(Movie movie)
     {
@@ -90,10 +103,9 @@ public class MovieTableJPA implements MovieOperationJPA
         return q.getSingleResult();
     }
 
+    @Transactional
     @Override
-    public void addMoveToDataBase(Movie movie) {
-        entityManager.persist(movie);
-    }
+    public void addMoveToDataBase(Movie movie) { entityManager.persist(movie); }
 
     @Override
     public List<Movie> search(String filter, String text)

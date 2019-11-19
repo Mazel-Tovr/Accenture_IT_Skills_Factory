@@ -45,8 +45,7 @@ public class GenreTableJPA implements GenreOperationJPA
         {
             typedQuery.setParameter(i,genres[i-1]);
         }
-        return  new HashSet<GenreModel>(typedQuery.getResultList());
+        return  new HashSet<>(typedQuery.getResultList());
     }
-
 
 }

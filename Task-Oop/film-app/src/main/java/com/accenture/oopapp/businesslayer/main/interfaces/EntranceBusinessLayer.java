@@ -1,4 +1,4 @@
-package com.accenture.oopapp.businesslayer.sql.interfaces;
+package com.accenture.oopapp.businesslayer.main.interfaces;
 
 import com.accenture.oopapp.businesslayer.exceptionhandler.InputDataException;
 import com.accenture.oopapp.model.users.User;

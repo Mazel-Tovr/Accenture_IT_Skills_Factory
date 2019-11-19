@@ -1,4 +1,8 @@
-package com.accenture.oopapp.businesslayer.sql.interfaces;
+package com.accenture.oopapp.businesslayer.main.interfaces;
 
-public interface ReviewBusinessLayer {
+import com.accenture.oopapp.businesslayer.exceptionhandler.InputDataException;
+
+public interface ReviewBusinessLayer
+{
+    void addReview(String movieId,String userId,String txt,double rating)throws InputDataException;
 }

@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
-
-// oh,"logging" should (must) be replaced on singIn or smt like this
 @RestController("/logging")
-//@RequestMapping()
 public class EntranceControl
 {
     @Autowired
@@ -39,14 +36,19 @@ public class EntranceControl
     Example 4 test (use Postman) !!bd should bee on!!
     http://localhost:8080/logging/registration?name=Alex&nickname=Alex228&password=228&age=44&gender=male
      */
+
+    //
     @RequestMapping(value = "/logging/registration",method = RequestMethod.POST)
     public String singUp(@RequestParam(value = "name")String name,@RequestParam(value = "nickname") String nickName,@RequestParam(value = "password") String passWord,
                          @RequestParam(value = "age")int age,@RequestParam(value = "gender") String gender) {
         //ну или просто бросать эксепшен выше
-        try {
+        try
+        {
             entrance.toRegister(name, nickName, passWord, age, gender);
             return "Регистрация успешно завершена";
-        } catch (InputDataException e) {
+        }
+        catch (InputDataException e)
+        {
             return e.getMessage();
         }
     }
