@@ -20,8 +20,6 @@ public class ReviewService implements ReviewBusinessLayer
 {
     @Autowired
     private InDataControl inDataControl;
-    @Autowired
-    private MovieOperationJPA movieOperationJPA;
 //    @Autowired
 //    private ReviewOperation reviewOperation;
 

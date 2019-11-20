@@ -62,7 +62,7 @@ public class MovieService implements MovieBusinessLayer
     }
     public List<Movie> getMovieByMovieType(String movieType)
     {
-        return movieOperationJPA.searchMovieByType(MovieType.valueOf(movieType.toUpperCase()));
+        return movieOperationJPA.searchMovieByType(getTypeArray(movieType));
     }
 
     public List<Movie> getMovieByGenre(String genre)
@@ -89,5 +89,15 @@ public class MovieService implements MovieBusinessLayer
             genres[i] = Genre.valueOf(genreArray[i].toUpperCase());
         }
         return genres;
+    }
+    private MovieType[] getTypeArray(String type)
+    {
+        String[] typeArray= type.split("\\s*(\\s|,|!|\\.)\\s*");
+        MovieType[] types = new MovieType[typeArray.length];
+        for (int i = 0; i <typeArray.length ; i++)
+        {
+            types[i] = MovieType.valueOf(typeArray[i].toUpperCase());
+        }
+        return types;
     }
 }

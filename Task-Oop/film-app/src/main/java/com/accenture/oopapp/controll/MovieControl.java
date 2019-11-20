@@ -31,8 +31,7 @@ public class MovieControl
     {
         return movieBusinessLayer.getMovieByGenre(genre);
     }
-    //http://localhost:8080/movie/genre?genre=film
-    //TODO Сдлеать выдачу по нескольким жанрам
+    //http://localhost:8080/movie/titletype?type=film,short
     @RequestMapping(value = "/movie/titletype",method=RequestMethod.GET)
     public List<Movie> getAllGenres(@RequestParam(value = "type") String type)
     {

@@ -31,7 +31,6 @@ public class MovieTableJPA implements MovieOperationJPA
     @Autowired
     private GenreOperationJPA genreOperationJPA;
 
-    //TODO Такой же только с типами
     @Override
     public List<Movie> searchMovieByGenre(Genre... genre)
     {
@@ -61,10 +60,14 @@ public class MovieTableJPA implements MovieOperationJPA
     }
 
     @Override
-    public List<Movie> searchMovieByType(MovieType type)
+    public List<Movie> searchMovieByType(MovieType... type)
     {
-        TypedQuery<Movie> typedQuery = entityManager.createQuery("Select m from Movie m WHERE m.movieType = ?1",Movie.class);
-        typedQuery.setParameter(1,type);
+        TypedQuery<Movie> typedQuery = entityManager.createQuery("Select m from Movie m WHERE m.movieType IN "+queryBuilder.createInQuery(type.length),Movie.class);
+        for (int i = 0; i <type.length ; i++)
+        {
+            typedQuery.setParameter((i+1),type[i]);
+        }
+
         return typedQuery.getResultList();
     }
 

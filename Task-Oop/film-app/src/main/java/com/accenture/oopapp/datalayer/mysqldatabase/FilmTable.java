@@ -30,7 +30,6 @@ public class FilmTable implements MovieOperation
             ResultSet rs = stmt.executeQuery();
             while (rs.next())
             {
-
                 movieList.add(new Movie(rs.getString("movieId"),rs.getString("movieName"), MovieType.valueOf(rs.getString("movieType")),getGenres(rs.getString("movieId")),rs.getString("releaseDate"),rs.getString("description"),rs.getDouble("rating")));
             }
         }
@@ -41,7 +40,7 @@ public class FilmTable implements MovieOperation
         return  movieList;
     }
 
-    //TODO этого небудт в sql, в jpa сделю
+
     @Override
     public List<Movie> search(String filter,String text)
     {
@@ -88,10 +87,15 @@ public class FilmTable implements MovieOperation
         {
         PreparedStatement stmt = dbConnection.getDbConnection().prepareStatement("INSERT INTO movie VALUES (?, ?, ?, ?, ?, ?)");
         stmt.setString(1,movie.getMovieId());stmt.setString(2,movie.getMovieName());stmt.setString(3,movie.getMovieType().name());
-
-       // stmt.setString(4,unParseGenres(movie.getGenres()));
-        //TODO Сделать  sql запрос на вставку жанрова к этому фильму , в эту функцию добавить параметр
         stmt.setString(5,movie.getReleaseDate());stmt.setDouble(6,movie.getRating());stmt.setString(7,movie.getDescription());
+            for (GenreModel item :movie.getGenres())
+            {
+               PreparedStatement statement = dbConnection.getDbConnection().prepareStatement("INSERT INTO genres VALUES (?, ?)");
+               statement.setString(1,movie.getMovieId());
+               statement.setLong(2,item.getGenreId());
+               statement.executeUpdate();
+            }
+
         stmt.executeUpdate();
         }
         catch (SQLException e)

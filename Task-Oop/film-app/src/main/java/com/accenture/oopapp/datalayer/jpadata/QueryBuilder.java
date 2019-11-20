@@ -4,9 +4,9 @@ import com.accenture.oopapp.model.films.Genre;
 import org.springframework.stereotype.Service;
 
 @Service
-class QueryBuilder
+ class QueryBuilder
 {
-    String createInQuery(int countOfElements)
+   String createInQuery(int countOfElements)
     {
         StringBuilder s = new StringBuilder();
         s.append("(");

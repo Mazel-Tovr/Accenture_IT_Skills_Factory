@@ -27,6 +27,7 @@ public class EntranceControl
     {
         return entrance.login(nickName, passWord);
     }
+
     @RequestMapping(value = "/logging/registration",method = RequestMethod.GET)
     public String registrationPage()
     {
