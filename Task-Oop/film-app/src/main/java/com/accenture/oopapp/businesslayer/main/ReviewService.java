@@ -3,10 +3,7 @@ package com.accenture.oopapp.businesslayer.main;
 import com.accenture.oopapp.businesslayer.exceptionhandler.InDataControl;
 import com.accenture.oopapp.businesslayer.exceptionhandler.InputDataException;
 import com.accenture.oopapp.businesslayer.main.interfaces.ReviewBusinessLayer;
-import com.accenture.oopapp.datalayer.jpadata.interfaces.MovieOperationJPA;
 import com.accenture.oopapp.datalayer.jpadata.interfaces.ReviewOperationJPA;
-import com.accenture.oopapp.datalayer.mysqldatabase.interfaces.MovieOperation;
-import com.accenture.oopapp.datalayer.mysqldatabase.interfaces.ReviewOperation;
 import com.accenture.oopapp.model.films.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +25,7 @@ public class ReviewService implements ReviewBusinessLayer
     private ReviewOperationJPA reviewOperationJPA;
 
 
+    @Transactional
     public void addReview(String movieId,String userId,String txt,double rating) throws InputDataException
     {
         if(!inDataControl.ratingCheck(rating) && !inDataControl.notEmptyField(txt))
@@ -36,7 +34,10 @@ public class ReviewService implements ReviewBusinessLayer
         }
         //reviewOperation.addReview(movieId,userId,txt,rating);
         reviewOperationJPA.save(new Review(movieId,txt,new SimpleDateFormat("yyyy.MM.dd").format(new Date()),userId,rating));
+        reviewOperationJPA.recalculateFilmRating(movieId);
     }
+
+    @Transactional
     public void deleteReview(String movieId,Long reviewId) throws InputDataException
     {
         if(!inDataControl.notNullValue(reviewId))
@@ -49,6 +50,7 @@ public class ReviewService implements ReviewBusinessLayer
         }
         // reviewOperation.removeReview(reviewId);
         reviewOperationJPA.deleteById(reviewId);
+        reviewOperationJPA.recalculateFilmRating(movieId);
     }
 
     @Transactional
